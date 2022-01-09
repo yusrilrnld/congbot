@@ -23,6 +23,6 @@ jobs:
           commit_message: 'PocongUserbot: auto fixes'
           commit_options: '--no-verify --signoff'
           repository: .
-          commit_user_name: poocoong
-          commit_user_email: rzkyfadilla80@gmail.com
-          commit_author: poocoong <rzkyfadilla80@gmail.com>
+          commit_user_name: poocong
+          commit_user_email: akuuntumball01@gmail.com
+          commit_author: poocong <akuuntumball01@gmail.com>
