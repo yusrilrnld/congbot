@@ -15,7 +15,7 @@ from userbot.utils import edit_delete, edit_or_reply, poci_cmd
 # Alvin Gans
 
 
-@poci_cmd(pattern="tt(?: |$)(.*)")
+@poci_cmd(pattern="tiktok(?: |$)(.*)")
 async def _(event):
     xxnx = event.pattern_match.group(1)
     if xxnx:
@@ -57,7 +57,7 @@ async def _(event):
 CMD_HELP.update(
     {
         "tiktok": f"**Plugin : **`tiktok`\
-        \n\n  •  **Syntax :** `{cmd}tt` <link>\
+        \n\n  •  **Syntax :** `{cmd}tiktok` <link>\
         \n  •  **Function : **Download Video Tiktok Tanpa Watermark\
     "
     }
