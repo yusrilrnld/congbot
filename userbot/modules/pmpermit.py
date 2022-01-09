@@ -254,7 +254,7 @@ async def approvepm(apprvpm):
         )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"(?:ga|nopm)\s?(.)?"))
+@bot.on(poci_cmd(outgoing=True, pattern=r"(?:bye|nopm)\s?(.)?"))
 async def disapprovepm(disapprvpm):
     try:
         from userbot.modules.sql_helper.pm_permit_sql import dissprove
