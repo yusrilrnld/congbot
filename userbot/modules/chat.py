@@ -590,7 +590,7 @@ CMD_HELP.update(
         "link": f"**Plugin : **`link`\
         \n\n  •  **Syntax :** `{cmd}link` <username/userid> <opsional teks> (atau) Reply pesan .link <teks opsional>\
         \n  •  **Function : **Membuat link permanen ke profil pengguna dengan teks ubahsuaian opsional.\
-        \n  •  **Contoh : **{cmd}link @mrismanaziz Ganteng\
+        \n  •  **Contoh : **{cmd}link username teks\
     "
     }
 )
