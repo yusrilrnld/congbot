@@ -42,6 +42,7 @@ from userbot.utils import edit_delete, edit_or_reply, poci_cmd
 KANGING_STR = [
     "Colong Sticker dulu yee kan",
     "Ini Sticker aku colong yaa DUARR!",
+    "Pim Pim Pom! Ni stiker punya aing sekarang",
     "Waw Stickernya Bagus Nih...Colong Dulu Yekan..",
     "ehh, keren nih... gua colong ya stickernya...",
     "Boleh juga ni Sticker Colong ahh~",
@@ -51,7 +52,7 @@ OWNER = user.first_name
 OWNER_ID = user.id
 
 
-@poci_cmd(pattern="(?:tikel|kang)\s?(.)?")
+@poci_cmd(pattern="(?:curi|kang)\s?(.)?")
 async def kang(args):
     user = await args.client.get_me()
     if not user.username:
@@ -80,7 +81,7 @@ async def kang(args):
             in message.media.document.attributes
         ):
             emoji = message.media.document.attributes[1].alt
-            if emoji != "✨":
+            if emoji != "👾":
                 emojibypass = True
     elif "tgsticker" in message.media.document.mime_type:
         xx = await edit_or_reply(args, f"`{random.choice(KANGING_STR)}`")
@@ -99,7 +100,7 @@ async def kang(args):
     if photo:
         splat = args.text.split()
         if not emojibypass:
-            emoji = "✨"
+            emoji = "👾"
         pack = 1
         if len(splat) == 3:
             pack = splat[2]
@@ -144,7 +145,7 @@ async def kang(args):
                 x = await conv.get_response()
                 while "120" in x.text:
                     pack += 1
-                    packname = f"Sticker_u{u_id}_Ke{pack}"
+                    packname = f"Sticker_u{u_id}_Pack{pack}"
                     packnick = f"{custom_packnick}"
                     await xx.edit(
                         "`Membuat Sticker Pack Baru "
