@@ -25,8 +25,8 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 ### Generate String Session
 [![Run repl.it](https://img.shields.io/badge/run-string__session.py-blue?style=for-the-badge&logo=repl.it)](https://repl.it/@mrismanaziz/stringenSession?lite=1&outputonly=1)
 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/poocong/PocongUserbot"> <img 
-src="https://img.shields.io/badge/Deploy%20To%20Heroku-purple?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
+<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/Xyren-64bit/PocongUserbot"> <img 
+src="https://img.shields.io/badge/Deploy%20To%20Heroku-red?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
 
 
 ## Updates dan support
