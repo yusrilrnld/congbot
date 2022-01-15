@@ -125,7 +125,7 @@ async def repo_is_here(event):
 async def string_is_here(event):
     await edit_or_reply(
         event,
-        "•❏ **GET STRING SESSION TELEGRAM :** [KLIK DISINI](https://t.me/StringManRobot)\n",
+        "❏ **GET STRING SESSION TELEGRAM :** [[ KLIK DISINI ]](https://t.me/StringPocongBot)\n",
     )
 
 
