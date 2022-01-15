@@ -23,15 +23,19 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 
 
 ### Generate String Session
-[![Run repl.it](https://img.shields.io/badge/run-string__session.py-blue?style=for-the-badge&logo=repl.it)](https://repl.it/@mrismanaziz/stringenSession?lite=1&outputonly=1)
+<p align="center"><a href="https://t.me/StringPocongBot"><img
+src="https://img.shields.io/badge/GenStringBot-black?style=flat&logo=telegram" width="210" height"40.50" /></a></p>
 
-<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/Xyren-64bit/PocongUserbot"> <img 
-src="https://img.shields.io/badge/Deploy%20To%20Heroku-red?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
+### Deploy To Heroku
+<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/ikyfadilla/PocongUserbot"> <img 
+src="https://img.shields.io/badge/Deploy%20To%20Heroku-purple?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
 
 
 ## Updates dan support
 
-Follow Channel [@Poocongonlen](https://t.me/Poocongonlen) untuk info Update bot dan Gabung Group [@PocongUserbot](https://t.me/PocongUserbot) untuk untuk diskusi, pelaporan bug, dan bantuan tentang PocongUserbot.
+Subs Channel [[ @Poocongonlen ]](https://t.me/PocongProject)
+
+Grup Support [[ @PocongUserbot ]](https://t.me/PocongUserbot)
 
 ## © Credits
 #### Thanks To [Everyone](https://github.com/poocong/PocongUserbot/graphs/contributors) Who Has Helped Make This Userbot Awesome!
@@ -41,10 +45,10 @@ Follow Channel [@Poocongonlen](https://t.me/Poocongonlen) untuk info Update bot 
 *   [BianSepang](https://github.com/BianSepang/WeebProject) : WeebProject
 *   [Sandy1709](https://github.com/sandy1709/catuserbot) : CatUserbot
 *   [X_ImFine](https://github.com/ximfine) :  XBot-REMIX
+*   [Pocong](https://github.com/poocong/Pocong-Userbot) : Pocong-Userbot
 *   [Risman](https://github.com/mrismanaziz/Man-Userbot) :  Man-Userbot
 *   [Koala](https://github.com/ManusiaRakitan/Kampang-Bot) : Kampang-Bot
 *   [Alvin](https://github.com/Zora24/Lord-Userbot) : Lord-Userbot
-*   [Pocong](https://github.com/poocong/Pocong-Userbot) : Pocong-Userbot
 
 ## License
 Licensed under [Raphielscape Public License](https://github.com/poocong/PocongUserbot/blob/PocongUserbot/LICENSE) - Version 1.d, February 2020
