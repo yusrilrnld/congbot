@@ -1,6 +1,6 @@
 # Credits: @mrismanaziz
 # Thanks To @tofik_dn || https://github.com/tofikdn
-# FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
+# FROM Man-Userbot
 # ReCode by @Pocongonlen
 
 from pytgcalls import StreamType
