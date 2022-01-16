@@ -10,7 +10,7 @@ from math import floor
 from telethon.errors import BadRequestError, FloodWaitError, ForbiddenError
 from telethon.utils import get_display_name
 
-from userbot import BOT_USERNAME, BOTLOG_CHATID
+from userbot import BOT_USERNAME, BOTLOG, BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot, tgbot, user
 from userbot.modules.sql_helper.bot_blacklists import (
@@ -92,7 +92,7 @@ async def ban_user_from_bot(user, reason, reply_to=None):
             \n**First Name:** {_format.mentionuser(get_display_name(user) , user.id)}\
             \n**User ID:** `{user.id}`\
             \n**Reason:** `{reason}`"
-    if BOTLOG_CHATID:
+    if BOTLOG:
         await bot.send_message(BOTLOG_CHATID, info)
     return info
 
@@ -110,7 +110,7 @@ async def unban_user_from_bot(user, reason, reply_to=None):
     info = f"**#Unbanned_Bot_PM_User**\
             \n**First Name:** {_format.mentionuser(get_display_name(user) , user.id)}\
             \n**User ID:** `{user.id}`"
-    if BOTLOG_CHATID:
+    if BOTLOG:
         await bot.send_message(BOTLOG_CHATID, info)
     return info
 
@@ -166,7 +166,7 @@ async def bot_broadcast(event):
                     await asyncio.sleep(e.seconds)
     end_ = datetime.now()
     b_info = f"🔊 <b>Berhasil Mengirim Broadcast Pesan Ke</b> ➜ <code>{count}</code> <b>Users.</b>"
-    if blocked_users:
+    if len(blocked_users) != 0:
         b_info += f"\n🚫 <code>{len(blocked_users)}</code> <b>user memblokir bot Anda baru-baru ini, jadi telah dihapus.</b>"
     b_info += f"\n⏳ <b>Dalam Waktu</b>  <code>{time_formatter((end_ - start_).seconds)}</code>."
     await br_cast.edit(b_info, parse_mode="html")
@@ -310,7 +310,7 @@ async def setpmbot(event):
         msg = message.message
         sql.addgvar("START_TEXT", msg)
         await xnxx.edit("**Berhasil Mengcustom Pesan Start BOT**")
-        if BOTLOG_CHATID:
+        if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID,
                 f"**{status} PMBOT Yang Tersimpan:** \n\n{msg}",
