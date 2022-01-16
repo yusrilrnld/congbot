@@ -24,11 +24,11 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 
 ### Generate String Session
 <p align="center"><a href="https://t.me/StringPocongBot"><img
-src="https://img.shields.io/badge/GenStringBot-orange?style=flat&logo=telegram" width="210" height"40.50" /></a></p>
+src="https://img.shields.io/badge/GenStringBot-white?style=flat&logo=telegram" width="210" height"40.50" /></a></p>
 
 ### Deploy To Heroku
 <p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/ikyfadilla/PocongUserbot"> <img 
-src="https://img.shields.io/badge/Deploy%20To%20Heroku-purple?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
+src="https://img.shields.io/badge/Deploy%20To%20Heroku-pink?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
 
 
 ## Updates dan support
