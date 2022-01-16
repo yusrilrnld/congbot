@@ -7,14 +7,18 @@ import asyncio
 
 from telethon import events
 
-from userbot import BOTLOG_CHATID
+from userbot import BOTLOG, BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, LOGS, bot
+from userbot.events import poci_cmd
 from userbot.modules.sql_helper import no_log_pms_sql
 from userbot.modules.sql_helper.globals import addgvar, gvarstatus
 from userbot.modules.vcplugin import vcmention
-from userbot.utils import _format, edit_delete, poci_cmd
+from userbot.utils import _format, edit_delete
+from userbot.utils.logger import logging
 from userbot.utils.tools import media_type
+
+LOGS = logging.getLogger(__name__)
 
 
 class LOG_CHATS:
@@ -118,9 +122,9 @@ async def log_tagged_messages(event):
         )
 
 
-@poci_cmd(pattern="save(?: |$)(.*)")
+@bot.on(poci_cmd(outgoing=True, pattern=r"save(?: |$)(.*)"))
 async def log(log_text):
-    if BOTLOG_CHATID:
+    if BOTLOG:
         if log_text.reply_to_msg_id:
             reply_msg = await log_text.get_reply_message()
             await reply_msg.forward_to(BOTLOG_CHATID)
@@ -138,7 +142,7 @@ async def log(log_text):
     await log_text.delete()
 
 
-@poci_cmd(pattern="log$")
+@bot.on(poci_cmd(outgoing=True, pattern=r"log$"))
 async def set_no_log_p_m(event):
     if BOTLOG_CHATID != -100:
         chat = await event.get_chat()
@@ -149,7 +153,7 @@ async def set_no_log_p_m(event):
             )
 
 
-@poci_cmd(pattern="nolog$")
+@bot.on(poci_cmd(outgoing=True, pattern=r"nolog$"))
 async def set_no_log_p_m(event):
     if BOTLOG_CHATID != -100:
         chat = await event.get_chat()
@@ -190,7 +194,7 @@ async def set_pmlog(event):
         await event.edit("**PM LOG Sudah Dimatikan**")
 
 
-@poci_cmd(pattern="gruplog (on|off)$")
+@bot.on(poci_cmd(outgoing=True, pattern=r"gruplog (on|off)$"))
 async def set_gruplog(event):
     if BOTLOG_CHATID == -100:
         return await edit_delete(
