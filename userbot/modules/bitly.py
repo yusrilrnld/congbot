@@ -9,11 +9,11 @@ from re import match
 
 from bitlyshortener import Shortener
 
-from userbot import BITLY_TOKEN, BOTLOG, BOTLOG_CHATID, bot
-from userbot.events import poci_cmd
+from userbot import BITLY_TOKEN, BOTLOG_CHATID
+from userbot.utils import poci_cmd
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"bitly(?: |$)(.*)"))
+@poci_cmd(pattern="bitly(?: |$)(.*)")
 async def shortener(short):
     """
     Shorten link using bit.ly API
@@ -43,7 +43,7 @@ async def shortener(short):
         await short.edit(
             f"`Your link shortened successfully!`\nHere is your link {output}"
         )
-        if BOTLOG:
+        if BOTLOG_CHATID:
             await short.client.send_message(
                 BOTLOG_CHATID, f"`#SHORTLINK \nThis Your Link!`\n {output}"
             )
