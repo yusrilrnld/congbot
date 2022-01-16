@@ -21,7 +21,7 @@ from userbot import CMD_HELP
 from userbot import PLAY_PIC as fotoplay
 from userbot import QUEUE_PIC as ngantri
 from userbot import call_py, owner
-from userbot.utils import bash, edit_delete, edit_or_reply, poci
+from userbot.utils import bash, edit_delete, edit_or_reply
 from userbot.utils.chattitle import CHAT_TITLE
 from userbot.utils.queues.queues import (
     QUEUE,
