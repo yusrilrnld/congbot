@@ -1,6 +1,6 @@
 # Credits: @mrismanaziz
 # Thanks To @tofik_dn || https://github.com/tofikdn
-# FROM Man-Userbot
+# FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
 # ReCode by @Pocongonlen
 
 from pytgcalls import StreamType
@@ -21,7 +21,7 @@ from userbot import CMD_HELP
 from userbot import PLAY_PIC as fotoplay
 from userbot import QUEUE_PIC as ngantri
 from userbot import call_py, owner
-from userbot.utils import bash, edit_delete, edit_or_reply, poci_cmd
+from userbot.utils import bash, edit_delete, edit_or_reply, poci
 from userbot.utils.chattitle import CHAT_TITLE
 from userbot.utils.queues.queues import (
     QUEUE,
