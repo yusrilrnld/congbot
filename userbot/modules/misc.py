@@ -126,8 +126,10 @@ async def string_is_here(event):
     await edit_or_reply(
         event,
         "**List Bot**\n"
-        "\n┌❏ **GET STRING SESSION TELEGRAM :** [[ KLIK DISINI ]](https://t.me/StringPocongBot)"
-        "\n└❏ **GET API ID & API HASH :** [[ KLIK DISINI ]](https://t.me/pocongscrapbot)",
+        "\n•[❏ **GET STRING SESSION TELEGRAM :**"
+        "\n[[ KLIK DISINI ]](https://t.me/StringPocongBot)"
+        "\n•[❏ **GET API ID & API HASH :**"
+        "\n[[ KLIK DISINI ]](https://t.me/pocongscrapbot)",
     )
 
 
