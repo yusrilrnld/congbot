@@ -3,7 +3,6 @@
 # you may not use this file except in compliance with the License.
 # You can find misc modules, which dont fit in anything xD
 # Copyright (C) 2022 @mrismanaziz
-# FROM Man-Userbot
 # ReCode by @Pocongonlen
 
 import io
@@ -282,6 +281,7 @@ CMD_HELP.update(
     }
 )
 
+
 CMD_HELP.update(
     {
         "random": f"**Plugin : **`random`\
@@ -291,23 +291,14 @@ CMD_HELP.update(
     }
 )
 
-CMD_HELP.update(
-    {
-        "sleep": f"**Plugin : **`sleep`\
-        \n\n  •  **Syntax :** `{cmd}sleep`\
-        \n  •  **Function : **Biarkan Man-Userbot tidur selama beberapa detik \
-    "
-    }
-)
-
 
 CMD_HELP.update(
     {
         "repo": f"**Plugin : **`Repository PocongUserbot`\
         \n\n  •  **Syntax :** `{cmd}repo`\
-        \n  •  **Function : **Menampilan link Repository Man-Userbot\
+        \n  •  **Function : **Menampilan link Repository PocongUserbot\
         \n\n  •  **Syntax :** `{cmd}string`\
-        \n  •  **Function : **Menampilan link String Man-Userbot\
+        \n  •  **Function : **Menampilan link String PocongUserbot\
     "
     }
 )
@@ -325,19 +316,13 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "restart": f"**Plugin : **`Restart PocongUserbot`\
+        "misc": f"**Plugin : **`Daftar Perintah misc`\
         \n\n  •  **Syntax :** `{cmd}restart`\
         \n  •  **Function : **Untuk Merestart userbot.\
-    "
-    }
-)
-
-
-CMD_HELP.update(
-    {
-        "shutdown": f"**Plugin : **`shutdown`\
         \n\n  •  **Syntax :** `{cmd}shutdown`\
         \n  •  **Function : **Mematikan Userbot.\
+        \n\n  •  **Syntax :** `{cmd} sleep`\
+        \n  •  **Function : **Biarkan PocongUserbot tidur selama waktu yg ditetapkan.\
     "
     }
 )
