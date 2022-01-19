@@ -18,13 +18,16 @@ from userbot.utils import edit_delete, edit_or_reply
 
 DEF_UNAPPROVED_MSG = (
     " ❏ PERINGATAN!\n"
-    " ┌ Saya belum menyetujui anda \n"
-    " ├ Untuk Melakukan Chat Pribadi.\n"
+    " ┌ Saya belum menyetujui kmu\n"
     " ├ Tunggu sampai saya menyetujui\n" 
-    " ├ Chat Pribadi anda.\n"
-    " ├ Jangan Spam Chat atau anda akan\n"
-    " ├ otomatis diblokir.\n"
-    " └ Pesan Otomatis By - PocongUserbot\n"
+    " ├ Cht kmu, jangan spam cht\n"
+    " ├ atau kmu akan otomatis\n
+    " ├ terblokir.\n"
+    " └ Bot by [[PocongUserbot]](https://github.com/poocong/PocongUserbot)\n"
+    "┌━━━━━━━━━━━━\n"
+    "├❏ Channel [PocongProject](https:/)t.me/PocongProject)\n"
+    "├❏ Grup [PocongUserbot](https://t.me/PocongUserbot)\n"
+    "└━━━━━━━━━━━━\n"
 )
 
 
