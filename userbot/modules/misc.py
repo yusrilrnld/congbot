@@ -114,9 +114,9 @@ async def repo_is_here(event):
     await xx.edit(
         f"**Hey**, Saya Menggunakan  **PocongUserbot** \n\n"
         f"┌❏ **UserbotVersion :** `{BOT_VER}@{branch}`\n"
-        f"├❏ **GroupSupport :** [Pocong Userbot](t.me/Poconguserbot)\n"
-        f"├❏ **Channel  :** [Pocong Project](t.me/Poocongonlen)\n"
-        f"├❏ **OwnerRepo :** [Pocong Onlen](t.me/Pocongonlen)\n"
+        f"├❏ **GroupSupport :** [PocongUserbot](t.me/Poconguserbot)\n"
+        f"├❏ **Channel  :** [PocongProject](t.me/Poocongonlen)\n"
+        f"├❏ **OwnerRepo :** [PocongOnlen](t.me/Pocongonlen)\n"
         f"└❏ **Repo :** [PocongUserbot](https://github.com/poocong/PocongUserbot)\n"
     )
 
