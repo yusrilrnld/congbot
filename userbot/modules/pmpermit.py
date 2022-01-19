@@ -23,7 +23,7 @@ DEF_UNAPPROVED_MSG = (
     f"├ Cht kmu, jangan spam cht\n"
     f"├ atau kmu akan otomatis\n"
     f"├ terblokir.\n"
-    f"└ Bot by [[PocongUserbot]](https://github.com/poocong/PocongUserbot)\n"
+    f"└ Bot by **PocongUserbot**\n"
     f"┌━━━━━━━━━━━━\n"
     f"├❏ **[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/{GROUP})**\n"
     f"├❏ **[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/{CHANNEL})**\n"
