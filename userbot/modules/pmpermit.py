@@ -17,13 +17,13 @@ from userbot.events import poci_cmd, register
 from userbot.utils import edit_delete, edit_or_reply
 
 DEF_UNAPPROVED_MSG = (
-    f" ❏ PERINGATAN!\n"
-    f" ┌ Saya belum menyetujui kmu\n"
-    f" ├ Tunggu sampai saya menyetujui\n" 
-    f" ├ Cht kmu, jangan spam cht\n"
-    f" ├ atau kmu akan otomatis\n"
-    f" ├ terblokir.\n"
-    f" └ Bot by [[PocongUserbot]](https://github.com/poocong/PocongUserbot)\n"
+    f"❏ PERINGATAN!\n"
+    f"┌ Saya belum menyetujui kmu\n"
+    f"├ Tunggu sampai saya menyetujui\n" 
+    f"├ Cht kmu, jangan spam cht\n"
+    f"├ atau kmu akan otomatis\n"
+    f"├ terblokir.\n"
+    f"└ Bot by [[PocongUserbot]](https://github.com/poocong/PocongUserbot)\n"
     f"┌━━━━━━━━━━━━\n"
     f"├❏ **[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/{GROUP})**\n"
     f"├❏ **[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/{CHANNEL})**\n"
