@@ -10,7 +10,7 @@ from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.types import User
 
-from userbot import BOTLOG, BOTLOG_CHATID
+from userbot import BOTLOG, BOTLOG_CHATID, CHANNEL, GROUP
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, COUNT_PM, LASTMSG, LOGS, PM_AUTO_BAN, PM_LIMIT, bot
 from userbot.events import poci_cmd, register
@@ -21,12 +21,12 @@ DEF_UNAPPROVED_MSG = (
     " ┌ Saya belum menyetujui kmu\n"
     " ├ Tunggu sampai saya menyetujui\n" 
     " ├ Cht kmu, jangan spam cht\n"
-    " ├ atau kmu akan otomatis\n
+    " ├ atau kmu akan otomatis\n"
     " ├ terblokir.\n"
     " └ Bot by [[PocongUserbot]](https://github.com/poocong/PocongUserbot)\n"
     "┌━━━━━━━━━━━━\n"
-    "├❏ Channel [PocongProject](https:/)t.me/PocongProject)\n"
-    "├❏ Grup [PocongUserbot](https://t.me/PocongUserbot)\n"
+    "├❏ **[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/{GROUP})**\n"
+    "├❏ **[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/{CHANNEL})**\n"
     "└━━━━━━━━━━━━\n"
 )
 
