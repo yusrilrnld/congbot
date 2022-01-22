@@ -28,14 +28,14 @@ src="https://img.shields.io/badge/GenStringBot-white?style=flat&logo=telegram" w
 
 ### Deploy To Heroku
 <p align="center"><a href="http://deploy.xyren.xyz"> <img 
-src="https://img.shields.io/badge/Deploy%20To%20Heroku-purple?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
+src="https://img.shields.io/badge/Deploy%20To%20Heroku-blue?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
 
 
 ## Updates dan support
 
-Subs Channel [[ @Poocongonlen ]](https://t.me/PocongProject)
+Subs Channel [[ Poocongonlen ]](https://t.me/PocongProject)
 
-Grup Support [[ @PocongUserbot ]](https://t.me/PocongUserbot)
+Grup Support [[ PocongUserbot ]](https://t.me/PocongUserbot)
 
 ## © Credits
 #### Thanks To [Everyone](https://github.com/poocong/PocongUserbot/graphs/contributors) Who Has Helped Make This Userbot Awesome!
