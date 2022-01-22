@@ -1,13 +1,10 @@
 # Ultroid - UserBot
 # Copyright (C) 2020 TeamUltroid
-#
 # This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
-#
 # Ported by Koala @manusiarakitann
 # Copyright by @mrismanaziz
-# FROM Man-Userbot
 # Recode by @pocongonlen
 
 import asyncio
@@ -87,14 +84,6 @@ CMD_HELP.update(
         "gcast": f"**Plugin : **`gcast`\
         \n\n  •  **Syntax :** `{cmd}gcast` <text/reply media>\
         \n  •  **Function : **Mengirim Global Broadcast pesan ke Seluruh Grup yang kamu masuk. (Bisa Mengirim Media/Sticker)\
-    "
-    }
-)
-
-
-CMD_HELP.update(
-    {
-        "gucast": f"**Plugin : **`gucast`\
         \n\n  •  **Syntax :** `{cmd}gucast` <text/reply media>\
         \n  •  **Function : **Mengirim Global Broadcast pesan ke Seluruh Private Massage / PC yang masuk. (Bisa Mengirim Media/Sticker)\
     "
