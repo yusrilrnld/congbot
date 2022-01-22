@@ -31,9 +31,9 @@ async def _(event):
 @poci_cmd(pattern="chika$")
 async def _(event):
     try:
-        response = requests.get("https://api-tede.herokuapp.com/api/chika").json()
+        response = requests.get("").json()
         await event.client.send_file(event.chat_id, response["url"])
-        await event.delete()
+        await event.delete()https://api-alphabot.herokuapp.com/api/asupan/chika?apikey=Alphabot
     except Exception:
         await event.edit("**Tidak bisa menemukan video chikakiku.**")
 
