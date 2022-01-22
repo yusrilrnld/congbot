@@ -11,7 +11,7 @@ from userbot.utils import poci_cmd
 @poci_cmd(pattern="asupan$")
 async def _(event):
     try:
-        response = requests.get("https://api-tede.herokuapp.com/api/asupan/ptl").json()
+        response = requests.get("https://api-alphabot.herokuapp.com/api/asupan/chika?apikey=Alphabot").json()
         await event.client.send_file(event.chat_id, response["url"])
         await event.delete()
     except Exception:
@@ -31,9 +31,9 @@ async def _(event):
 @poci_cmd(pattern="chika$")
 async def _(event):
     try:
-        response = requests.get("").json()
+        response = requests.get("https://api-alphabot.herokuapp.com/api/asupan/chika?apikey=Alphabot").json()
         await event.client.send_file(event.chat_id, response["url"])
-        await event.delete()https://api-alphabot.herokuapp.com/api/asupan/chika?apikey=Alphabot
+        await event.delete()
     except Exception:
         await event.edit("**Tidak bisa menemukan video chikakiku.**")
 
