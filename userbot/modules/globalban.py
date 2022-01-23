@@ -67,7 +67,7 @@ async def gban(event):
         await gbun.edit("**Anda Tidak mempunyai GC yang anda admin 🥺**")
         return
     await gbun.edit(
-        f"**initiating gban of the** [CAPER](tg://user?id={user.id}) **in** `{len(san)}` **groups**"
+        f"**Prosess gban anak** [yteam](tg://user?id={user.id}) **di** `{len(san)}` **groups**"
     )
     for i in range(fiz):
         try:
@@ -116,7 +116,7 @@ async def ungban(event):
         await ungbun.edit("**Anda Tidak mempunyai GC yang anda admin 🥺**")
         return
     await ungbun.edit(
-        f"**initiating ungban of the** [Jamet](tg://user?id={user.id}) **in** `{len(san)}` **groups**"
+        f"**Prosess ungban anak** [yteam](tg://user?id={user.id}) **di** `{len(san)}` **groups**"
     )
     for i in range(fiz):
         try:
@@ -176,11 +176,6 @@ async def _(event):
                 )
             except BaseException:
                 pass
-
-
-# Ported by @mrismanaziz
-# FROM Man-Userbot
-# Recode by @Pocongonlen
 
 
 CMD_HELP.update(
