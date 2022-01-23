@@ -2,9 +2,7 @@
 #
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
-#
-# Ported by @mrismanaziz
-# FROM Man-Userbot
+# Copyright (C) @mrismanaziz 
 # Recode by @Pocongonlen
 
 import asyncio
@@ -45,7 +43,7 @@ KANGING_STR = [
     "Pim Pim Pom! Ni stiker punya aing sekarang",
     "Waw Stickernya Bagus Nih...Colong Dulu Yekan..",
     "ehh, keren nih... gua colong ya stickernya...",
-    "Boleh juga ni Sticker Colong ahh~",
+    "Husstt diem ni stiker sekarang punya aing",
 ]
 
 OWNER = user.first_name
@@ -245,8 +243,8 @@ async def kang(args):
                 await args.client.send_read_acknowledge(conv.chat_id)
 
         await xx.edit(
-            "** Sticker Berhasil Ditambahkan!**"
-            f"\n        👻 **[KLIK DISINI](t.me/addstickers/{packname})** 👻\n**Untuk Menggunakan Stickers**",
+            "** Berhasil Mencuri Stiker!**"
+            f"\n        👻 **[KLIK DISINI](t.me/addstickers/{packname})** 👻\n**Untuk Menggunakan Sticker Curian**",
             parse_mode="md",
         )
 
