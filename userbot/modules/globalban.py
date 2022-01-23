@@ -1,11 +1,9 @@
 # Copyright (C) 2020 Catuserbot <https://github.com/sandy1709/catuserbot>
-# Ported by @mrismanaziz
-# FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
-# ReCode by @Pocongonlen
+# Copyright (C) 2022 Man-Userbot
+# Recode by @Pocongonlen
 
 import asyncio
 from datetime import datetime
-from io import BytesIO
 
 from telethon import events
 from telethon.errors import BadRequestError
@@ -50,14 +48,14 @@ async def gban(event):
     if not user:
         return
     if user.id == (await event.client.get_me()).id:
-        await gbun.edit("**Ngapain NgeGban diri sendiri Goblok 🤬**")
+        await gbun.edit("**Ngapain NgeGban diri sendiri Goblok 🐽**")
         return
     if user.id in DEVS:
-        await gbun.edit("**Gagal GBAN karena dia adalah Pembuat saya 😝**")
+        await gbun.edit("**Gagal GBAN karena dia adalah Pembuat saya 🗿**")
         return
     if gban_sql.is_gbanned(user.id):
         await gbun.edit(
-            f"**Si** [Y TEAM](tg://user?id={user.id}) **ini sudah ada di daftar gbanned**"
+            f"**Si** [Caper](tg://user?id={user.id}) **Goblok ini sudah ada di daftar gbanned**"
         )
     else:
         gban_sql.freakgban(user.id, reason)
@@ -69,7 +67,7 @@ async def gban(event):
         await gbun.edit("**Anda Tidak mempunyai GC yang anda admin 🥺**")
         return
     await gbun.edit(
-        f"**Mampus kao** [Y TEAM](tg://user?id={user.id}) **Ter gban** `{len(san)}` **groups**"
+        f"**initiating gban of the** [CAPER](tg://user?id={user.id}) **in** `{len(san)}` **groups**"
     )
     for i in range(fiz):
         try:
@@ -107,7 +105,7 @@ async def ungban(event):
         gban_sql.freakungban(user.id)
     else:
         await ungbun.edit(
-            f"**Si** [Y TEAM](tg://user?id={user.id}) **ini tidak ada dalam daftar gban Anda**"
+            f"**Si** [CAPER](tg://user?id={user.id}) **ini tidak ada dalam daftar gban Anda**"
         )
         return
     san = []
@@ -118,7 +116,7 @@ async def ungban(event):
         await ungbun.edit("**Anda Tidak mempunyai GC yang anda admin 🥺**")
         return
     await ungbun.edit(
-        f"**Prosess ungban** [Y TEAM](tg://user?id={user.id}) **in** `{len(san)}` **groups**"
+        f"**initiating ungban of the** [Jamet](tg://user?id={user.id}) **in** `{len(san)}` **groups**"
     )
     for i in range(fiz):
         try:
@@ -156,17 +154,6 @@ async def gablist(event):
                 GBANNED_LIST += (
                     f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id}) `No Reason`\n"
                 )
-    if len(gbanned_users) >= 4096:
-        with BytesIO(str.encode(GBANNED_LIST)) as fileuser:
-            fileuser.name = "list-gban.txt"
-            await event.client.send_file(
-                event.chat_id,
-                fileuser,
-                force_document=True,
-                thumb="userbot/resources/logo.jpg",
-                caption="**List Global Banned**",
-                allow_cache=False,
-            )
     else:
         GBANNED_LIST = "Belum ada Pengguna yang Di-Gban"
     await edit_or_reply(event, GBANNED_LIST)
@@ -192,7 +179,8 @@ async def _(event):
 
 
 # Ported by @mrismanaziz
-# FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
+# FROM Man-Userbot
+# Recode by @Pocongonlen
 
 
 CMD_HELP.update(
