@@ -104,9 +104,9 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "instagram": f"Plugin : **`instagram`\
-        \n\n  •  **Syntax :** `{cmd}ig` < reply di link>\
-        \n  •  **Function** : __Download Video Instagram__\
+        "instagram": f"Plugin : **instagram**\
+        \n\n  •  **Syntax**: {cmd}ig < reply di link>\
+        \n  •  **Function**: __Download Video Instagram__\
     "
     }
 )
