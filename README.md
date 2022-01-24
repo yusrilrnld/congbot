@@ -1,11 +1,14 @@
-# PocongUserbot Telegram
-[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.png?v=103)](https://github.com/poocong/PocongUserbot)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-Yes-green)](https://GitHub.com/poocong/PocongUserbot/graphs/commit-activity)
-[![CodeFactor](https://www.codefactor.io/repository/github/mrismanaziz/Man-Userbot/badge)](https://www.codefactor.io/repository/github/poocong/PocongUserbot)
-[![CodeQuality](https://img.shields.io/codacy/grade/a723cb464d5a4d25be3152b5d71de82d?color=blue&logo=codacy)](https://app.codacy.com/gh/poocong/PocongUserbot/dashboard)
-[![Docker Pulls](https://img.shields.io/docker/pulls/poocong/poconguserbot)](https://hub.docker.com/r/mrismanaziz/man-userbot/tags)
-[![GitHub Forks](https://img.shields.io/github/forks/poocong/PocongUserbot?&logo=github)](https://github.com/poocong/PocongUserbot/fork)
-[![GitHub Stars](https://img.shields.io/github/stars/poocong/PocongUserbot?&logo=github)](https://github.com/poocong/PocongUserbot/stargazers)
+# PocongUserbot
+<p align="center">
+    <img alt="POCONG VERSION" src="https://img.shields.io/badge/POCONG%20VERSION-4.+-brightgreen"/>
+    <img alt="BUILD IN" src="https://img.shields.io/badge/BUILD%20-Last Day-brightgreen"/>
+           <a href="https://travis-ci.com/poocong/PocongUserbot.svg?branch=main" /></a>
+    <a href="https://github.com/poocong/PocongUserbot/network/members"> <img src="https://img.shields.io/github/forks/poocong/PocongUserbot?logo=github&style=for-the-badge" /></a>
+           <a href="https://app.codacy.com/gh/poocong/PocongUserbot/dashboard"> <img src="https://img.shields.io/codacy/grade/a8f0747a964e4712818a28d2a7f4edd3?color=blue&logo=codacy&style=for-the-badge" alt="Codacy" /></a>
+    <a href="https://github.com/poocong/PocongUserbot"> <img src="https://img.shields.io/github/repo-size/poocong/PocongUserbot?logo=github&style=for-the-badge" /></a>
+    <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?label=telethon&logo=pypi&logoColor=white&style=for-the-badge" /></a>
+    <img alt="PYTHON" src="https://img.shields.io/badge/PYTHON-v3.9.0-blue?style=for-the-badge&logo=appveyor"/>
+   </p>
 
 PocongUserbot adalah userbot Telegram modular yang berjalan di Python3 dengan database sqlalchemy.
 
@@ -21,23 +24,29 @@ mengelola grup secara efisien dan mengotomatiskan beberapa hal yang membosankan.
 Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 ```
 
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-### Generate String Session
 <p align="center"><a href="https://t.me/StringPocongBot"><img
-src="https://img.shields.io/badge/GenStringBot-white?style=flat&logo=telegram" width="210" height"40.50" /></a></p>
+src="https://img.shields.io/badge/GenStringBot-lavender?style=flat&logo=telegram" width="210" height"40.50" /></a></p>
 
-### Deploy To Heroku
+
 <p align="center"><a href="http://deploy.xyren.xyz"> <img 
-src="https://img.shields.io/badge/Deploy%20To%20Heroku-blue?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
+src="https://img.shields.io/badge/Deploy%20To%20Heroku-purple?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
 
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-## Updates dan support
+<details>
+    <summary> <b>Update and support</b></summary><br/>
 
-Subs Channel [[ Poocongonlen ]](https://t.me/PocongProject)
+Channel Support [[Poocongonlen]](https://t.me/PocongProject)
 
-Grup Support [[ PocongUserbot ]](https://t.me/PocongUserbot)
+Grup Support [[PocongUserbot]](https://t.me/PocongUserbot)
 
-## © Credits
+</details>
+
+<details>
+    <summary>&#127942 <b>Credits</b></summary><br/>
+
 #### Thanks To [Everyone](https://github.com/poocong/PocongUserbot/graphs/contributors) Who Has Helped Make This Userbot Awesome!
 *   [AdekMaulana](https://github.com/adekmaulana) : ProjectBish
 *   [RaphielGang](https://github.com/RaphielGang) : Paperplane
@@ -47,7 +56,6 @@ Grup Support [[ PocongUserbot ]](https://t.me/PocongUserbot)
 *   [X_ImFine](https://github.com/ximfine) :  XBot-REMIX
 *   [Pocong](https://github.com/poocong/Pocong-Userbot) : Pocong-Userbot
 *   [Risman](https://github.com/mrismanaziz/Man-Userbot) :  Man-Userbot
-*   [Koala](https://github.com/ManusiaRakitan/Kampang-Bot) : Kampang-Bot
 *   [Alvin](https://github.com/Zora24/Lord-Userbot) : Lord-Userbot
 
 ## License
