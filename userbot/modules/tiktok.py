@@ -106,7 +106,7 @@ CMD_HELP.update(
     {
         "instagram": f"Plugin : **`instagram`\
         \n\n  •  **Syntax :** `{cmd}ig` < reply di link>\
-        \n  •  **Function : **Download Video Instagram\
+        \n  •  **Function** : __Download Video Instagram__\
     "
     }
 )
