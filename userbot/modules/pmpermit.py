@@ -435,9 +435,9 @@ async def add_pmsg(cust_msg):
 CMD_HELP.update(
     {
         "pmpermit": f"**Plugin : **`pmpermit`\
-        \n\n  •  **Syntax :** `{cmd}g` atau `{cmd}ok`\
+        \n\n  •  **Syntax :** `{cmd}y` atau `{cmd}ok`\
         \n  •  **Function : **Menerima pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm.\
-        \n\n  •  **Syntax :** `{cmd}y` atau `{cmd}nopm`\
+        \n\n  •  **Syntax :** `{cmd}g` atau `{cmd}nopm`\
         \n  •  **Function : **Menolak pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm.\
         \n\n  •  **Syntax :** `{cmd}block`\
         \n  •  **Function : **Memblokir Orang Di PM.\
