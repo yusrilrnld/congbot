@@ -367,7 +367,7 @@ async def lang(value):
         )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"yt (\d*) *(.*)"))
+@bot.on(poci_cmd(outgoing=True, pattern=r"utube (\d*) *(.*)"))
 async def yt_search(video_q):
     """For .yt command, do a YouTube search from Telegram."""
     if video_q.pattern_match.group(1) != "":
@@ -958,7 +958,7 @@ CMD_HELP.update(
 CMD_HELP.update(
     {
         "ytdl": f"**Plugin : **`ytdl`\
-        \n\n  •  **Syntax :** `{cmd}yt` <jumlah> <query>\
+        \n\n  •  **Syntax :** `{cmd}utube` <jumlah> <query>\
         \n  •  **Function : **Melakukan Pencarian YouTube. Dapat menentukan jumlah hasil yang dibutuhkan (default adalah 5)\
         \n\n  •  **Syntax :** `{cmd}ytaudio` <url>\
         \n  •  **Function : **Untuk Mendownload lagu dari YouTube dengan link.\
