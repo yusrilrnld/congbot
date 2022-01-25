@@ -1,4 +1,4 @@
-# PocongUserbot
+#PocongUserbot
 <p align="center">
     <img alt="POCONG VERSION" src="https://img.shields.io/badge/POCONG%20VERSION-4.+-brightgreen"/>
     <img alt="BUILD IN" src="https://img.shields.io/badge/BUILD%20-Last Day-brightgreen"/>
@@ -26,8 +26,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-<p align="center"><a href="https://t.me/StringPocongBot"><img
-src="https://img.shields.io/badge/GenStringBot-lavender?style=flat&logo=telegram" width="210" height"40.50" /></a></p>
+<p align="center"><a href="https://t.me/Stringpocongbot"><img src="https://img.shields.io/badge/String%20Via%20Bot-blue?style=for-the-flat&logo=telegram" width="210" height"34.45" /</a></p>
 
 
 <p align="center"><a href="http://deploy.xyren.xyz"> <img 
