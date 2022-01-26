@@ -27,12 +27,12 @@ try:
     bot.start()
     call_py.start()
     user = bot.get_me()
-    blacklistman = requests.get(
-        "https://raw.githubusercontent.com/mrismanaziz/Reforestation/master/manblacklist.json"
+    blacklist = requests.get(
+        "https://raw.githubusercontent.com/poocong/darkweeb/master/blacklist.json"
     ).json()
-    if user.id in blacklistman:
+    if user.id in blacklist:
         LOGS.warning(
-            "MAKANYA GA USAH BERTINGKAH GOBLOK, USERBOTnya GUA MATIIN NAJIS BANGET DIPAKE JAMET KEK LU.\nCredits: @Pocongonlen"
+            "MAKANYA GA USAH BERTINGKAH GOBLOK, USERBOTnya GUA MATIIN NAJISS BET DIPAKE BOCIL KEK LU.\nCredits: @Pocongonlen"
         )
         sys.exit(1)
 except Exception as e:
