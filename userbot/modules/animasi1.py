@@ -277,37 +277,37 @@ async def _(event):
 
 @poci_cmd(pattern="sensodyne(?: |$)(.*)")
 async def _(event):
-    await edit_or_reply(event, f"**Pada saat moment kebersamaan kita, kita pesen satu es. Pas saya lagi sendok itu es kemulut, cuuut itu ngilu nya. Saya bener bener langsung keilangan moment kebersamaan sama sahabat sahabat saya. Dokter sarankan coba deh ibu pakai sensodyne khusus untuk gigi yang sensitif. Berkat sensodyne, sekarang waah saya malah mungkin paling banyak tu kata temen temen eh rin pelan pelan dong makan nya kita belum kebagian nih. Mas es nya yang banyak ya. Dug dug**")
+    xx = await edit_or_reply(event, f"**Pada saat moment kebersamaan kita, kita pesen satu es. Pas saya lagi sendok itu es kemulut, cuuut itu ngilu nya. Saya bener bener langsung keilangan moment kebersamaan sama sahabat sahabat saya. Dokter sarankan coba deh ibu pakai sensodyne khusus untuk gigi yang sensitif. Berkat sensodyne, sekarang waah saya malah mungkin paling banyak tu kata temen temen eh rin pelan pelan dong makan nya kita belum kebagian nih. Mas es nya yang banyak ya. Dug dug**")
     
     
 @poci_cmd(pattern="ldr(?: |$)(.*)")
 async def _(event):
-    await edit_or_reply(event, f"**kamu hanya membaca dan medengarkan pesan ku tanpa membalas cerita yang ku ketik  atau melantunkan nada di dalam voice note ?kamu datang mengibarkan rasa dengan suara yang menjanjikan tapi kamu berbeda sekarang hilang tanpa pesan tanpa suara tanpa ketikan tidak seperti awal menderu suara...**")
+    xx = await edit_or_reply(event, f"**kamu hanya membaca dan medengarkan pesan ku tanpa membalas cerita yang ku ketik  atau melantunkan nada di dalam voice note ?kamu datang mengibarkan rasa dengan suara yang menjanjikan tapi kamu berbeda sekarang hilang tanpa pesan tanpa suara tanpa ketikan tidak seperti awal menderu suara...**")
     
     
 @poci_cmd(pattern="odading(?: |$)(.*)")
 async def _(event):
-    await edit_or_reply(event, f"**odading mang oleh eum rasanya seperti anda menjadi iron man , belilah odading mang oleh didie karna lamun teu ngadahar odading mang oleh maneh teu gaul jeung aing lain balad aing goblog ikan hiu makan tomat eee goblog mun teu kadie odading mang oleh rasanya anjing banget**")
+    xx = await edit_or_reply(event, f"**odading mang oleh eum rasanya seperti anda menjadi iron man , belilah odading mang oleh didie karna lamun teu ngadahar odading mang oleh maneh teu gaul jeung aing lain balad aing goblog ikan hiu makan tomat eee goblog mun teu kadie odading mang oleh rasanya anjing banget**")
     
     
 @poci_cmd(pattern="sosad(?: |$)(.*)")
 async def _(event):
-    await edit_or_reply(event, f"**percuma ya, setiap habis sholat aku sebut nama dia, giliran dia habis sholat nyebutnya nama orang lain bukan aku, ga ada timbal baliknya anjing☺️.**")
+    xx = await edit_or_reply(event, f"**percuma ya, setiap habis sholat aku sebut nama dia, giliran dia habis sholat nyebutnya nama orang lain bukan aku, ga ada timbal baliknya anjing☺️.**")
     
     
 @poci_cmd(pattern="bullshit(?: |$)(.*)")
 async def _(event):
-    await edit_or_reply(event, f"**SETIA itu bohongKOMITMEN itu omong kosong semua akan berubah jika sudah mulai bosan.**")
+    xx = await edit_or_reply(event, f"**SETIA itu bohong KOMITMEN itu omong kosong semua akan berubah jika sudah mulai bosan.**")
     
     
 @poci_cmd(pattern="insecure(?: |$)(.*)")
 async def _(event):
-    await edit_or_reply(event, f"**Udah jangan insecure Semua sama dimata tuna netra**")
+    xx = await edit_or_reply(event, f"**Udah jangan insecure Semua sama dimata tuna netra**")
     
     
 @poci_cmd(pattern="abc(?: |$)(.*)")
 async def _(event):
-    await edit_or_reply(event, f"**a b c d e f g h i l o v e y o u w i l l y o u m a r r y m e**")
+    xx = await edit_or_reply(event, f"**a b c d e f g h i l o v e y o u w i l l y o u m a r r y m e**")
     
 CMD_HELP.update(
     {
@@ -324,7 +324,7 @@ CMD_HELP.update(
     \n\nㅤㅤ•**Syntax**: {cmd}bullshit\
     \n•**Function**: __Komitmen tai asu__\
     \n\nㅤㅤ•**Syntax**: {cmd}ldr\
-    \n•**Function**: __Udah lrd di ghosting lagi :)__\
+    \n•**Function**: __Udah ldr di ghosting lagi :)__\
     \n\nㅤㅤ•**Syntax**: {cmd}insecure\
     \n•**Function**: __Ingat ya ganteng / cantik jangan insinyur__\
     \n\nㅤㅤ•**Syntax**: {cmd}abc\
