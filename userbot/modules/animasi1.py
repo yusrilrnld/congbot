@@ -1,6 +1,7 @@
+# Copyright (C) Pocong - Userbot 2022
 # Ported by @Pocongonlen
 # From Pocong-Userbot <https://github.com/poocong/Pocong-Userbot>
-# 
+
 
 
 from time import sleep
@@ -272,21 +273,66 @@ async def _(event):
     await xx.edit("Nanti aku tf deh janjii")
 
     
-#P o c o n g U s e r b o t
-#Ini Tercipta Hasil kegabutan ku Doang
-#Jadi Ga Usah Bacot Ngentod
+# Pocong - Userbot
 
+@poci_cmd(pattern="sensodyne(?: |$)(.*)")
+async def _(event):
+    xx = await edit_or_reply(event, f"**Pada saat moment kebersamaan kita, kita pesen satu es. Pas saya lagi sendok itu es kemulut, cuuut itu ngilu nya. Saya bener bener langsung keilangan moment kebersamaan sama sahabat sahabat saya. Dokter sarankan coba deh ibu pakai sensodyne khusus untuk gigi yang sensitif. Berkat sensodyne, sekarang waah saya malah mungkin paling banyak tu kata temen temen eh rin pelan pelan dong makan nya kita belum kebagian nih. Mas es nya yang banyak ya. Dug dug**")
+    
+    
+@poci_cmd(pattern="ldr(?: |$)(.*)")
+async def _(event):
+    xx = await edit_or_reply(event, f"**kamu hanya membaca dan medengarkan pesan ku tanpa membalas cerita yang ku ketik  atau melantunkan nada di dalam voice note ?kamu datang mengibarkan rasa dengan suara yang menjanjikan tapi kamu berbeda sekarang hilang tanpa pesan tanpa suara tanpa ketikan tidak seperti awal menderu suara...**")
+    
+    
+@poci_cmd(pattern="odading(?: |$)(.*)")
+async def _(event):
+    xx = await edit_or_reply(event, f"**odading mang oleh eum rasanya seperti anda menjadi iron man , belilah odading mang oleh didie karna lamun teu ngadahar odading mang oleh maneh teu gaul jeung aing lain balad aing goblog ikan hiu makan tomat eee goblog mun teu kadie odading mang oleh rasanya anjing banget**")
+    
+    
+@poci_cmd(pattern="sosad(?: |$)(.*)")
+async def _(event):
+    xx = await edit_or_reply(event, f"**percuma ya, setiap habis sholat aku sebut nama dia, giliran dia habis sholat nyebutnya nama orang lain bukan aku, ga ada timbal baliknya anjing☺️.**")
+    
+    
+@poci_cmd(pattern="bullshit(?: |$)(.*)")
+async def _(event):
+    xx = await edit_or_reply(event, f"**SETIA itu bohongKOMITMEN itu omong kosong semua akan berubah jika sudah mulai bosan.**")
+    
+    
+@poci_cmd(pattern="insecure(?: |$)(.*)")
+async def _(event):
+    xx = await edit_or_reply(event, f"**Udah jangan insecure Semua sama dimata tuna netra**")
+    
+    
+@poci_cmd(pattern="abc(?: |$)(.*)")
+async def _(event):
+    xx = await edit_or_reply(event, f"**a b c d e f g h i l o v e y o u w i l l y o u m a r r y m e**")
     
 CMD_HELP.update(
     {
     "animasi1": f"**Perintah**: **animasi1**\
-    \n**Total Command: 8**\
+    \n**Total Command: 15**\
     \n\nㅤㅤ•**Syntax**: {cmd}hai\
     \n•**Function**: __Cosplay Nissa Sablon__\
     \n\nㅤㅤ•**Syntax**: {cmd}kntl\
     \n•**Function**: __Kalian kntl__\
     \n\nㅤㅤ•**Syntax**: {cmd}alay\
     \n•**Function**: __Lumayanlah Buat Nyindir__\
+    \n\nㅤㅤ•**Syntax**: {cmd}sensodyne\
+    \n•**Function**: __Di sponsori oleh sensodyne😔__\
+    \n\nㅤㅤ•**Syntax**: {cmd}bullshit\
+    \n•**Function**: __Komitmen tai asu__\
+    \n\nㅤㅤ•**Syntax**: {cmd}ldr\
+    \n•**Function**: __Udah lrd di ghosting lagi :)__\
+    \n\nㅤㅤ•**Syntax**: {cmd}insecure\
+    \n•**Function**: __Ingat ya ganteng / cantik jangan insinyur__\
+    \n\nㅤㅤ•**Syntax**: {cmd}abc\
+    \n•**Function**: __gombal nichh__\
+    \n\nㅤㅤ•**Syntax**: {cmd}sosad\
+    \n•**Function**: __mengsad__\
+    \n\nㅤㅤ•**Syntax**: {cmd}odading\
+    \n•**Function**: __jangan lupa beli odading nya ngabs__\
     \n\nㅤㅤ•**Syntax**: {cmd}phe / {cmd}Phe\
     \n•**Function**: __Jagoan tele__\
     \n\nㅤㅤ•**Syntax**: {cmd}ehm\
