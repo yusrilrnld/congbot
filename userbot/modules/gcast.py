@@ -3,7 +3,6 @@
 # This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
-# Ported by Koala @manusiarakitann
 # Copyright by @mrismanaziz
 # Recode by @pocongonlen
 
@@ -16,9 +15,19 @@ from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, DEVS
 from userbot.utils import edit_delete, edit_or_reply, poci_cmd
 
-GCAST_BLACKLIST = get(
-    "https://raw.githubusercontent.com/poocong/darkweeb/master/blacklistgcast.json"
-).json()
+while 0 < 6:
+    _GCAST_BLACKLIST = get(
+        "https://raw.githubusercontent.com/mrismanaziz/Reforestation/master/blacklistgcast.json"
+    )
+    if _GCAST_BLACKLIST.status_code != 200:
+        if 0 != 5:
+            continue
+        GCAST_BLACKLIST = [-1001473548283, -1001390552926]
+        break
+    GCAST_BLACKLIST = _GCAST_BLACKLIST.json()
+    break
+
+del _GCAST_BLACKLIST
 
 
 @poci_cmd(pattern="gcast(?: |$)(.*)")
@@ -43,6 +52,8 @@ async def gcast(event):
                     done += 1
                 except FloodWaitError as anj:
                     await asyncio.sleep(int(anj.seconds))
+                    await event.client.send_message(chat, msg)
+                    done += 1
                 except BaseException:
                     er += 1
     await kk.edit(
@@ -72,6 +83,8 @@ async def gucast(event):
                     done += 1
                 except FloodWaitError as anj:
                     await asyncio.sleep(int(anj.seconds))
+                    await event.client.send_message(chat, msg)
+                    done += 1
                 except BaseException:
                     er += 1
     await kk.edit(
