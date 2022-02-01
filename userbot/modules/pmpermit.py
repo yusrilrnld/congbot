@@ -188,7 +188,7 @@ async def notifon(non_event):
     )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"(?:a|ok)\s?(.)?"))
+@bot.on(poci_cmd(outgoing=True, pattern=r"(?: approve|ok)\s?(.)?"))
 async def approvepm(apprvpm):
     """For .ok command, give someone the permissions to PM you."""
     try:
