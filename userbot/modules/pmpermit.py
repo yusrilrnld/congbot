@@ -188,7 +188,7 @@ async def notifon(non_event):
     )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"(?: approve|ok)\s?(.)?"))
+@bot.on(poci_cmd(outgoing=True, pattern=r"(?:setuju|ok)\s?(.)?"))
 async def approvepm(apprvpm):
     """For .ok command, give someone the permissions to PM you."""
     try:
@@ -257,7 +257,7 @@ async def approvepm(apprvpm):
         )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"(?:bye|nopm)\s?(.)?"))
+@bot.on(poci_cmd(outgoing=True, pattern=r"(?:byeee|nopm)\s?(.)?"))
 async def disapprovepm(disapprvpm):
     try:
         from userbot.modules.sql_helper.pm_permit_sql import dissprove
@@ -435,9 +435,9 @@ async def add_pmsg(cust_msg):
 CMD_HELP.update(
     {
         "pmpermit": f"**Plugin : **`pmpermit`\
-        \n\n  •  **Syntax :** `{cmd}y` atau `{cmd}ok`\
+        \n\n  •  **Syntax :** `{cmd}setuju` atau `{cmd}ok`\
         \n  •  **Function : **Menerima pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm.\
-        \n\n  •  **Syntax :** `{cmd}g` atau `{cmd}nopm`\
+        \n\n  •  **Syntax :** `{cmd}byeee` atau `{cmd}nopm`\
         \n  •  **Function : **Menolak pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm.\
         \n\n  •  **Syntax :** `{cmd}block`\
         \n  •  **Function : **Memblokir Orang Di PM.\
