@@ -1,4 +1,8 @@
-#PocongUserbot
+# <p align="center">PocongUserbot</p>
+
+<img src="https://telegra.ph/file/0297888edbdc754503e0b.jpg">
+</p>
+
 <p align="center">
     <img alt="POCONG VERSION" src="https://img.shields.io/badge/POCONG%20VERSION-4.+-brightgreen"/>
     <img alt="BUILD IN" src="https://img.shields.io/badge/BUILD%20-Last Day-brightgreen"/>
