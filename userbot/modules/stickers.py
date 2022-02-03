@@ -38,12 +38,12 @@ from userbot.modules.sql_helper.globals import addgvar, gvarstatus
 from userbot.utils import edit_delete, edit_or_reply, poci_cmd
 
 KANGING_STR = [
-    "Colong Sticker dulu yee kan",
-    "Ini Sticker aku colong yaa DUARR!",
-    "Pim Pim Pom! Ni stiker punya aing sekarang",
-    "Waw Stickernya Bagus Nih...Colong Dulu Yekan..",
-    "ehh, keren nih... gua colong ya stickernya...",
-    "Husstt diem ni stiker sekarang punya aing",
+    "**Colong Sticker dulu yee kan**",
+    "**Izin nyolong stiker nya bg mwehehe**",
+    "**Pim Pim Pom! Ni stiker punya aing sekarang**",
+    "**Waw Stickernya Bagus Nih...Colong Dulu Yekan..**",
+    "**Ehh, keren nih... gua colong ahh...**",
+    "**Husstt diem ni stiker sekarang punya aing**",
 ]
 
 OWNER = user.first_name
@@ -98,7 +98,7 @@ async def kang(args):
     if photo:
         splat = args.text.split()
         if not emojibypass:
-            emoji = "👾"
+            emoji = "👻"
         pack = 1
         if len(splat) == 3:
             pack = splat[2]
@@ -243,8 +243,8 @@ async def kang(args):
                 await args.client.send_read_acknowledge(conv.chat_id)
 
         await xx.edit(
-            "** Berhasil Mencuri Stiker!**"
-            f"\n        👻 **[KLIK DISINI](t.me/addstickers/{packname})** 👻\n**Untuk Menggunakan Sticker Curian**",
+            "**Berhasil Mencuri Stiker ke pack!**"
+            f"\n        👻 **[[ Stiker Curian ]](t.me/addstickers/{packname})** 👻\n**Untuk Menggunakan Sticker Curian**",
             parse_mode="md",
         )
 
