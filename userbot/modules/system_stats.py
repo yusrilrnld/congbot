@@ -170,14 +170,14 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     uptime = await get_readable_time((time.time() - StartTime))
     output = (
-        f"**[Pocong Userbot](https://github.com/poocong/PocongUserbot) is Up and Running.**\n\n"
+        f"**[Pocong Userbot](https://github.com/poocong/PocongUserbot) Telah Aktif.**\n\n"
         
         f"┌ **😈Master :** [{user.first_name}](tg://user?id={user.id}) \n"
         f"├ **📂Modules :** `{len(modules)} Modules` \n"
         f"├ **🤖BotVersion :** `{BOT_VER}` \n"
         f"├ **🐍PythonVersion :** `{python_version()}` \n"
-        f"├ **{emoji}Pytgcalls Version :** `{pytgcalls.__version__}` \n"
         f"├ **👾TelethonVersion :** `{version.__version__}` \n"
+        f"├ **{emoji}Pytgcalls Version :** `{pytgcalls.__version__}` \n"
         f"└ **⏳BotUptime :** `{uptime}` \n\n"
         f"    **[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/{GROUP})** | **[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/{CHANNEL})** | **[𝗢𝘄𝗻𝗲𝗿](tg://user?id={user.id})**"
     )
