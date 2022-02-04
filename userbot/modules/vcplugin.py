@@ -444,7 +444,7 @@ async def vc_resume(event):
 @poci_cmd(pattern=r"volume(?: |$)(.*)")
 async def vc_volume(event):
     query = event.pattern_match.group(1)
-    me = await event.client.get_me()
+    await event.client.get_me()
     chat = await event.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
