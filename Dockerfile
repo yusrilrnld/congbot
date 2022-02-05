@@ -1,4 +1,4 @@
-FROM mrismanaziz/man-userbot:buster
+FROM biansepang/weebproject:buster
 
 RUN git clone -b main https://github.com/poocong/PocongUserbot /home/poconguserbot/ \
     && chmod 777 /home/poconguserbot \
