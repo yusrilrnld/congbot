@@ -160,18 +160,18 @@ async def _(event):
                     await event.client.send_message(event.chat_id, file=pic)
                     await event.client.send_message(
                         event.chat_id,
-                        f"\n ❏ 𝗔𝗙𝗞 !\n┌ {owner} 𝗟𝗮𝗴𝗶 𝗔𝗙𝗞! \n └ 𝗞𝗮𝗿𝗲𝗻𝗮 : `{reason}`",
+                        f"\n ❏ 𝗔𝗙𝗞 !\n┌ {owner} 𝗟𝗮𝗴𝗶 𝗔𝗙𝗞! \n└ 𝗞𝗮𝗿𝗲𝗻𝗮 : `{reason}`",
                     )
                 else:
                     await event.client.send_message(
                         event.chat_id,
-                        f"\n ❏ 𝗔𝗙𝗞 !\n┌ {owner} 𝗟𝗮𝗴𝗶 𝗔𝗙𝗞! \n └ 𝗞𝗮𝗿𝗲𝗻𝗮 : `{reason}`",
+                        f"\n ❏ 𝗔𝗙𝗞 !\n┌ {owner} 𝗟𝗮𝗴𝗶 𝗔𝗙𝗞! \n└ 𝗞𝗮𝗿𝗲𝗻𝗮 : `{reason}`",
                         file=pic,
                     )
             except BaseException:
                 await event.client.send_message(
                     event.chat_id,
-                    f"\n ❏ 𝗔𝗙𝗞 !\n┌ {owner} 𝗟𝗮𝗴𝗶 𝗔𝗙𝗞! \n └ 𝗞𝗮𝗿𝗲𝗻𝗮 : `{reason}`",
+                    f"\n ❏ 𝗔𝗙𝗞 !\n┌ {owner} 𝗟𝗮𝗴𝗶 𝗔𝗙𝗞! \n└ 𝗞𝗮𝗿𝗲𝗻𝗮 : `{reason}`",
                 )
         else:
             try:
@@ -197,7 +197,7 @@ async def _(event):
                     await event.client.send_message(BOTLOG_CHATID, file=pic)
                     await event.client.send_message(
                         BOTLOG_CHATID,
-                        f"\n ❏ 𝗔𝗙𝗞 !\n┌ {owner} 𝗟𝗮𝗴𝗶 𝗔𝗙𝗞! \n └ 𝗞𝗮𝗿𝗲𝗻𝗮 : `{reason}`",
+                        f"\n ❏ 𝗔𝗙𝗞 !\n┌ {owner} 𝗟𝗮𝗴𝗶 𝗔𝗙𝗞! \n└ 𝗞𝗮𝗿𝗲𝗻𝗮 : `{reason}`",
                     )
                 else:
                     await event.client.send_message(
@@ -208,7 +208,7 @@ async def _(event):
             elif reason:
                 await event.client.send_message(
                     BOTLOG_CHATID,
-                    f"\n ❏ 𝗔𝗙𝗞 !\n┌ {owner} 𝗟𝗮𝗴𝗶 𝗔𝗙𝗞! \n └ 𝗞𝗮𝗿𝗲𝗻𝗮 : `{reason}`",
+                    f"\n ❏ 𝗔𝗙𝗞 !\n┌ {owner} 𝗟𝗮𝗴𝗶 𝗔𝗙𝗞! \n└ 𝗞𝗮𝗿𝗲𝗻𝗮 : `{reason}`",
                 )
             elif pic:
                 if pic.endswith((".tgs", ".webp")):
