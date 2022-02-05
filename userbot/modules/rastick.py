@@ -13,6 +13,7 @@ async def rastick(animu):
     if not text:
         if animu.is_reply:
             text = (await animu.get_reply_message()).message
+            xx = await edit_or_reply(animu, "`Processing...`")
         else:
             await animu.answer("**Tidak ada teks yang diberikan.**")
             return
@@ -93,11 +94,11 @@ async def rastick(animu):
         )
 
     except Exception:
-        return await animu.edit(
-            "`You cannot send inline results in this chat (caused by SendInlineBotResultRequest)`"
+        return await edit_delete(
+            xx,
+            "**You cannot send inline results in this chat**"
         )
-    await sleep(5)
-    await animu.delete()
+    await xx.delete()
 
 
 CMD_HELP.update(

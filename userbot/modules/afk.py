@@ -1,6 +1,6 @@
-# Copyright (C) 2020 TeamUltroid
-# Ported by X_ImFine
-# Recode by @mrismanaziz
+# Copyright (C) 2022 Man-Userbot
+# PocongUserbot < https://github.com/poocong/PocongUserbot
+# Recode by @pocongonlen
 
 import asyncio
 from datetime import datetime
@@ -160,18 +160,18 @@ async def _(event):
                     await event.client.send_message(event.chat_id, file=pic)
                     await event.client.send_message(
                         event.chat_id,
-                        f"\n**✘ {owner} Telah AFK ✘**\n**✦҈͜͡➳ Karena :** `{reason}`",
+                        f"\n ❏ 𝗔𝗙𝗞 !\n┌ {owner} 𝗟𝗮𝗴𝗶 𝗔𝗙𝗞! \n └ 𝗞𝗮𝗿𝗲𝗻𝗮 : `{reason}`",
                     )
                 else:
                     await event.client.send_message(
                         event.chat_id,
-                        f"\n**✘ {owner} Telah AFK ✘**\n**✦҈͜͡➳ Karena :** `{reason}`",
+                        f"\n ❏ 𝗔𝗙𝗞 !\n┌ {owner} 𝗟𝗮𝗴𝗶 𝗔𝗙𝗞! \n └ 𝗞𝗮𝗿𝗲𝗻𝗮 : `{reason}`",
                         file=pic,
                     )
             except BaseException:
                 await event.client.send_message(
                     event.chat_id,
-                    f"\n**✘ {owner} Telah AFK ✘**\n**✦҈͜͡➳ Karena :** `{reason}`",
+                    f"\n ❏ 𝗔𝗙𝗞 !\n┌ {owner} 𝗟𝗮𝗴𝗶 𝗔𝗙𝗞! \n └ 𝗞𝗮𝗿𝗲𝗻𝗮 : `{reason}`",
                 )
         else:
             try:
@@ -197,18 +197,18 @@ async def _(event):
                     await event.client.send_message(BOTLOG_CHATID, file=pic)
                     await event.client.send_message(
                         BOTLOG_CHATID,
-                        f"\n**✘ {owner} Sedang AFK ✘**\n**✦҈͜͡➳ Karena :** `{reason}`",
+                        f"\n ❏ 𝗔𝗙𝗞 !\n┌ {owner} 𝗟𝗮𝗴𝗶 𝗔𝗙𝗞! \n └ 𝗞𝗮𝗿𝗲𝗻𝗮 : `{reason}`",
                     )
                 else:
                     await event.client.send_message(
                         BOTLOG_CHATID,
-                        f"\n**✘ {owner} Sedang AFK ✘**\n**✦҈͜͡➳ Karena :** `{reason}`",
+                        f"\n ❏ 𝗔𝗙𝗞 !\n┌ {owner} 𝗟𝗮𝗴𝗶 𝗔𝗙𝗞! \n └ 𝗞𝗮𝗿𝗲𝗻𝗮 : `{reason}`",
                         file=pic,
                     )
             elif reason:
                 await event.client.send_message(
                     BOTLOG_CHATID,
-                    f"\n**✘ {owner} Sedang AFK ✘**\n**✦҈͜͡➳ Karena :** `{reason}`",
+                    f"\n ❏ 𝗔𝗙𝗞 !\n┌ {owner} 𝗟𝗮𝗴𝗶 𝗔𝗙𝗞! \n └ 𝗞𝗮𝗿𝗲𝗻𝗮 : `{reason}`",
                 )
             elif pic:
                 if pic.endswith((".tgs", ".webp")):
