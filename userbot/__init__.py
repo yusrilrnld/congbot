@@ -165,6 +165,9 @@ UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL", "https://github.com/poocong/PocongUserbot.git"
 )
 
+# Custom name sticker pack
+S_PACK_NAME = os.environ.get("S_PACK_NAME", "Tikell @PocongProject")
+
 # SQL Database URI
 DB_URI = os.environ.get("DATABASE_URL", None)
 
@@ -452,7 +455,6 @@ with bot:
         BTN_URL_REGEX = re.compile(
             r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
         )
-        S_PACK_NAME = os.environ.get("S_PACK_NAME", f"Sticker Pack {owner}")
 
         @tgbot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
         async def bot_pms(event):
@@ -539,12 +541,12 @@ with bot:
                     description="Repository PocongUserbot",
                     url="https://t.me/PocongUserbot",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text="**PocongUserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [Pocong](https://t.me/Pocongonlen)\n✣ **Support :** @PocongProject\n✣ **Repository :** [PocongUserbot](https://github.com/poocong/PocongUserbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="**PocongUserBot**\n➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [Pocong](https://t.me/Pocongonlen)\n✣ **Support :** @PocongUserbot\n✣ **Repository :** [PocongUserbot](https://github.com/poocong/PocongUserbot)\n➖➖➖➖➖➖➖➖➖➖
                     buttons=[
                         [
-                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/PocongUserbot"),
+                            custom.Button.url("𝐺𝑟𝑜𝑢𝑝", "https://t.me/PocongUserbot"),
                             custom.Button.url(
-                                "ʀᴇᴘᴏ", "https://github.com/poocong/PocongUserbot"
+                                "𝑅𝑒𝑝𝑜", "https://github.com/poocong/PocongUserbot"
                             ),
                         ],
                     ],
@@ -584,16 +586,16 @@ with bot:
                 )
             else:
                 result = builder.article(
-                    title="✗ PocongUserbot ✗",
+                    title=" PocongUserbot ",
                     description="PocongUserBot | Telethon",
                     url="https://t.me/PocongUserbot",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text=f"**PocongUserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n✣ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Support:** @Poocongonlen\n➖➖➖➖➖➖➖➖➖➖",
+                    text=f"**PocongUserBot**\n➖➖➖➖➖➖➖➖➖ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n✣ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖\n**Support:** @PoocongUserbot\n➖➖➖➖➖➖➖➖
                     buttons=[
                         [
-                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/PocongUserbot"),
+                            custom.Button.url("𝐺𝑟𝑜𝑢𝑝", "https://t.me/PocongUserbot"),
                             custom.Button.url(
-                                "ʀᴇᴘᴏ", "https://github.com/poocong/PocongUserbot"
+                                "𝑅𝑒𝑝𝑜", "https://github.com/poocong/PocongUserbot"
                             ),
                         ],
                     ],
@@ -608,7 +610,7 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 current_page_number = int(looters)
                 buttons = paginate_help(current_page_number, dugmeler, "helpme")
-                text = f"**✗ PocongUserbot Inline Menu ✗**\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules"
+                text = f"**🚀 PocongUserbot Inline Menu **\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules"
                 await event.edit(
                     text,
                     file=logoman,
@@ -638,9 +640,9 @@ with bot:
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in DEVS and SUDO_USERS:
-                openlagi = custom.Button.inline("• Re-Open Menu •", data="reopen")
+                openlagi = custom.Button.inline("Re-Open Menu", data="reopen")
                 await event.edit(
-                    "⚜️ **Help Mode Button Ditutup!** ⚜️", buttons=openlagi
+                    " **Help Mode Button Ditutup!** ️", buttons=openlagi
                 )
             else:
                 reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
