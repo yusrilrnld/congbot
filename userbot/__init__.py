@@ -590,7 +590,7 @@ with bot:
                     description="PocongUserBot | Telethon",
                     url="https://t.me/PocongUserbot",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text=f"**PocongUserBot**\n➖➖➖➖➖➖➖➖➖ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n✣ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖\n**Support:** @PoocongUserbot\n➖➖➖➖➖➖➖➖
+                    text=f"**PocongUserBot**\n➖➖➖➖➖➖➖➖➖ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n✣ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖\n**Support:** @PoocongUserbot\n➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url("𝐺𝑟𝑜𝑢𝑝", "https://t.me/PocongUserbot"),
