@@ -1,9 +1,7 @@
-# Alvin Gans
 # Copyright (C) 2019 The Raphielscape Company LLC.
 #
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
-#
 
 from io import BytesIO
 from random import choice, randint
@@ -14,10 +12,10 @@ from requests import get
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot
-from userbot.events import poci_cmd
+from userbot.utils import poci_cmd
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"imp (.*)"))
+@poci_cmd(pattern="imp (.*)")
 async def f_load(message):
     clrs = {
         "red": 1,
@@ -51,14 +49,11 @@ async def f_load(message):
     if text.split(" ")[0] in clrs:
         clr = clrs[text.split(" ")[0]]
         text = " ".join(text.split(" ")[1:])
-
     if text == "colors":
         await message.edit(
             ("Cores disponíveis:\n" + "\n".join(f"• `{i}`" for i in list(clrs.keys())))
         )
-
         return
-
     url = "https://raw.githubusercontent.com/KeyZenD/AmongUs/master/"
     font = ImageFont.truetype(BytesIO(get(url + "bold.ttf").content), 60)
     imposter = Image.open(BytesIO(get(f"{url}{clr}.png").content))
