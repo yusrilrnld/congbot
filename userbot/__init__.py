@@ -541,7 +541,7 @@ with bot:
                     description="Repository PocongUserbot",
                     url="https://t.me/PocongUserbot",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text="**PocongUserBot**\n➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [Pocong](https://t.me/Pocongonlen)\n✣ **Support :** @PocongUserbot\n✣ **Repository :** [PocongUserbot](https://github.com/poocong/PocongUserbot)\n➖➖➖➖➖➖➖➖➖➖
+                    text="**PocongUserBot**\n➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [Pocong](https://t.me/Pocongonlen)\n✣ **Support :** @PocongUserbot\n✣ **Repository :** [PocongUserbot](https://github.com/poocong/PocongUserbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url("𝐺𝑟𝑜𝑢𝑝", "https://t.me/PocongUserbot"),
