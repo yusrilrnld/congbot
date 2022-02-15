@@ -21,13 +21,10 @@ from userbot import (
 )
 
 
-KUNTILANAK = [1593802955, 1675900974]
-TUYUL_HANDLER = "*"
 
 def poci_cmd(
     pattern: str = None,
     allow_sudo: bool = True,
-    gendoruwo: bool = True,
     disable_edited: bool = False,
     forword=False,
     command: str = None,
@@ -60,10 +57,8 @@ def poci_cmd(
         else:
             man_ = "\\" + CMD_HANDLER
             sudo_ = "\\" + SUDO_HANDLER
-            tuyul = "\\" + TUYUL_HANDLER
             man_reg = re.compile(man_ + pattern)
             sudo_reg = re.compile(sudo_ + pattern)
-            tuyul_reg = re.compile(tuyul + pattern)
             if command is not None:
                 cmd1 = man_ + command
                 cmd2 = sudo_ + command
@@ -90,20 +85,6 @@ def poci_cmd(
         bot.add_event_handler(
             func, events.NewMessage(**args, outgoing=True, pattern=man_reg)
         )
-        if gendoruwo:
-            if not disable_edited:
-                bot.add_event_handler(
-                    func,
-                    events.MessageEdited(
-                        **args, from_users=KUNTILANAK, pattern=tuyul_reg
-                    ),
-                )
-            bot.add_event_handler(
-                func,
-                events.NewMessage(
-                    **args, from_users=KUNTILANAK, pattern=tuyul_reg
-                ),
-            )
         if allow_sudo:
             if not disable_edited:
                 bot.add_event_handler(

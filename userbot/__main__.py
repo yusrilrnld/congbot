@@ -20,7 +20,7 @@ from userbot import BOT_TOKEN, BOT_USERNAME, BOT_VER, BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import LOGS, bot, branch, call_py
 from userbot.modules import ALL_MODULES
-from userbot.utils import autobot, checking, waiting
+from userbot.utils import autobot, checking
 
 try:
     bot.start()
@@ -72,7 +72,6 @@ async def pocong_userbot_on():
     
 
 
-bot.loop.run_until_complete(waiting())
 bot.loop.run_until_complete(checking())
 bot.loop.run_until_complete(pocong_userbot_on())
 if not BOT_TOKEN:

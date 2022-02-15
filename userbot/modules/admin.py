@@ -180,6 +180,7 @@ async def demote(event):
 @poci_cmd(pattern="ban(?:\s|$)([\s\S]*)")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.cban(?:\s|$)([\s\S]*)")
 async def ban(bon):
+    me = await bon.get_me()
     chat = await bon.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
@@ -265,7 +266,7 @@ async def spider(spdr):
         if reason:
             await edit_or_reply(
                 spdr,
-                r"\\**#DMute_User**//"
+                r"\\**#Mute_User**//"
                 f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
                 f"**User ID:** `{user.id}`\n"
                 f"**Reason:** `{reason}`",
@@ -273,10 +274,10 @@ async def spider(spdr):
         else:
             await edit_or_reply(
                 spdr,
-                r"\\**#DMute_User**//"
+                r"\\**#Mute_User**//"
                 f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
                 f"**User ID:** `{user.id}`\n"
-                f"**Action:** `DMute by {owner}`",
+                f"**Action:** `Mute by {owner}`",
             )
     except UserIdInvalidError:
         return await edit_delete(spdr, "**Terjadi ERROR!**")
@@ -421,7 +422,7 @@ async def rm_deletedacc(show):
                 await sleep(1)
         if del_u > 0:
             del_status = (
-                f"**Menemukan** `{del_u}` **Akun Depresi/Terhapus/Zombie Dalam Grup Ini,"
+                f"**Menemukan** `{del_u}` **Akun Terhapus Dalam Grup Ini,"
                 "\nBersihkan Itu Menggunakan Perintah** `.zombies clean`"
             )
         return await show.edit(del_status)
@@ -430,7 +431,7 @@ async def rm_deletedacc(show):
     creator = chat.creator
     if not admin and not creator:
         return await show.edit("**Maaf Kamu Bukan Admin!**")
-    await show.edit("`Menghapus Akun Depresi...`")
+    await show.edit("`Menghapus Akun Terhapus...`")
     del_u = 0
     del_a = 0
     async for user in show.client.iter_participants(show.chat_id):

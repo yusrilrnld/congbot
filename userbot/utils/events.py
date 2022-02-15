@@ -1,5 +1,5 @@
 import pybase64
-from telethon.tl.functions.channels import JoinChannelRequest as Mansiez
+from telethon.tl.functions.channels import JoinChannelRequest as Get
 from telethon.tl.types import MessageEntityMentionName
 
 from userbot import bot
@@ -78,29 +78,11 @@ async def get_user_from_event(
 
 
 async def checking():
-    pocong = str(pybase64.b64decode("QFBvY29uZ1Byb2plY3Q="))[2:13]
-    xpocong = str(pybase64.b64decode("QFBvY29uZ1VzZXJib3Q="))[2:17]
-    userbot = str(pybase64.b64decode("QFRFQU1TcXVhZFVzZXJib3RTdXBwb3J0"))[2:13]
-    xuserbot = str(pybase64.b64decode("QFVzZXJib3RURUFNX1R1dG9yaWFs"))[2:17]
+    gocheck = str(pybase64.b64decode("QFBvY29uZ1Byb2plY3Q="))[2:13]
+    checker = str(pybase64.b64decode("QFBvY29uZ1VzZXJib3Q="))[2:17]
     try:
-        await bot(Mansiez(userbot))
-    except BaseException:
-        pass
-    try:
-        await bot(Mansiez(xuserbot))
-    except BaseException:
-        pass
-
-async def waiting():
-    pocong = str(pybase64.b64decode("QFBvY29uZ1Byb2plY3Q="))[2:13]
-    xpocong = str(pybase64.b64decode("QFBvY29uZ1VzZXJib3Q="))[2:17]
-    userbot = str(pybase64.b64decode("QFRFQU1TcXVhZFVzZXJib3RTdXBwb3J0"))[2:13]
-    xuserbot = str(pybase64.b64decode("QFVzZXJib3RURUFNX1R1dG9yaWFs"))[2:17]
-    try:
-        await bot(Mansiez(pocong))
-    except BaseException:
-        pass
-    try:
-        await bot(Mansiez(xpocong))
+        if bot:
+            await bot(Get(gocheck))
+            await bot(Get(checker))
     except BaseException:
         pass

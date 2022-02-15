@@ -16,7 +16,7 @@
 from . import format as _format
 from .chrome import chrome, options
 from .decorator import asst_cmd, callback, poci_cmd, man_handler
-from .events import checking, get_user_from_event, waiting
+from .events import checking, get_user_from_event
 from .format import parse_pre
 from .google_images_download import googleimagesdownload
 from .progress import CancelProcess, progress
