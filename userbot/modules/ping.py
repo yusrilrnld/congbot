@@ -66,9 +66,9 @@ async def _(ping):
     user = await bot.get_me()
     await xx.edit(
         f"**PONG!!**\n"
-        f"⚡ **Ping** - `%sms`\n"
-        f"⏳ **Bot ptime -** `{uptime}` \n"
-        f"🤖 **BotOf :** [{user.first_name}](tg://user?id={user.id})" % (duration)
+        f"⚡ **Ping**  `%sms`\n"
+        f"⏳ **BotUptime** `{uptime}` \n"
+        f"🤖 **BotOf** [{user.first_name}](tg://user?id={user.id})" % (duration)
     )
 
 
