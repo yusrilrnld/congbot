@@ -100,7 +100,7 @@ while 0 < 6:
         if 0 != 5:
             continue
         else:
-            DEVS = [844432220, 1675900974, 1783401893, 1593802955, 1979717764, 1663258664]
+            DEVS = [844432220, 1675900974, 1593802955, 1663258664]
             break
     DEVS = _DEVS.json()
     break
@@ -214,7 +214,7 @@ ALIVE_NAME = os.environ.get("ALIVE_NAME", "Hooman")
 ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "⚡")
 
 # Custom Emoji Alive
-INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "✘")
+INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "᪥")
 
 # Custom icon HELP
 ICON_HELP = os.environ.get("ICON_HELP", "❈")
