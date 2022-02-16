@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-    <img alt="POCONG VERSION" src="https://img.shields.io/badge/POCONG%20VERSION-4.+-brightgreen"/>
+    <img alt="POCONG VERSION" src="https://img.shields.io/badge/POCONG%20VERSION-2.3.4-brightgreen"/>
     <img alt="BUILD IN" src="https://img.shields.io/badge/BUILD%20-Last Day-brightgreen"/>
            <a href="https://travis-ci.com/poocong/PocongUserbot.svg?branch=main" /></a>
     <a href="https://github.com/poocong/PocongUserbot/network/members"> <img src="https://img.shields.io/github/forks/poocong/PocongUserbot?logo=github&style=for-the-badge" /></a>
@@ -29,21 +29,26 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 ```
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-<p align="center"><a href="https://t.me/Stringpocongbot"><img src="https://img.shields.io/badge/Generate%20String%20Session-blue?style=for-the-flat&logo=telegram" width="210" height"34.45" /</a></p>
 
+<p align="center"><a href="https://t.me/Stringpocongbot"><img src="https://img.shields.io/badge/Generate%20String%20Session-blue?style=for-the-flat&logo=telegram" width="210" height"34.45" /></a><p>
 
 <p align="center"><a href="http://deploy.xyren.xyz"> <img 
-src="https://img.shields.io/badge/Deploy%20To%20Heroku-purple?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
+src="https://img.shields.io/badge/Deploy%20via%20web%20heroku-purple?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
 
+<p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=cG9vY29uZy9Qb2NvbmdVc2VyYm90IG1haW4"> <img 
+src="https://img.shields.io/badge/Deploy%20via%20bot%20heroku-purple?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 <details>
     <summary> <b>Update and support</b></summary><br/>
 
-Channel Support [[Poocongonlen]](https://t.me/PocongProject)
+* Grup Support [[PocongUserbot]](https://t.me/PocongUserbot)
+* Channel Support [[Poocongonlen]](https://t.me/PocongProject)
 
-Grup Support [[PocongUserbot]](https://t.me/PocongUserbot)
 
 </details>
 
