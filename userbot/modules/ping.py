@@ -120,10 +120,6 @@ async def pocong(ganteng):
     await ganteng.reply(random.choice(absen))
 
 
-# JANGAN DI HAPUS GOBLOK 😡 LU COPY AJA TINGGAL TAMBAHIN
-# DI HAPUS GUA GBAN YA 🥴 GUA TANDAIN LU AKUN TELENYA 😡
-
-
 CMD_HELP.update(
     {
         "ping": f"**Plugin : **`ping`\

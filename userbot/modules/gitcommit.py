@@ -14,12 +14,12 @@ from github import Github
 # from uniborg.util import admin_cmd, humanbytes, progress, time_formatter
 # from userbot.events import humanbytes, progress, time_formatter
 from userbot import CMD_HELP, GIT_REPO_NAME, GITHUB_ACCESS_TOKEN, bot
-from userbot.events import poci_cmd
+from userbot.utils import poci_cmd
 
 GIT_TEMP_DIR = "./userbot/temp/"
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"gcommit(?: |$)(.*)"))
+@poci_cmd(pattern="gcommit(?: |$)(.*)")
 async def download(event):
     if event.fwd_from:
         return

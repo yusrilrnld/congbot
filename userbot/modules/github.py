@@ -1,5 +1,4 @@
 # Copyright (C) 2021 Catuserbot <https://github.com/sandy1709/catuserbot>
-# Ported by @mrismanaziz
 # FROM Man-Userbot
 # Recode by @Pocongonlen
 
@@ -10,14 +9,13 @@ import requests
 from pySmartDL import SmartDL
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, bot
-from userbot.events import poci_cmd
-from userbot.utils import edit_delete, edit_or_reply, reply_id
+from userbot import CMD_HELP
+from userbot.utils import edit_delete, edit_or_reply, poci_cmd, reply_id
 
 ppath = os.path.join(os.getcwd(), "temp", "githubuser.jpg")
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"github( -l(\d+))? ([\s\S]*)"))
+@poci_cmd(pattern="github( -l(\d+))? ([\s\S]*)")
 async def _(event):
     "Get info about an GitHub User"
     reply_to = await reply_id(event)

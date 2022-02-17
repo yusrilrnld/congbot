@@ -1,8 +1,6 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.
-#
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
-#
 
 """ Userbot module for System Stats commands """
 
@@ -23,7 +21,7 @@ from telethon import __version__, version
 
 from userbot import ALIVE_EMOJI, ALIVE_LOGO, ALIVE_TEKS_CUSTOM, BOT_VER, CHANNEL
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, GROUP, StartTime, bot
+from userbot import CMD_HELP, GROUP, StartTime
 from userbot.utils import bash, edit_or_reply, poci_cmd
 
 from .ping import get_readable_time
@@ -167,10 +165,10 @@ async def bot_ver(event):
 
 @poci_cmd(pattern="(?:alive|on)\s?(.)?")
 async def amireallyalive(alive):
-    user = await bot.get_me()
+    user = await alive.client.get_me()
     uptime = await get_readable_time((time.time() - StartTime))
     output = (
-        f"**[Pocong Userbot](https://github.com/poocong/PocongUserbot) Telah Aktif.**\n\n"
+        f"**[Pocong Userbot](https://github.com/poocong/PocongUserbot) Telah Di Aktifkan.**\n\n"
         
         f"┌ **😈Master :** [{user.first_name}](tg://user?id={user.id}) \n"
         f"├ **📂Modules :** `{len(modules)} Modules` \n"
@@ -179,13 +177,13 @@ async def amireallyalive(alive):
         f"├ **👾TelethonVersion :** `{version.__version__}` \n"
         f"├ **{emoji}Pytgcalls Version :** `{pytgcalls.__version__}` \n"
         f"└ **⏳BotUptime :** `{uptime}` \n\n"
-        f"    **[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/{GROUP})** | **[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/{CHANNEL})** | **[𝗢𝘄𝗻𝗲𝗿](tg://user?id={user.id})**"
+        f"    **[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/{GROUP})** | **[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/{CHANNEL})** | **[𝗢𝘄𝗻𝗲𝗿](https://t.me/pocongonlen)**"
     )
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
             await alive.delete()
-            msg = await bot.send_file(alive.chat_id, logo, caption=output)
+            msg = await alive.client.send_file(alive.chat_id, logo, caption=output)
             await asyncio.sleep(800)
             await msg.delete()
         except BaseException:
