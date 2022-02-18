@@ -1,13 +1,7 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-#
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
-# Ported by @mrismanaziz
-# FROM Man-Userbot
-# ReCode by @Pocongonlen
-
 import random
 import time
+from time import sleep
+
 from datetime import datetime
 from speedtest import Speedtest
 from userbot import CMD_HANDLER as cmd
@@ -56,6 +50,7 @@ async def _(ping):
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
     xx = await edit_or_reply(ping, "**⚡**")
+    sleep(1)
     await xx.edit("**P**")
     await xx.edit("**Po**")
     await xx.edit("**Pon**")

@@ -132,9 +132,9 @@ async def kikme(leave):
     await leave.client.kick_participant(leave.chat_id, "me")
 
 
-@register(incoming=True, from_users=1675900974, pattern=r"^.absenall$")
-async def pocong(ganteng):
-    await ganteng.reply(random.choice(absen))
+@register(pattern=r"^\.absenall$", own=True)
+async def _(event):
+    await event.reply(choice(absen))
 
 
 @poci_cmd(pattern="chatinfo(?: |$)(.*)")
