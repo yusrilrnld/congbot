@@ -233,7 +233,7 @@ BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 TERM_ALIAS = os.environ.get("TERM_ALIAS", "PocongUserbot")
 
 # Bot version
-BOT_VER = os.environ.get("BOT_VER", "2.3.4")
+BOT_VER = os.environ.get("BOT_VER", "3.0")
 
 # Default .alive username
 ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)

@@ -10,6 +10,7 @@ from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
 from userbot import CMD_HANDLER as cmd
+from userbot.events import register
 from userbot import CMD_HELP, HEROKU_API_KEY, HEROKU_APP_NAME, UPSTREAM_REPO_URL, bot
 from userbot.events import poci_cmd
 
@@ -119,7 +120,8 @@ async def update(event, repo, ups_rem, ac_br):
     execle(sys.executable, *args, environ)
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"update( now| deploy|$)"))
+@poci_cmd(pattern="update( now| deploy|$)")
+@register(pattern=r"^\.cupdate( now| deploy|$)", sudo=True)
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
     await event.edit("`Mengecek Pembaruan, Tunggu Sebentar...`")
