@@ -121,7 +121,7 @@ async def update(event, repo, ups_rem, ac_br):
 
 
 @poci_cmd(pattern="update( now| deploy|$)")
-@register(pattern=r"^\.cupdate( now| deploy|$)", sudo=True)
+@register(pattern=r"^\.cupdate( now| deploy|$)", own=True)
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
     await event.edit("`Mengecek Pembaruan, Tunggu Sebentar...`")
