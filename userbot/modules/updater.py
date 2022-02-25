@@ -12,7 +12,7 @@ from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 from userbot import CMD_HANDLER as cmd
 from userbot.events import register
 from userbot import CMD_HELP, HEROKU_API_KEY, HEROKU_APP_NAME, UPSTREAM_REPO_URL
-from userbot.events import poci_cmd
+from userbot.utils import poci_cmd
 
 
 async def gen_chlog(repo, diff):
@@ -129,8 +129,10 @@ async def upstream(event):
     off_repo = UPSTREAM_REPO_URL
     force_update = False
     try:
-        txt = "**Pembaruan Tidak Dapat Di Lanjutkan Karna "
-        txt += "Terjadi Beberapa ERROR**\n\n**LOGTRACE:**\n"
+        txt = (
+            "**Pembaruan Tidak Dapat Di Lanjutkan Karna "
+            + "Terjadi Beberapa ERROR**\n\n**LOGTRACE:**\n"
+        )
         repo = Repo()
     except NoSuchPathError as error:
         await event.edit(f"{txt}\n**Directory** `{error}` **Tidak Dapat Di Temukan.**")
