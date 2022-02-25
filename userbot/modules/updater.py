@@ -143,7 +143,6 @@ async def upstream(event):
             return await event.edit(
                 f"**Sayangnya, Directory {error} Tampaknya Bukan Dari Repo. Tapi Kita Bisa Memperbarui Paksa Userbot Menggunakan** `{cmd}update deploy`"
             )
-            )
         repo = Repo.init()
         origin = repo.create_remote("upstream", off_repo)
         origin.fetch()
