@@ -49,9 +49,7 @@ async def _(ping):
     """For .ping command, ping the userbot from any chat."""
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    xx = await edit_or_reply(ping, "**⚡**")
-    sleep(1)
-    await xx.edit("**P**")
+    xx = await edit_or_reply(ping, "**P**")
     await xx.edit("**Po**")
     await xx.edit("**Pon**")
     await xx.edit("**Pong**")
