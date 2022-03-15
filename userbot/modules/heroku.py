@@ -1,6 +1,5 @@
 # Copyright (C) 2020 Adek Maulana.
 # All rights reserved.
-# Ported by @mrismanaziz
 # FROM Man-Userbot
 # Recode by @Pocongonlen
 """
@@ -133,7 +132,7 @@ async def set_var(var):
 """
 
 
-@poci_cmd(pattern="(dynousage|dyno)(?: |$)")
+@poci_cmd(pattern="(usage|dyno)(?: |$)")
 async def dyno_usage(dyno):
     if app is None:
         return await dyno.edit(
@@ -201,7 +200,7 @@ async def dyno_usage(dyno):
         return True
 
 
-@poci_cmd(pattern="usage(?: |$)")
+@poci_cmd(pattern="dynousage(?: |$)")
 async def fake_dyno(event):
     xx = await edit_or_reply(event, "`Processing...`")
     await xx.edit(
