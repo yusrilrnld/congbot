@@ -1,6 +1,5 @@
 import random
 import time
-from time import sleep
 
 from datetime import datetime
 from speedtest import Speedtest
