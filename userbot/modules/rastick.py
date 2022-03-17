@@ -1,12 +1,11 @@
 import random
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, bot
-from userbot.events import poci_cmd
-from userbot.utils import deEmojify
+from userbot import CMD_HELP
+from userbot.utils import deEmojify, edit_or_reply, poci_cmd
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"rst(?: |$)(.*)"))
+@poci_cmd(pattern="rst(?: |$)(.*)")
 async def rastick(animu):
     text = animu.pattern_match.group(1)
     if not text:
@@ -104,7 +103,7 @@ CMD_HELP.update(
     {
         "rastick": f"**Plugin : **`rastick`\
         \n\n  •  **Syntax :** `{cmd}rst`\
-        \n  •  **Function : **Untuk membuat stiker teks Anda dengan templat stiker acak daro @StickerizerBot\
+        \n  •  **Function : **Untuk membuat stiker teks Anda dengan template stiker acak dari @StickerizerBot\
     "
     }
 )
