@@ -18,7 +18,7 @@ async def _(event):
                 "@Asupan_Pocong", filter=InputMessagesFilterVideo
             )
         ]
-        aing = await event.client.get_me()
+        await event.client.get_me()
         await event.client.send_file(
             event.chat_id,
             file=random.choice(asupannya),
