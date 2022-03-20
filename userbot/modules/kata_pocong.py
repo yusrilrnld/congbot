@@ -29,7 +29,7 @@ KATAPOCONG = [
 ]
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"quote$"))
+@poci_cmd(pattern="quote$")
 async def _(sange):
     """Quote Gajelas"""
     await sange.edit(choice(KATAPOCONG))
