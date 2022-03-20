@@ -2,7 +2,7 @@
 # ⚠️ Do not remove credits.
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP
+from userbot import CMD_HELP, bot
 from userbot.events import poci_cmd
 from random import choice
 
@@ -29,7 +29,7 @@ KATAPOCONG = [
 ]
 
 
-@poci_cmd(pattern="quote$")
+@bot.on(poci_cmd(outgoing=True, pattern=r"quote$"))
 async def _(sange):
     """Quote Gajelas"""
     await sange.edit(choice(KATAPOCONG))
