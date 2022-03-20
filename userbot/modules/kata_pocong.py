@@ -3,7 +3,7 @@
 
 
 from userbot.events import poci_cmd
-from random import choice, getrandbits, randint
+from random import choice
 
 KATAPOCONG = [
     "pawang? apakah itu semacam pimpinan para hewan?",
