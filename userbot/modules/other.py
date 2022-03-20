@@ -15,7 +15,7 @@ from telethon.tl.functions.messages import ExportChatInviteRequest
 from telethon.tl.types import ChannelParticipantsKicked
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, owner
+from userbot import CMD_HELP, BYPASS_URL, owner
 from userbot.utils import edit_delete, edit_or_reply, poci_cmd
 
 
@@ -200,11 +200,49 @@ async def _(event):
             await event.client.send_message(event.chat_id, response.message)
 
 
+@poci_cmd(pattern="bypass(?: |$)(.*)")
+async def _(event):
+    xxnx = event.pattern_match.group(1)
+    if xxnx:
+        d_link = xxnx
+    elif event.is_reply:
+        d_link = await event.get_reply_message()
+    else:
+        return await edit_delete(
+            event,
+            "**Mohon berikan link valid..**",
+        )
+    xx = await edit_or_reply(event, "`Melakukan direct link...`")
+    web = BYPASS_URL
+    async with event.client.conversation(web) as conv:
+        try:
+            await conv.send_message(d_link)
+            details = await conv.get_response()
+            await event.client.send_read_acknowledge(conv.chat_id)
+        except YouBlockedUserError:
+            await event.client(UnblockRequest(web))
+            await conv.send_message(d_link)
+            details = await conv.get_response()
+            await event.client.send_read_acknowledge(conv.chat_id)
+        await event.client.send_message(event.chat_id, details.message)
+        await xx.delete()
+
+
 CMD_HELP.update(
     {
         "view": f"**Plugin : **`view`\
         \n\n  •  **Syntax :** `{cmd}view` <reply ke link>\
         \n  •  **Function : **Untuk Melihat isi web dengan instan view telegraph.\
+    "
+    }
+)
+
+
+CMD_HELP.update(
+    {
+        "bypass": f"**Plugin : **`bypass`\
+        \n\n  •  **Syntax :** `{cmd}bypass` <link>\
+        \n  •  **Function : **Melakukan Bypass suatu link\
     "
     }
 )
