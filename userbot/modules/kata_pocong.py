@@ -1,7 +1,8 @@
 #  (C) @pocongonlen
 # ⚠️ Do not remove credits.
 
-
+from userbot import CMD_HANDLER as cmd
+from userbot import CMD_HELP
 from userbot.events import poci_cmd
 from random import choice
 
@@ -30,5 +31,15 @@ KATAPOCONG = [
 
 @bot.on(poci_cmd(outgoing=True, pattern=r"quote$"))
 async def _(sange):
-    """Greet everyone!"""
+    """Quote Gajelas"""
     await sange.edit(choice(KATAPOCONG))
+
+
+CMD_HELP.update(
+    {
+        "quotes": f"**Plugin : **`quotes`\
+        \n\n  •  **Syntax :** `{cmd}quote`\
+        \n  •  **Function : **Untuk Mengirim Kata-kata quote.\
+    "
+    }
+)
