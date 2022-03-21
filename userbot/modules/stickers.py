@@ -1,7 +1,6 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.
 #
-# Recode by @mrismanaziz
-# FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
+# FROM Man-Userbot
 
 
 import asyncio
@@ -635,7 +634,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "stickers": f"**Plugin : **`stickers`\
+        "stiker": f"**Plugin : **`stiker`\
         \n\n  •  **Syntax :** `{cmd}kang` atau `{cmd}curi` [emoji]\
         \n  •  **Function : **Balas .kang Ke Sticker Atau Gambar Untuk Menambahkan Ke Sticker Pack Mu\
         \n\n  •  **Syntax :** `{cmd}kang` [emoji] atau `{cmd}tikel` [emoji]\
@@ -659,7 +658,7 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "sticker_v2": f"**Plugin : **`stickers`\
+        "stiker_v2": f"**Plugin : **`stickers`\
         \n\n  •  **Syntax :** `{cmd}getsticker`\
         \n  •  **Function : **Balas Ke Stcker Untuk Mendapatkan File 'PNG' Sticker.\
         \n\n  •  **Syntax :** `{cmd}get`\
