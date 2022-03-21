@@ -13,7 +13,7 @@ from telethon.tl.types import User
 from userbot import BOTLOG, BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, COUNT_PM, LASTMSG, LOGS, PM_AUTO_BAN, PM_LIMIT, bot
-from userbot.events import poci_cmd, register
+from userbot.events import poci_cmd
 from userbot.utils import edit_delete, edit_or_reply
 
 DEF_UNAPPROVED_MSG = (
@@ -31,7 +31,7 @@ DEF_UNAPPROVED_MSG = (
 )
 
 
-@register(incoming=True, disable_edited=True, disable_errors=True)
+@bot.on(events.NewMessage(incoming=True))
 async def permitpm(event):
     """ Prohibits people from PMing you without approval. \
         Will block retarded nibbas automatically. """
@@ -114,7 +114,7 @@ async def permitpm(event):
                     )
 
 
-@register(disable_edited=True, outgoing=True, disable_errors=True)
+@bot.on(events.NewMessage(outgoing=True))
 async def auto_accept(event):
     """Will approve automatically if you texted them first."""
     if not PM_AUTO_BAN:
