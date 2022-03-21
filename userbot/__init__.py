@@ -145,11 +145,11 @@ OWNER_ID = int(os.environ.get("OWNER_ID") or 0)
 # Support
 GROUP = os.environ.get("GROUP", "PocongUserbot")
 CHANNEL = os.environ.get("CHANNEL", "PocongProject")
-BYPASS_URL = os.environ.get("BYPASS_URL", None)
+BYPASS_URL = os.environ.get("BYPASS_URL", "@bypassvip_bot")
 
 # Heroku Credentials for updater.
 HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
-HEROKU_API_KEY = os.environ.get("BYPASS_URL", None)
+HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
 
 # JustWatch Country
 WATCH_COUNTRY = os.environ.get("WATCH_COUNTRY", "ID")
