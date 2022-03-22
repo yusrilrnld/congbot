@@ -370,7 +370,7 @@ async def gspider(gspdr):
         from userbot.modules.sql_helper.gmute_sql import gmute
     except AttributeError:
         return await gspdr.edit(NO_SQL)
-    pocong = await = edit_or_reply(gspdr, "`Processing...`"
+    pocong = await edit_or_reply(gspdr, "`Processing...`"
     user, reason = await get_user_from_event(gspdr)
     if not user:
         return
