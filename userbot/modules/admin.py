@@ -3,7 +3,7 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 
-import logging
+
 from asyncio import sleep
 
 from telethon.errors import (
@@ -43,6 +43,7 @@ from userbot.utils import (
     man_handler,
     media_type,
 )
+from userbot.utils.logger import logging
 
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "**Gambar Terlalu Kecil**"
@@ -74,11 +75,6 @@ UNBAN_RIGHTS = ChatBannedRights(
     send_games=None,
     send_inline=None,
     embed_links=None,
-)
-logging.basicConfig(
-    format="[%(levelname)s- %(asctime)s]- %(name)s- %(message)s",
-    level=logging.INFO,
-    datefmt="%H:%M:%S",
 )
 
 LOGS = logging.getLogger(__name__)
@@ -470,7 +466,7 @@ async def get_admin(show):
             else:
                 mentions += f"\n⚜ Akun Terhapus <code>{user.id}</code>"
     except ChatAdminRequiredError as err:
-        mentions += " " + str(err) + "\n"
+        mentions += f" {str(err)}" + "\n"
     await show.edit(mentions, parse_mode="html")
 
 
@@ -536,7 +532,7 @@ async def kick(usr):
         await usr.client.kick_participant(usr.chat_id, user.id)
         await sleep(0.5)
     except Exception as e:
-        return await edit_delete(usr, NO_PERM + f"\n{e}")
+        return await edit_delete(usr, f"{NO_PREM}\n{e}")
     if reason:
         await xxnx.edit(
             f"[{user.first_name}](tg://user?id={user.id}) **Telah Dikick Dari Grup**\n**Alasan:** `{reason}`"
