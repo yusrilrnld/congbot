@@ -172,7 +172,7 @@ async def demote(event):
 @poci_cmd(pattern="ban(?:\s|$)([\s\S]*)")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.cban(?:\s|$)([\s\S]*)")
 async def ban(bon):
-    await bon.get_me()
+    hantu = await bon.get_me()
     chat = await bon.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
@@ -189,7 +189,6 @@ async def ban(bon):
         return await edit_or_reply(bon, NO_PERM)
     if reason:
         await pocong.edit(
-            bon,
             r"\\**#Banned_User**//"
             f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
             f"**User ID:** `{str(user.id)}`\n"
@@ -197,8 +196,7 @@ async def ban(bon):
         )
     else:
         await pocong.edit(
-            bon,
-            f"\\\\**#Banned_User**//\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n**User ID:** `{user.id}`\n**Action:** `Banned User by {owner}`",
+            f"\\\\**#Banned_User**//\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n**User ID:** `{user.id}`\n**Action:** `Banned User by {hantu.first_name}`",
         )
 
 
