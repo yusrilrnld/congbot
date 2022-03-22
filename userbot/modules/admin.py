@@ -376,11 +376,9 @@ async def gspider(gspdr):
         return
     self_user = await gspdr.client.get_me()
     if user.id == self_user.id:
-        return await pocong.edit("**Tidak Bisa Membisukan Diri Sendiri..（>﹏<）**"
-        )
+        return await pocong.edit("**Tidak Bisa Membisukan Diri Sendiri..（>﹏<）**")
     if user.id in DEVS:
-        return await pocong.edit("**Gagal Global Mute, Dia Adalah Pembuat Saya 🤪**"
-        )
+        return await pocong.edit("**Gagal Global Mute, Dia Adalah Pembuat Saya 🤪**")
     await pocong.edit("**Berhasil Membisukan Pengguna!**")
     if gmute(user.id) is False:
         await edit_delete(gspdr, "**ERROR! Pengguna Sudah Dibisukan.**")
@@ -393,7 +391,6 @@ async def gspider(gspdr):
         )
     else:
         await pocong.edit(
-            gspdr,
             r"\\**#GMuted_User**//"
             f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
             f"**User ID:** `{user.id}`\n"
