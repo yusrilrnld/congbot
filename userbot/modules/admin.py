@@ -172,7 +172,7 @@ async def demote(event):
 @poci_cmd(pattern="ban(?:\s|$)([\s\S]*)")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.cban(?:\s|$)([\s\S]*)")
 async def ban(bon):
-    hantu = await bon.get_me()
+    hantu = await bon.client.get_me()
     chat = await bon.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
