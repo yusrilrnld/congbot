@@ -1,7 +1,4 @@
 # Copyright (C) 2021 Man-Userbot
-# Created by mrismanaziz
-# FROM Man-Userbot
-# Recode by @Pocongonlen
 
 from asyncio.exceptions import TimeoutError
 
@@ -19,7 +16,7 @@ async def _(event):
         return await edit_or_reply(event, "**Mohon Reply ke teks apa pun**")
     reply_message = await event.get_reply_message()
     chat = "@office2pdf_bot"
-    xx = await edit_or_reply(event, "`Mengubah menjadi PDF...`")
+    pocong = await edit_or_reply(event, "`Mengubah menjadi PDF...`")
     try:
         async with bot.conversation(chat) as conv:
             try:
@@ -30,13 +27,13 @@ async def _(event):
                 cnfrm = await conv.get_response()
                 editfilename = await conv.send_message("Yes")
                 enterfilename = await conv.get_response()
-                filename = await conv.send_message("Man-Userbot")
+                filename = await conv.send_message("PocongUserbot")
                 started = await conv.get_response()
                 pdf = await conv.get_response()
                 await bot.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
                 await event.client(UnblockRequest(chat))
-                return await xx.edit(
+                return await pocong.edit(
                     "**Silahkan Unblock @office2pdf_bot dan coba lagi**"
                 )
             await event.client.send_message(event.chat_id, pdf)
@@ -55,9 +52,9 @@ async def _(event):
                     convert.id,
                 ],
             )
-            await xx.delete()
+            await pocong.delete()
     except TimeoutError:
-        return await xx.edit(
+        return await pocong.edit(
             "**ERROR: @office2pdf_bot tidak merespon, coba lagi nanti**"
         )
 
@@ -66,7 +63,7 @@ CMD_HELP.update(
     {
         "pdf": f"**Plugin : **`pdf`\
         \n\n  •  **Syntax :** `{cmd}pdf` <reply text>\
-        \n  •  **Function : **Untuk Mengconvert teks menjadi file PDF menggunakan @office2pdf_bot\
+        \n  •  **Function : **Untuk Mengconvert teks menjadi file PDF\
     "
     }
 )
