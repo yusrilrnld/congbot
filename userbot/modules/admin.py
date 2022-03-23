@@ -345,7 +345,7 @@ async def ungmoot(un_gmute):
     user = user[0]
     if not user:
         return
-    await pocong.edit(un_gmute, "`Membuka Global Mute Pengguna...`")
+    await pocong.edit("`Membuka Global Mute Pengguna...`")
     if ungmute(user.id) is False:
         await pocong.edit("**ERROR!** Pengguna Sedang Tidak Di Gmute.")
     else:
