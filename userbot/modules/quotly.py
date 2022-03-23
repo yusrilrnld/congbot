@@ -86,7 +86,7 @@ CMD_HELP.update(
         \n\n  •  **Syntax :** `{cmd}q` <angka>\
         \n  •  **Function : **Membuat pesan menjadi sticker dengan custom jumlah pesan yang diberikan.\
         \n\n  •  **Syntax :** `{cmd}q` <warna>\
-        \n  •  **Function : **Membuat pesan menjadi sticker dengan custom [warna](https://t.me/PocongProject/16) background yang diberikan.\
+        \n  •  **Function : **Membuat pesan menjadi sticker dengan custom [warna](https://t.me/PocongProject/16) background yang diberikan. list custom warna klik [𝗗𝗜𝗦𝗜𝗡𝗜](https://t.me/PocongProject/16) .\
         \n\n  •  **Syntax :** `{cmd}q` <username>\
         \n  •  **Function : **Membuat pesan menjadi sticker dengan custom username user tele yang diberikan.\
     "
