@@ -170,7 +170,7 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", "Tikell @PocongProject")
 DB_URI = os.environ.get("DATABASE_URL", None)
 
 # OCR API key
-OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", 12dc42a0ff88957)
+OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", "12dc42a0ff88957")
 
 # remove.bg API key
 REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
@@ -183,7 +183,7 @@ GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN") or "/usr/bin/google-chro
 NC_LOG_P_M_S = bool(os.environ.get("NC_LOG_P_M_S", "False"))
 
 # OpenWeatherMap API Key
-OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", 5ed2fcba931692ec6bd0a8a3f8d84936)
+OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", "5ed2fcba931692ec6bd0a8a3f8d84936")
 WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY", "Jakarta")
 
 # Lydia API
@@ -200,7 +200,7 @@ ANTI_SPAMBOT = sb(os.environ.get("ANTI_SPAMBOT", "False"))
 ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 
 # Youtube API key
-YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", AIzaSyACwFrVv-mlhICIOCvDQgaabo6RIoaK8Dg)
+YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", "AIzaSyACwFrVv-mlhICIOCvDQgaabo6RIoaK8Dg")
 
 # untuk perintah teks costum .alive
 ALIVE_TEKS_CUSTOM = os.environ.get("ALIVE_TEKS_CUSTOM", None)
