@@ -1,8 +1,6 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
-# Ported by @mrismanaziz
-# Recode by @Pocongonlen
 """ Userbot module for keeping control who PM you. """
 
 from sqlalchemy.exc import IntegrityError
@@ -26,8 +24,8 @@ DEF_UNAPPROVED_MSG = (
     "├ terblokir.\n"
     "└ Bot by **PocongUserbot**\n"
     "┌━━━━━━━━━━━━\n"
-    "├❏ **𝗦𝘂𝗽𝗽𝗼𝗿𝘁: @PocongUserbot**\n"
-    "├❏ **𝗖𝗵𝗮𝗻𝗻𝗲𝗹: @PocongProject**\n"
+    "├❏ Support: @PocongUserbot\n"
+    "├❏ Channel: @PocongProject\n"
     "└━━━━━━━━━━━━\n"
 )
 
