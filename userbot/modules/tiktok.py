@@ -103,7 +103,7 @@ async def _(event):
     else:
         return await edit_delete(
             event,
-            "**Berikan Link Tiktok Pesan atau Reply Link Tiktok Untuk di Download**",
+            "**Berikan Link Facebook atau Reply Link Facebook Untuk di Download**",
         )
     xx = await edit_or_reply(event, "`Video Sedang Diproses...`")
     chat = "@thisvidbot"
@@ -151,9 +151,9 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "instagram": f"Plugin : **instagram**\
-        \n\n  •  **Syntax**: {cmd}ig < reply di link>\
-        \n  •  **Function**: __Download Video Instagram__\
+        "instagram": f"**Plugin : **`instagram`\
+        \n\n  •  **Syntax :** `{cmd}ig` <reply di link>\
+        \n  •  **Function: **Download Video Instagram\
     "
     }
 )
