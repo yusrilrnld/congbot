@@ -32,11 +32,21 @@ async def _(event):
 @poci_cmd(pattern="wibu$")
 async def _(event):
     try:
-        response = requests.get("https://api-tede.herokuapp.com/api/asupan/wibu").json()
-        await event.client.send_file(event.chat_id, response["url"])
+        wibukntl = [
+            wibu
+            async for wibu in event.client.iter_messages(
+                "@pocongwibu", filter=InputMessagesFilterVideo
+            )
+        ]
+        await event.client.get_me()
+        await event.client.send_file(
+            event.chat_id,
+            file=random.choice(wibukntl),
+            caption=f"nih buat lo vvibu bau bawang",
+        )
         await event.delete()
     except Exception:
-        await event.edit("**Tidak bisa menemukan video wibu.**")
+        await event.edit("Tidak bisa menemukan video asupan.")
 
 
 @poci_cmd(pattern="chika$")
@@ -54,10 +64,17 @@ CMD_HELP.update(
         "asupan": f"**Plugin : **`asupan`\
         \n\n  •  **Syntax :** `{cmd}asupan`\
         \n  •  **Function : **Untuk Mengirim video asupan secara random.\
-        \n\n  •  **Syntax :** `{cmd}wibu`\
-        \n  •  **Function : **Untuk Mengirim video wibu secara random.\
         \n\n  •  **Syntax :** `{cmd}chika`\
         \n  •  **Function : **Untuk Mengirim video chikakiku secara random.\
+    "
+    }
+)
+
+CMD_HELP.update(
+    {
+        "wibu": f"**Plugin : **`Wibu`\
+        \n\n  •  **Syntax :** `{cmd}wibu`\
+        \n  •  **Function : **Mengirim secara random video anime\
     "
     }
 )
