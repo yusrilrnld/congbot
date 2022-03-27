@@ -4,10 +4,9 @@
 # you may not use this file except in compliance with the License.
 #
 # Copyright (C) 2021 TeamUltroid for autobot
-# Ported by @mrizmanaziz
-# FROM Man-Userbot
+# FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
 # ReCode by @Pocongonlen
-#
+
 """ Userbot start point """
 
 import sys
@@ -20,7 +19,7 @@ from userbot import BOT_TOKEN, BOT_USERNAME, BOT_VER, BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import LOGS, bot, branch, call_py
 from userbot.modules import ALL_MODULES
-from userbot.utils import autobot, checking
+from userbot.utils import autopilot, autobot, checking
 
 try:
     bot.start()
@@ -47,6 +46,11 @@ LOGS.info(
 
 LOGS.info(f"PocongUserbot ⚙️ V{BOT_VER} [🔥 BERHASIL DIAKTIFKAN! 🔥]")
 
+if not BOTLOG_CHATID:
+    LOGS.info(
+        "Vars BOTLOG_CHATID tidak terisi, Proses Membuat Grup Otomatis."
+    )
+    bot.loop.run_until_complete(autopilot())
 
 async def pocong_userbot_on():
     try:

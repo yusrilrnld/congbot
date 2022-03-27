@@ -132,7 +132,7 @@ NO_LOAD = os.environ.get("NO_LOAD", "").split()
 
 # Bleep Blop, this is a bot ;)
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "True"))
-PM_LIMIT = int(os.environ.get("PM_LIMIT", 6))
+PM_LIMIT = int(os.environ.get("PM_LIMIT", 5))
 
 # Custom Handler command
 CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
@@ -234,7 +234,7 @@ BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 TERM_ALIAS = os.environ.get("TERM_ALIAS", "PocongUserbot")
 
 # Bot version
-BOT_VER = os.environ.get("BOT_VER", "3.0.8")
+BOT_VER = os.environ.get("BOT_VER", "3.1.0")
 
 # Default .alive username
 ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
@@ -701,8 +701,3 @@ with bot:
             "Untuk Mengaktifkannya Buat bot di @BotFather Lalu Tambahkan var BOT_TOKEN dan BOT_USERNAME. "
             "Pergi Ke @BotFather lalu settings bot » Pilih mode inline » Turn On. "
         )
-    try:
-        bot.loop.run_until_complete(check_botlog_chatid())
-    except BaseException as e:
-        LOGS.exception(f"[BOTLOG] - {e}")
-        sys.exit(1)
