@@ -45,7 +45,6 @@ async def f_load(message):
             await bruh(message, reply.sender)
             return
         text = reply.pattern_match.group(1)
-
     if text.split(" ")[0] in clrs:
         clr = clrs[text.split(" ")[0]]
         text = " ".join(text.split(" ")[1:])

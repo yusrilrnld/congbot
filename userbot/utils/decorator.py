@@ -45,7 +45,7 @@ def poci_cmd(
         args["chats"] = black_list_chats
 
     if pattern is not None:
-        global man_reg
+        global poci_reg
         global sudo_reg
         global tuyul_reg
         if (
@@ -53,18 +53,18 @@ def poci_cmd(
             or not pattern.startswith(r"\#")
             and pattern.startswith(r"^")
         ):
-            man_reg = sudo_reg = tuyul_req = re.compile(pattern)
+            poci_reg = sudo_reg = tuyul_req = re.compile(pattern)
         else:
-            man_ = "\\" + CMD_HANDLER
+            poci_ = "\\" + CMD_HANDLER
             sudo_ = "\\" + SUDO_HANDLER
-            man_reg = re.compile(man_ + pattern)
+            poci_reg = re.compile(poci_ + pattern)
             sudo_reg = re.compile(sudo_ + pattern)
             if command is not None:
-                cmd1 = man_ + command
+                cmd1 = poci_ + command
                 cmd2 = sudo_ + command
             else:
                 cmd1 = (
-                    (man_ + pattern).replace("$", "").replace("\\", "").replace("^", "")
+                    (poci_ + pattern).replace("$", "").replace("\\", "").replace("^", "")
                 )
                 cmd2 = (
                     (sudo_ + pattern)
@@ -80,10 +80,10 @@ def poci_cmd(
     def decorator(func):
         if not disable_edited:
             bot.add_event_handler(
-                func, events.MessageEdited(**args, outgoing=True, pattern=man_reg)
+                func, events.MessageEdited(**args, outgoing=True, pattern=poci_reg)
             )
         bot.add_event_handler(
-            func, events.NewMessage(**args, outgoing=True, pattern=man_reg)
+            func, events.NewMessage(**args, outgoing=True, pattern=poci_reg)
         )
         if allow_sudo:
             if not disable_edited:
@@ -108,7 +108,7 @@ def poci_cmd(
     return decorator
 
 
-def man_handler(
+def pocong_handler(
     **args,
 ):
     def decorator(func):

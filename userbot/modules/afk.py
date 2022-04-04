@@ -9,7 +9,7 @@ from telethon.tl import functions, types
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import bash, poci_cmd, man_handler
+from userbot.utils import bash, poci_cmd, pocong_handler
 
 USER_AFK = {}
 afk_time = None
@@ -18,7 +18,7 @@ last_afk_msg = {}
 afk_start = {}
 
 
-@man_handler(outgoing=True)
+@pocong_handler(outgoing=True)
 async def set_not_afk(event):
     global USER_AFK
     global afk_time
@@ -65,7 +65,7 @@ async def set_not_afk(event):
         await bash("rm -rf *.tgs")
 
 
-@man_handler(incoming=True, func=lambda e: bool(e.mentioned or e.is_private))
+@pocong_handler(incoming=True, func=lambda e: bool(e.mentioned or e.is_private))
 async def on_afk(event):
     if event.fwd_from:
         return

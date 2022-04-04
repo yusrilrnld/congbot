@@ -40,7 +40,7 @@ from userbot.utils import (
     edit_or_reply,
     get_user_from_event,
     poci_cmd,
-    man_handler,
+    pocong_handler,
     media_type,
 )
 from userbot.utils.logger import logging
@@ -297,7 +297,7 @@ async def unmoot(unmot):
         return await edit_delete(pocong, "**Terjadi ERROR!**")
 
 
-@man_handler()
+@pocong_handler()
 async def muter(moot):
     try:
         from userbot.modules.sql_helper.gmute_sql import is_gmuted
