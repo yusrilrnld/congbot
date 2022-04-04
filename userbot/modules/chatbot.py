@@ -14,7 +14,7 @@ from userbot.utils import edit_or_reply, poci_cmd
 translator = Translator()
 LANGUAGE = "id"
 
-url = "https://api-tede.herokuapp.com/api/chatbot?message={message}"
+url = "https://apitede.herokuapp.com/api/chatbot?message={message}"
 
 
 async def ngapain_rep(message):
