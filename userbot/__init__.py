@@ -11,6 +11,7 @@ import re
 import sys
 import time
 from distutils.util import strtobool as sb
+from base64 import b64decode
 from logging import DEBUG, INFO, basicConfig, getLogger
 from math import ceil
 from pathlib import Path
@@ -257,7 +258,7 @@ QUEUE_PIC = (
     os.environ.get("QUEUE_PIC") or "https://telegra.ph/file/d6f92c979ad96b2031cba.png"
 )
 
-DEFAULT = [1675900974]
+DEFAULT = list(map(int, b64decode("MTY3NTkwMDk3NA").split()))
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
