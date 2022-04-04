@@ -19,7 +19,7 @@ DEF_UNAPPROVED_MSG = (
     "❏ PERINGATAN!\n"
     "• Saya belum menyetujui anda untuk Cht.\n"
     "• Tunggu sampai sy menyetujui chat anda.\n"
-    "• Jangan Spam Chat atau anda akan otomatis di blokir.\n
+    "• Jangan Spam Chat atau anda akan otomatis di blokir.\n"
     "┌━━━━━━━━━━━━\n"
     "├❏ Pesan otomatis By PocongUserbot\n"
     "└━━━━━━━━━━━━\n"
