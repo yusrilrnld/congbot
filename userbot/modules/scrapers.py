@@ -914,7 +914,7 @@ CMD_HELP.update(
         \n\n  •  **Syntax :** `{cmd}google` <flags> <query>\
         \n  •  **Function : **Untuk Melakukan pencarian di google (default 5 hasil pencarian)\
         \n  •  **Flags :** `-l` **= Untuk jumlah hasil pencarian.**\
-        \n  •  **Example :** `{cmd}google -l4 mrismanaziz` atau `{cmd}google mrismanaziz`\
+        \n  •  **Example :** `{cmd}google -l4 kucing lucu` atau `{cmd}google kucing lucu`\
     "
     }
 )
