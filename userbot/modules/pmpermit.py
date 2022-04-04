@@ -17,15 +17,11 @@ from userbot.utils import edit_delete, edit_or_reply
 
 DEF_UNAPPROVED_MSG = (
     "❏ PERINGATAN!\n"
-    "┌ Saya belum menyetujui kmu\n"
-    "├ Tunggu sampai saya menyetujui\n" 
-    "├ Cht kmu, jangan spam cht\n"
-    "├ atau kmu akan otomatis\n"
-    "├ terblokir.\n"
-    "└ Bot by **PocongUserbot**\n"
+    "• Saya belum menyetujui anda untuk Cht.\n"
+    "• Tunggu sampai sy menyetujui chat anda.\n"
+    "• Jangan Spam Chat atau anda akan otomatis di blokir.\n
     "┌━━━━━━━━━━━━\n"
-    "├❏ Support: @PocongUserbot\n"
-    "├❏ Channel: @PocongProject\n"
+    "├❏ Pesan otomatis By PocongUserbot\n"
     "└━━━━━━━━━━━━\n"
 )
 
