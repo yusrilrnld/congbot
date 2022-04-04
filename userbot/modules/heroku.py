@@ -290,9 +290,9 @@ CMD_HELP.update(
         \n  •  **Function : **Dapatkan Variabel Yang Ada,Harap Gunakan Di Grup Private Anda!\
         \n\n  •  **Syntax :** `{cmd}del var <nama var>`\
         \n  •  **Function : **Untuk Menghapus var heroku\
-        \n\n  •  **Syntax :** `{cmd}dynousage` atau `{cmd}dyno`\
+        \n\n  •  **Syntax :** `{cmd}usage` atau `{cmd}dyno`\
         \n  •  **Function : **Check Kouta Dyno Heroku\
-        \n\n  •  **Syntax :** `{cmd}usage`\
+        \n\n  •  **Syntax :** `{cmd}dynousage`\
         \n  •  **Function : **Fake Check Kouta Dyno Heroku jadi 9989jam Untuk menipu temanmu wkwk\
     "
     }
