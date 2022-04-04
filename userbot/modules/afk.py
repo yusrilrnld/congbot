@@ -5,14 +5,11 @@
 import asyncio
 from datetime import datetime
 
-from telethon import events
 from telethon.tl import functions, types
 
-from userbot import BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, bot, owner
-from userbot.events import poci_cmd
-from userbot.utils import bash
+from userbot import CMD_HELP
+from userbot.utils import bash, poci_cmd, man_handler
 
 USER_AFK = {}
 afk_time = None
@@ -21,14 +18,15 @@ last_afk_msg = {}
 afk_start = {}
 
 
-@bot.on(events.NewMessage(outgoing=True))
-@bot.on(events.MessageEdited(outgoing=True))
+@man_handler(outgoing=True)
 async def set_not_afk(event):
     global USER_AFK
     global afk_time
     global last_afk_message
     global afk_start
     global afk_end
+    user = await event.client.get_me()
+    owner = user.first_name
     back_alive = datetime.now()
     afk_end = back_alive.replace(microsecond=0)
     if afk_start != {}:
@@ -64,15 +62,10 @@ async def set_not_afk(event):
         afk_time = None
 
         await bash("rm -rf *.webp")
-        await bash("rm -rf *.mp4")
         await bash("rm -rf *.tgs")
-        await bash("rm -rf *.png")
-        await bash("rm -rf *.jpg")
 
 
-@bot.on(
-    events.NewMessage(incoming=True, func=lambda e: bool(e.mentioned or e.is_private))
-)
+@man_handler(incoming=True, func=lambda e: bool(e.mentioned or e.is_private))
 async def on_afk(event):
     if event.fwd_from:
         return
@@ -81,6 +74,8 @@ async def on_afk(event):
     global last_afk_message
     global afk_start
     global afk_end
+    user = await event.client.get_me()
+    owner = user.first_name
     back_alivee = datetime.now()
     afk_end = back_alivee.replace(microsecond=0)
     if afk_start != {}:
@@ -125,7 +120,7 @@ async def on_afk(event):
             pass
 
 
-@bot.on(poci_cmd(outgoing=True, pattern="afk(?: |$)(.*)"))
+@poci_cmd(pattern="afk(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -138,6 +133,8 @@ async def _(event):
     global afk_end
     global reason
     global pic
+    user = await event.client.get_me()
+    owner = user.first_name
     USER_AFK = {}
     afk_time = None
     last_afk_message = {}
@@ -148,7 +145,7 @@ async def _(event):
     reason = event.pattern_match.group(1)
     pic = await event.client.download_media(reply) if reply else None
     if not USER_AFK:
-        last_seen_status = await bot(
+        last_seen_status = await event.client(
             functions.account.GetPrivacyRequest(types.InputPrivacyKeyStatusTimestamp())
         )
         if isinstance(last_seen_status.rules, types.PrivacyValueAllowAll):
@@ -191,43 +188,6 @@ async def _(event):
                     event.chat_id, f"**✘ {owner} Telah AFK ✘**"
                 )
         await event.delete()
-        try:
-            if reason and pic:
-                if pic.endswith((".tgs", ".webp")):
-                    await event.client.send_message(BOTLOG_CHATID, file=pic)
-                    await event.client.send_message(
-                        BOTLOG_CHATID,
-                        f"\n ❏ 𝗔𝗙𝗞 !\n┌ {owner} 𝗟𝗮𝗴𝗶 𝗔𝗙𝗞! \n└ 𝗞𝗮𝗿𝗲𝗻𝗮 : `{reason}`",
-                    )
-                else:
-                    await event.client.send_message(
-                        BOTLOG_CHATID,
-                        f"\n ❏ 𝗔𝗙𝗞 !\n┌ {owner} 𝗟𝗮𝗴𝗶 𝗔𝗙𝗞! \n └ 𝗞𝗮𝗿𝗲𝗻𝗮 : `{reason}`",
-                        file=pic,
-                    )
-            elif reason:
-                await event.client.send_message(
-                    BOTLOG_CHATID,
-                    f"\n ❏ 𝗔𝗙𝗞 !\n┌ {owner} 𝗟𝗮𝗴𝗶 𝗔𝗙𝗞! \n└ 𝗞𝗮𝗿𝗲𝗻𝗮 : `{reason}`",
-                )
-            elif pic:
-                if pic.endswith((".tgs", ".webp")):
-                    await event.client.send_message(BOTLOG_CHATID, file=pic)
-                    await event.client.send_message(
-                        BOTLOG_CHATID, f"\n**✘ {owner} Sedang AFK ✘**"
-                    )
-                else:
-                    await event.client.send_message(
-                        BOTLOG_CHATID,
-                        f"\n**✘ {owner} Sedang AFK ✘**",
-                        file=pic,
-                    )
-            else:
-                await event.client.send_message(
-                    BOTLOG_CHATID, f"\n**✘ {owner} Sedang AFK ✘**"
-                )
-        except Exception as e:
-            BOTLOG_CHATIDger.warn(str(e))
 
 
 CMD_HELP.update(

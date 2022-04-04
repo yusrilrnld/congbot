@@ -1,9 +1,10 @@
+# Copyright (c) 2022 Man-Userbot
 # Credits: @mrismanaziz
 # Thanks To @tofik_dn || https://github.com/tofikdn
-# FROM PocongUserbot < https://github.com/poocong/PocongUserbot >
-# ReCode @pocongonlen
+# This file is a part of < https://github.com/mrismanaziz/Man-Userbot/ >
 
 from pytgcalls import StreamType
+from pytgcalls.exceptions import AlreadyJoinedError
 from pytgcalls.types import Update
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
 from pytgcalls.types.input_stream.quality import (
@@ -14,23 +15,19 @@ from pytgcalls.types.input_stream.quality import (
 )
 from telethon.tl import types
 from telethon.utils import get_display_name
-from youtubesearchpython import VideosSearch
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP
-from userbot import PLAY_PIC as fotoplay
-from userbot import QUEUE_PIC as ngantri
-from userbot import call_py, owner
-from userbot.utils import bash, edit_delete, edit_or_reply, poci_cmd
-from userbot.utils.chattitle import CHAT_TITLE
-from userbot.utils.queues.queues import (
-    QUEUE,
-    add_to_queue,
-    clear_queue,
-    get_queue,
-    pop_an_item,
+from userbot import CMD_HELP, PLAY_PIC, QUEUE_PIC, call_py
+from userbot.core.vcbot import (
+    CHAT_TITLE,
+    gen_thumb,
+    skip_current_song,
+    skip_item,
+    ytdl,
+    ytsearch,
 )
-from userbot.utils.thumbnail import gen_thumb
+from userbot.core.vcbot.queues import QUEUE, add_to_queue, clear_queue, get_queue
+from userbot.utils import edit_delete, edit_or_reply, poci_cmd
 
 
 def vcmention(user):
@@ -40,81 +37,12 @@ def vcmention(user):
     return f"[{full_name}](tg://user?id={user.id})"
 
 
-def ytsearch(query: str):
-    try:
-        search = VideosSearch(query, limit=1).result()
-        data = search["result"][0]
-        songname = data["title"]
-        url = data["link"]
-        duration = data["duration"]
-        thumbnail = f"https://i.ytimg.com/vi/{data['id']}/maxresdefault.jpg"
-        return [songname, url, duration, thumbnail]
-    except Exception as e:
-        print(e)
-        return 0
-
-
-async def ytdl(format: str, link: str):
-    stdout, stderr = await bash(f'yt-dlp -g -f "{format}" {link}')
-    if stdout:
-        return 1, stdout.split("\n")[0]
-    return 0, stderr
-
-
-async def skip_item(chat_id: int, x: int):
-    if chat_id not in QUEUE:
-        return 0
-    chat_queue = get_queue(chat_id)
-    try:
-        songname = chat_queue[x][0]
-        chat_queue.pop(x)
-        return songname
-    except Exception as e:
-        print(e)
-        return 0
-
-
-async def skip_current_song(chat_id: int):
-    if chat_id not in QUEUE:
-        return 0
-    chat_queue = get_queue(chat_id)
-    if len(chat_queue) == 1:
-        await call_py.leave_group_call(chat_id)
-        clear_queue(chat_id)
-        return 1
-    songname = chat_queue[1][0]
-    url = chat_queue[1][1]
-    link = chat_queue[1][2]
-    type = chat_queue[1][3]
-    RESOLUSI = chat_queue[1][4]
-    if type == "Audio":
-        await call_py.change_stream(
-            chat_id,
-            AudioPiped(
-                url,
-                HighQualityAudio(),
-            ),
-        )
-    elif type == "Video":
-        if RESOLUSI == 720:
-            hm = HighQualityVideo()
-        elif RESOLUSI == 480:
-            hm = MediumQualityVideo()
-        elif RESOLUSI == 360:
-            hm = LowQualityVideo()
-        await call_py.change_stream(
-            chat_id, AudioVideoPiped(url, HighQualityAudio(), hm)
-        )
-    pop_an_item(chat_id)
-    return [songname, link, type]
-
-
 @poci_cmd(pattern="play(?:\s|$)([\s\S]*)")
 async def vc_play(event):
     title = event.pattern_match.group(1)
     replied = await event.get_reply_message()
-    sender = await event.get_sender()
     chat = await event.get_chat()
+    titlegc = chat.title
     chat_id = event.chat_id
     from_user = vcmention(event.sender)
     if (
@@ -127,11 +55,11 @@ async def vc_play(event):
     ):
         return await edit_or_reply(event, "**Silahkan Masukan Judul Lagu**")
     elif replied and not replied.audio and not replied.voice or not replied:
-        botman = await edit_or_reply(event, "`Searching...`")
+        botpoci = await edit_or_reply(event, "`Searching...`")
         query = event.text.split(maxsplit=1)[1]
         search = ytsearch(query)
         if search == 0:
-            await botman.edit(
+            await botpoci.edit(
                 "**Tidak Dapat Menemukan Lagu** Coba cari dengan Judul yang Lebih Spesifik"
             )
         else:
@@ -140,18 +68,17 @@ async def vc_play(event):
             url = search[1]
             duration = search[2]
             thumbnail = search[3]
-            userid = sender.id
+            videoid = search[4]
             titlegc = chat.title
             ctitle = await CHAT_TITLE(titlegc)
-            thumb = await gen_thumb(thumbnail, title, userid, ctitle)
-            format = "best[height<=?720][width<=?1280]"
-            hm, ytlink = await ytdl(format, url)
+            thumb = await gen_thumb(thumbnail, title, videoid, ctitle)
+            hm, ytlink = await ytdl(url)
             if hm == 0:
-                await botman.edit(f"`{ytlink}`")
+                await botpoci.edit(f"`{ytlink}`")
             elif chat_id in QUEUE:
                 pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                 caption = f"💡 **Lagu Ditambahkan Ke antrian »** `#{pos}`\n\n**🏷 Judul:** [{songname}]({url})\n**⏱ Durasi:** `{duration}`\n🎧 **Atas permintaan:** {from_user}"
-                await botman.delete()
+                await botpoci.delete()
                 await event.client.send_file(
                     chat_id, thumb, caption=caption, reply_to=event.reply_to_msg_id
                 )
@@ -167,16 +94,22 @@ async def vc_play(event):
                     )
                     add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                     caption = f"🏷 **Judul:** [{songname}]({url})\n**⏱ Durasi:** `{duration}`\n💡 **Status:** `Sedang Memutar`\n🎧 **Atas permintaan:** {from_user}"
-                    await botman.delete()
+                    await botpoci.delete()
                     await event.client.send_file(
                         chat_id, thumb, caption=caption, reply_to=event.reply_to_msg_id
                     )
+                except AlreadyJoinedError:
+                    await call_py.leave_group_call(chat_id)
+                    clear_queue(chat_id)
+                    await botpoci.edit(
+                        "**ERROR:** `Karena akun sedang berada di obrolan suara`\n\n• Silahkan Coba Play lagi"
+                    )
                 except Exception as ep:
                     clear_queue(chat_id)
-                    await botman.edit(f"`{ep}`")
+                    await botpoci.edit(f"`{ep}`")
 
     else:
-        botman = await edit_or_reply(event, "📥 **Sedang Mendownload**")
+        botpoci = await edit_or_reply(event, "📥 **Sedang Mendownload**")
         dl = await replied.download_media()
         link = f"https://t.me/c/{chat.id}/{event.reply_to_msg_id}"
         if replied.audio:
@@ -187,9 +120,9 @@ async def vc_play(event):
             pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
             caption = f"💡 **Lagu Ditambahkan Ke antrian »** `#{pos}`\n\n**🏷 Judul:** [{songname}]({link})\n**👥 Chat ID:** `{chat_id}`\n🎧 **Atas permintaan:** {from_user}"
             await event.client.send_file(
-                chat_id, ngantri, caption=caption, reply_to=event.reply_to_msg_id
+                chat_id, QUEUE_PIC, caption=caption, reply_to=event.reply_to_msg_id
             )
-            await botman.delete()
+            await botpoci.delete()
         else:
             try:
                 await call_py.join_group_call(
@@ -203,20 +136,24 @@ async def vc_play(event):
                 add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 caption = f"🏷 **Judul:** [{songname}]({link})\n**👥 Chat ID:** `{chat_id}`\n💡 **Status:** `Sedang Memutar Lagu`\n🎧 **Atas permintaan:** {from_user}"
                 await event.client.send_file(
-                    chat_id, fotoplay, caption=caption, reply_to=event.reply_to_msg_id
+                    chat_id, PLAY_PIC, caption=caption, reply_to=event.reply_to_msg_id
                 )
-                await botman.delete()
+                await botpoci.delete()
+            except AlreadyJoinedError:
+                await call_py.leave_group_call(chat_id)
+                clear_queue(chat_id)
+                await botpoci.edit(
+                    "**ERROR:** `Karena akun sedang berada di obrolan suara`\n\n• Silahkan Coba Play lagi"
+                )
             except Exception as ep:
                 clear_queue(chat_id)
-                await botman.edit(f"`{ep}`")
+                await botpoci.edit(f"`{ep}`")
 
 
 @poci_cmd(pattern="vplay(?:\s|$)([\s\S]*)")
 async def vc_vplay(event):
     title = event.pattern_match.group(1)
     replied = await event.get_reply_message()
-    sender = await event.get_sender()
-    userid = sender.id
     chat = await event.get_chat()
     titlegc = chat.title
     chat_id = event.chat_id
@@ -246,10 +183,10 @@ async def vc_vplay(event):
             url = search[1]
             duration = search[2]
             thumbnail = search[3]
+            videoid = search[4]
             ctitle = await CHAT_TITLE(titlegc)
-            thumb = await gen_thumb(thumbnail, title, userid, ctitle)
-            format = "best[height<=?720][width<=?1280]"
-            hm, ytlink = await ytdl(format, url)
+            thumb = await gen_thumb(thumbnail, title, videoid, ctitle)
+            hm, ytlink = await ytdl(url)
             if hm == 0:
                 await xnxx.edit(f"`{ytlink}`")
             elif chat_id in QUEUE:
@@ -275,6 +212,12 @@ async def vc_vplay(event):
                         f"**🏷 Judul:** [{songname}]({url})\n**⏱ Durasi:** `{duration}`\n💡 **Status:** `Sedang Memutar Video`\n🎧 **Atas permintaan:** {from_user}",
                         link_preview=False,
                     )
+                except AlreadyJoinedError:
+                    await call_py.leave_group_call(chat_id)
+                    clear_queue(chat_id)
+                    await xnxx.edit(
+                        "**ERROR:** `Karena akun sedang berada di obrolan suara`\n\n• Silahkan Coba Play lagi"
+                    )
                 except Exception as ep:
                     clear_queue(chat_id)
                     await xnxx.edit(f"`{ep}`")
@@ -294,7 +237,7 @@ async def vc_vplay(event):
             pos = add_to_queue(chat_id, songname, dl, link, "Video", RESOLUSI)
             caption = f"💡 **Video Ditambahkan Ke antrian »** `#{pos}`\n\n**🏷 Judul:** [{songname}]({link})\n**👥 Chat ID:** `{chat_id}`\n🎧 **Atas permintaan:** {from_user}"
             await event.client.send_file(
-                chat_id, ngantri, caption=caption, reply_to=event.reply_to_msg_id
+                chat_id, QUEUE_PIC, caption=caption, reply_to=event.reply_to_msg_id
             )
             await xnxx.delete()
         else:
@@ -318,7 +261,13 @@ async def vc_vplay(event):
                 caption = f"🏷 **Judul:** [{songname}]({link})\n**👥 Chat ID:** `{chat_id}`\n💡 **Status:** `Sedang Memutar Video`\n🎧 **Atas permintaan:** {from_user}"
                 await xnxx.delete()
                 await event.client.send_file(
-                    chat_id, fotoplay, caption=caption, reply_to=event.reply_to_msg_id
+                    chat_id, PLAY_PIC, caption=caption, reply_to=event.reply_to_msg_id
+                )
+            except AlreadyJoinedError:
+                await call_py.leave_group_call(chat_id)
+                clear_queue(chat_id)
+                await xnxx.edit(
+                    "**ERROR:** `Karena akun sedang berada di obrolan suara`\n\n• Silahkan Coba Play lagi"
                 )
             except Exception as ep:
                 clear_queue(chat_id)
@@ -337,10 +286,10 @@ async def vc_vplay(event):
             url = search[1]
             duration = search[2]
             thumbnail = search[3]
+            videoid = search[4]
             ctitle = await CHAT_TITLE(titlegc)
-            thumb = await gen_thumb(thumbnail, title, userid, ctitle)
-            format = "best[height<=?720][width<=?1280]"
-            hm, ytlink = await ytdl(format, url)
+            thumb = await gen_thumb(thumbnail, title, videoid, ctitle)
+            hm, ytlink = await ytdl(url)
             if hm == 0:
                 await xnxx.edit(f"`{ytlink}`")
             elif chat_id in QUEUE:
@@ -366,6 +315,12 @@ async def vc_vplay(event):
                     await xnxx.delete()
                     await event.client.send_file(
                         chat_id, thumb, caption=caption, reply_to=event.reply_to_msg_id
+                    )
+                except AlreadyJoinedError:
+                    await call_py.leave_group_call(chat_id)
+                    clear_queue(chat_id)
+                    await xnxx.edit(
+                        "**ERROR:** `Karena akun sedang berada di obrolan suara`\n\n• Silahkan Coba Play lagi"
                     )
                 except Exception as ep:
                     clear_queue(chat_id)
@@ -444,13 +399,13 @@ async def vc_resume(event):
 @poci_cmd(pattern=r"volume(?: |$)(.*)")
 async def vc_volume(event):
     query = event.pattern_match.group(1)
-    await event.client.get_me()
+    me = await event.client.get_me()
     chat = await event.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
     chat_id = event.chat_id
     if not admin and not creator:
-        return await edit_delete(event, f"**Maaf {owner} Bukan Admin 👮**", 30)
+        return await edit_delete(event, f"**Maaf {me.first_name} Bukan Admin 👮**", 30)
 
     if chat_id in QUEUE:
         try:
