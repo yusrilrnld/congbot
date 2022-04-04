@@ -37,7 +37,6 @@ def user_list(l, n):
 
 
 @poci_cmd(pattern="startvc$")
-@register(pattern=r"^\.startvcs$", sudo=True)
 async def start_voice(c):
     me = await c.client.get_me()
     chat = await c.get_chat()
@@ -55,7 +54,6 @@ async def start_voice(c):
 
 
 @poci_cmd(pattern="stopvc$")
-@register(pattern=r"^\.stopvcs$", sudo=True)
 async def stop_voice(c):
     me = await c.client.get_me()
     chat = await c.get_chat()
@@ -91,7 +89,6 @@ async def _(c):
 
 
 @poci_cmd(pattern="vctitle(?: |$)(.*)")
-@register(pattern=r"^\.cvctitle$", sudo=True)
 async def change_title(e):
     title = e.pattern_match.group(1)
     me = await e.client.get_me()
@@ -113,7 +110,6 @@ async def change_title(e):
 
 
 @poci_cmd(pattern="joinvc(?: |$)(.*)")
-@register(pattern=r"^\.joinvcs(?: |$)(.*)", sudo=True)
 async def _(event):
     Pocong = await edit_or_reply(event, "`Processing...`")
     if len(event.text.split()) > 1:
@@ -151,7 +147,6 @@ async def _(event):
 
 
 @poci_cmd(pattern="leavevc(?: |$)(.*)")
-@register(pattern=r"^\.leavevcs(?: |$)(.*)", sudo=True)
 async def vc_end(event):
     Pocong = await edit_or_reply(event, "`Processing...`")
     if len(event.text.split()) > 1:
