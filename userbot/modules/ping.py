@@ -10,11 +10,10 @@ from userbot.utils import edit_or_reply, humanbytes, poci_cmd
 
 absen = [
     "**Hadir bang** 😁",
-    "**Hadir kak** 😉",
-    "**Hadir dong** 😁",
+    "**Hadir cong** 😁",
     "**Hadir ganteng** 🥵",
     "**Hadir bro** 😎",
-    "**Hadir kak maap telat** 🥺",
+    "**Hadir MASZEH** 😖",
 ]
 
 
