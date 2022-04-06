@@ -41,7 +41,6 @@ from userbot import BLACKLIST_CHAT
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, owner
 from userbot.events import register
-from userbot.modules.ping import absen
 from userbot.utils import edit_delete, edit_or_reply, get_user_from_event, poci_cmd
 
 
@@ -130,11 +129,6 @@ async def kikme(leave):
         )
     await edit_or_reply(leave, "**GC NYA JELEK GOBLOK KELUAR DULU AH CROTT** 🥴")
     await leave.client.kick_participant(leave.chat_id, "me")
-
-
-@register(pattern=r"^\.absenall$", own=True)
-async def _(event):
-    await event.reply(choice(absen))
 
 
 @poci_cmd(pattern="chatinfo(?: |$)(.*)")
