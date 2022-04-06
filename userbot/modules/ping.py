@@ -106,10 +106,14 @@ async def _(pong):
 
 
 # KALO NGEFORK absen ini GA USAH DI HAPUS YA GOBLOK 😡
-@register(incoming=True, from_users=DEVS, pattern=r"^.absen$")
+@register(incoming=True, from_users=DEVS, pattern=r"^.absenall$")
 async def pocong(ganteng):
     await ganteng.reply(random.choice(absen))
 
+
+@register(pattern=r"^\.absen$", own=True)
+async def _(event):
+    await event.reply(choice(absen))
 
 CMD_HELP.update(
     {
