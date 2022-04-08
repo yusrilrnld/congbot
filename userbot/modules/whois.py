@@ -15,34 +15,27 @@ from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
-from userbot.events import poci_cmd
+from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from userbot.utils import edit_or_reply, poci_cmd
 
 
-@bot.on(poci_cmd(pattern=r"whois(?: |$)(.*)", outgoing=True))
+@poci_cmd(pattern="whois(?: |$)(.*)")
 async def who(event):
-
-    await event.edit("`Mengambil Informasi Pengguna Ini...`")
-
+    xx = await edit_or_reply(event, "`Mengambil Informasi Pengguna Ini...`")
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
-
     replied_user = await get_user(event)
     if replied_user is None:
-        return await event.edit(
+        return await xx.edit(
             "**itu admin anonim, selamat mencoba cari tahu yang mana!**"
         )
-
     try:
         photo, caption = await fetch_info(replied_user, event)
     except AttributeError:
-        return await event.edit("**Saya Tidak Mendapatkan Informasi Apapun.**")
-
+        return await xx.edit("**Saya Tidak Mendapatkan Informasi Apapun.**")
     message_id_to_reply = event.message.reply_to_msg_id
-
     if not message_id_to_reply:
         message_id_to_reply = None
-
     try:
         await event.client.send_file(
             event.chat_id,
@@ -53,20 +46,18 @@ async def who(event):
             reply_to=message_id_to_reply,
             parse_mode=r"html",
         )
-
         if not photo.startswith("http"):
             os.remove(photo)
         await event.delete()
-
     except TypeError:
-        await event.edit(caption, parse_mode=r"html")
+        await xx.edit(caption, parse_mode=r"html")
 
 
 async def get_user(event):
     """Get the user from argument or replied message."""
     if event.reply_to_msg_id and not event.pattern_match.group(1):
         previous_message = await event.get_reply_message()
-        if previous_message.from_id is None and not event.is_private:
+        if previous_message.sender_id is None and not event.is_private:
             return None
         replied_user = await event.client(
             GetFullUserRequest(previous_message.sender_id)
@@ -101,7 +92,7 @@ async def fetch_info(replied_user, event):
     """Get details from the User object."""
     replied_user_profile_photos = await event.client(
         GetUserPhotosRequest(
-            user_id=replied_user.user.id, offset=42, max_id=0, limit=80
+            user_id=replied_user.full_user.id, offset=42, max_id=0, limit=80
         )
     )
     replied_user_profile_photos_count = (
@@ -111,20 +102,20 @@ async def fetch_info(replied_user, event):
         replied_user_profile_photos_count = replied_user_profile_photos.count
     except AttributeError:
         pass
-    user_id = replied_user.user.id
-    first_name = replied_user.user.first_name
-    last_name = replied_user.user.last_name
+    user_id = replied_user.full_user.id
+    first_name = replied_user.users[0].first_name
+    last_name = replied_user.users[0].last_name
     try:
-        dc_id, _ = get_input_location(replied_user.profile_photo)
+        dc_id, _ = get_input_location(replied_user.full_user.profile_photo)
     except Exception as e:
         dc_id = "Tidak Dapat Mengambil DC ID!"
         str(e)
-    common_chat = replied_user.common_chats_count
-    username = replied_user.user.username
-    user_bio = replied_user.about
-    is_bot = replied_user.user.bot
-    restricted = replied_user.user.restricted
-    verified = replied_user.user.verified
+    common_chat = replied_user.full_users.common_chats_count
+    username = replied_user.users[0].username
+    user_bio = replied_user.full_user.about
+    is_bot = replied_user.users[0].bot
+    restricted = replied_user.users[0].restricted
+    verified = replied_user.users[0].verified
     photo = await event.client.download_profile_photo(
         user_id, TEMP_DOWNLOAD_DIRECTORY + str(user_id) + ".jpg", download_big=True
     )
@@ -150,7 +141,7 @@ async def fetch_info(replied_user, event):
     caption += f"Bio : <code>{user_bio}</code>\n\n"
     caption += f"Group yang sama Dengan Pengguna Ini : {common_chat}\n"
     caption += "Link Permanen Ke Profil : "
-    caption += f'<a href="tg://user?id={user_id}">{first_name}</a>'
+    caption += f'<a href="tg://user?id={user_id}">here</a>'
 
     return photo, caption
 
