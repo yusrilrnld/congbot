@@ -110,7 +110,7 @@ async def fetch_info(replied_user, event):
     except Exception as e:
         dc_id = "Tidak Dapat Mengambil DC ID!"
         str(e)
-    common_chat = replied_user.full_users.common_chats_count
+    common_chat = replied_user.full_user.common_chats_count
     username = replied_user.users[0].username
     user_bio = replied_user.full_user.about
     is_bot = replied_user.users[0].bot
