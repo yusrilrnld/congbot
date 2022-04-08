@@ -38,7 +38,7 @@ def mentionuser(name, userid):
 
 
 @poci_cmd(pattern="gban(?: |$)(.*)")
-@register(incoming=True, from_users=DEVS, pattern=r"^\.cgban(?: |$)(.*)")
+@register(pattern=r"^\.cgban(?: |$)(.*)", sudo=True)
 async def gban(event):
     if event.fwd_from:
         return
@@ -92,7 +92,7 @@ async def gban(event):
 
 
 @poci_cmd(pattern="ungban(?: |$)(.*)")
-@register(incoming=True, from_users=DEVS, pattern=r"^\.cungban(?: |$)(.*)")
+@register(pattern=r"^\.cungban(?: |$)(.*)", sudo=True)
 async def ungban(event):
     if event.fwd_from:
         return

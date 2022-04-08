@@ -5,7 +5,7 @@ from telethon.events import ChatAction
 
 from userbot import DEVS, bot, owner
 from userbot.events import poci_cmd, register
-from userbot.utils import get_user_from_event
+from userbot.utils import get_user_from_event, poci_cmd
 
 # Ported For Lord-Userbot by liualvinas/Alvin
 
@@ -41,8 +41,8 @@ async def handler(tele):
                         return
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"gband(?: |$)(.*)"))
-@register(incoming=True, from_users=DEVS, pattern=r"^\.cgband(?: |$)(.*)")
+@poci_cmd(pattern="gband(?: |$)(.*)")
+@register(pattern=r"^\.cgband(?: |$)(.*)", sudo=True)
 async def gben(userbot):
     dc = userbot
     sender = await dc.get_sender()
@@ -110,8 +110,8 @@ async def gben(userbot):
     )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"ungband(?: |$)(.*)"))
-@register(incoming=True, from_users=DEVS, pattern=r"^\.cungband(?: |$)(.*)")
+@poci_cmd(pattern="ungband(?: |$)(.*)")
+@register(pattern=r"^\.cungband(?: |$)(.*)", sudo=True)
 async def gunben(userbot):
     dc = userbot
     sender = await dc.get_sender()
@@ -140,7 +140,7 @@ async def gunben(userbot):
     if user:
         if user.id in DEVS:
             return await dark.edit(
-                "**Man Tidak Bisa Terkena Perintah Ini, Karna Dia Pembuat saya**"
+                "**Developer Tidak Bisa Terkena Perintah Ini, Karna Dia Pembuat saya**"
             )
         try:
             from userbot.modules.sql_helper.gmute_sql import ungmute

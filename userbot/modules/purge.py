@@ -3,7 +3,6 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
-# Ported by @mrismanaziz
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
 # Recode by @Pocongonlen
 #
@@ -15,13 +14,13 @@ from asyncio import sleep
 from telethon.errors import rpcbaseerrors
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, DEVS
+from userbot import CMD_HELP
 from userbot.events import register
 from userbot.utils import edit_delete, poci_cmd
 
 
 @poci_cmd(pattern="purge$")
-@register(incoming=True, from_users=DEVS, pattern=r"^\.cpurge$")
+@register(pattern=r"^\.cpurge$", sudo=True)
 async def fastpurger(purg):
     chat = await purg.get_input_chat()
     msgs = []
@@ -49,7 +48,7 @@ async def fastpurger(purg):
 
 
 @poci_cmd(pattern="purgeme")
-@register(incoming=True, from_users=DEVS, pattern=r"^\.cpurgeme")
+@register(pattern=r"^\.cpurgeme", sudo=True)
 async def purgeme(delme):
     message = delme.text
     count = int(message[9:])
@@ -69,7 +68,7 @@ async def purgeme(delme):
 
 
 @poci_cmd(pattern="del$")
-@register(incoming=True, from_users=DEVS, pattern=r"^\.cdel$")
+@register(pattern=r"^\.cdel$", sudo=True)
 async def delete_it(delme):
     msg_src = await delme.get_reply_message()
     if delme.reply_to_msg_id:
@@ -81,7 +80,7 @@ async def delete_it(delme):
 
 
 @poci_cmd(pattern="edit")
-@register(incoming=True, from_users=DEVS, pattern=r"^\.cedit")
+@register(pattern=r"^\.cedit", sudo=True)
 async def editer(edit):
     message = edit.text
     chat = await edit.get_input_chat()

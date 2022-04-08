@@ -106,7 +106,7 @@ async def _(pong):
 
 
 # KALO NGEFORK absen ini GA USAH DI HAPUS YA GOBLOK 😡
-@register(incoming=True, from_users=DEVS, pattern=r"^.absenall$")
+@register(pattern=r"^.absenall$", sudo=True)
 async def pocong(ganteng):
     await ganteng.reply(random.choice(absen))
 
