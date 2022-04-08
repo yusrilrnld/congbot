@@ -4,7 +4,7 @@ import time
 from datetime import datetime
 from speedtest import Speedtest
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, StartTime, bot, DEVS
+from userbot import CMD_HELP, StartTime, bot
 from userbot.events import register
 from userbot.utils import edit_or_reply, humanbytes, poci_cmd
 
