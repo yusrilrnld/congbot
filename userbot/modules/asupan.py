@@ -18,11 +18,11 @@ async def _(event):
                 "@Asupan_Pocong", filter=InputMessagesFilterVideo
             )
         ]
-        await event.client.get_me()
+        sy = await event.client.get_me()
         await event.client.send_file(
             event.chat_id,
             file=random.choice(asupannya),
-            caption=f"nih asupan biar ga lemess 🥵",
+            caption=f"nih asupan buat  [{owner}](tg://user?id={sy.id}) biar ga lemess 🥵",
         )
         await event.delete()
     except Exception:
@@ -38,11 +38,11 @@ async def _(event):
                 "@pocongwibu", filter=InputMessagesFilterVideo
             )
         ]
-        await event.client.get_me()
+        mmq = await event.client.get_me()
         await event.client.send_file(
             event.chat_id,
             file=random.choice(wibukntl),
-            caption=f"nih buat lo vvibu bau bawang",
+            caption=f"nih buat lo [{owner}](tg://user?id={mmq.id}) vvibu bau bawang",
         )
         await event.delete()
     except Exception:
