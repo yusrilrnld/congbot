@@ -4,7 +4,7 @@
 import requests
 import random
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP
+from userbot import CMD_HELP, owner
 from userbot.utils import poci_cmd
 from telethon.tl.types import InputMessagesFilterVideo
 
@@ -46,7 +46,7 @@ async def _(event):
         )
         await event.delete()
     except Exception:
-        await event.edit("Tidak bisa menemukan video asupan.")
+        await event.edit("Tidak bisa menemukan video anime.")
 
 
 @poci_cmd(pattern="chika$")
