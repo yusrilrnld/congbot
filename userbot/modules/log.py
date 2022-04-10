@@ -20,8 +20,6 @@ from userbot.utils import (
 )
 from userbot.utils.tools import media_type
 
-LOGS = logging.getLogger(__name__)
-
 
 class LOG_CHATS:
     def __init__(self):
@@ -128,7 +126,7 @@ async def log_tagged_messages(event):
 
 @poci_cmd(pattern="save(?: |$)(.*)")
 async def log(log_text):
-    if BOTLOG:
+    if BOTLOG_CHATID:
         if log_text.reply_to_msg_id:
             reply_msg = await log_text.get_reply_message()
             await reply_msg.forward_to(BOTLOG_CHATID)
@@ -144,7 +142,7 @@ async def log(log_text):
         await edit_delete(
             log_text,
             "**Untuk Menggunakan Module ini, Kamu Harus Mengatur** `BOTLOG_CHATID` ** di Config Vars***",
-               30,
+            30,
         )
 
 
