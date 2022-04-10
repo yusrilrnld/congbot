@@ -13,7 +13,6 @@ from userbot.modules.sql_helper.globals import addgvar, gvarstatus
 from userbot.modules.vcplugin import vcmention
 from userbot.utils import (
     _format,
-    chataction,
     edit_delete,
     edit_or_reply,
     poci_cmd,
