@@ -17,7 +17,6 @@ from userbot.utils import (
     edit_or_reply,
     poci_cmd,
     pocong_handler,
-    chataction,
 )
 from userbot.utils.tools import media_type
 
