@@ -13,6 +13,7 @@ from userbot.modules.sql_helper.globals import addgvar, gvarstatus
 from userbot.modules.vcplugin import vcmention
 from userbot.utils import (
     _format,
+    chataction,
     edit_delete,
     edit_or_reply,
     poci_cmd,
@@ -31,7 +32,7 @@ class LOG_CHATS:
 LOG_CHATS_ = LOG_CHATS()
 
 
-@ChatAction()
+@chataction()
 async def logaddjoin(event):
     user = await event.get_user()
     chat = await event.get_chat()
