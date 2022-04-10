@@ -7,7 +7,6 @@
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest
-from telethon.tl.functions.messages import DeleteHistoryRequest
 from telethon import events
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
