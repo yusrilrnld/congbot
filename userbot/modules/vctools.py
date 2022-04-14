@@ -124,8 +124,8 @@ async def _(event):
             return await Pocong.edit(f"**ERROR:** `{e}`")
     else:
         chat_id = event.chat_id
-    file = "./userbot/resources/audio-pocong.mp3"
     if chat_id:
+    file = "./userbot/resources/audio-pocong.mp3"
         try:
             await call_py.join_group_call(
                 chat_id,
@@ -140,14 +140,11 @@ async def _(event):
                 f"❏ **Berhasil Join Ke Obrolan Suara**\n└ **Chat ID:** `{chat_id}`"
             )
         except AlreadyJoinedError:
-            await call_py.leave_group_call(chat_id)
-            await edit_delete(
-                Pocong,
-                "**ERROR:** `Karena akun sedang berada di obrolan suara`\n\n• Silahkan coba `.joinvc` lagi",
-                45,
+            return await edit_delete(
+                Pocong, "**INFO:** `akun anda sudah berada di obrolan suara`", 45
             )
         except Exception as e:
-            await Pocong.edit(f"**INFO:** `{e}`")
+            return await Pocong.edit(f"**INFO:** `{e}`")
 
 
 @poci_cmd(pattern="leavevc(?: |$)(.*)")
@@ -170,7 +167,7 @@ async def vc_end(event):
                 f"❏ **Berhasil Turun dari Obrolan Suara**\n└ **Chat ID:** `{chat_id}`",
             )
         except Exception as e:
-            await Pocong.edit(f"**INFO:** `{e}`")
+            return await Pocong.edit(f"**INFO:** `{e}`")
 
 
 CMD_HELP.update(
