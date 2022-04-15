@@ -7,13 +7,14 @@
 
 from asyncio import sleep
 
-from userbot import BOTLOG, BOTLOG_CHATID
+from userbot import BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, bot
-from userbot.events import poci_cmd, register
+from userbot import CMD_HELP
+from userbot.events import register
+from userbot.utils import poci_cmd
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"notes$"))
+@poci_cmd(pattern="notes$")
 async def notes_active(svd):
     """For .notes command, list all of the notes saved in a chat."""
     try:
@@ -29,7 +30,7 @@ async def notes_active(svd):
     await svd.edit(message)
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"clear (\w*)"))
+@poci_cmd(pattern="clear (\w*)")
 async def remove_notes(clr):
     """For .clear command, clear note with the given name."""
     try:
@@ -44,7 +45,7 @@ async def remove_notes(clr):
     return await clr.edit("**Berhasil Menghapus Catatan:** `{}`".format(notename))
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"save (\w*)"))
+@poci_cmd(pattern="save (\w*)")
 async def add_note(fltr):
     """For .save command, saves notes in a chat."""
     try:
@@ -112,7 +113,7 @@ async def incom_note(getnt):
         pass
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"rmbotnotes (.*)"))
+@poci_cmd(pattern="rmbotnotes (.*)")
 async def kick_marie_notes(kick):
     """ For .rmbotnotes command, allows you to kick all \
         Marie(or her clones) notes from a chat. """
@@ -131,7 +132,7 @@ async def kick_marie_notes(kick):
             await kick.reply("/clear %s" % (i.strip()))
         await sleep(0.3)
     await kick.respond("```Successfully purged bots notes yaay!```\n Gimme cookies!")
-    if BOTLOG:
+    if BOTLOG_CHATID:
         await kick.client.send_message(
             BOTLOG_CHATID, "I cleaned all Notes at " + str(kick.chat_id)
         )

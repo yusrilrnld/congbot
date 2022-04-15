@@ -9,7 +9,7 @@ from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.types import User
 from telethon import events
 
-from userbot import BOTLOG, BOTLOG_CHATID
+from userbot import BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, COUNT_PM, LASTMSG, LOGS, PM_AUTO_BAN, PM_LIMIT, bot
 from userbot.events import poci_cmd
@@ -85,7 +85,7 @@ async def permitpm(event):
                     del COUNT_PM[event.chat_id]
                     del LASTMSG[event.chat_id]
                 except KeyError:
-                    if BOTLOG:
+                    if BOTLOG_CHATID:
                         await event.client.send_message(
                             BOTLOG_CHATID,
                             "**Terjadi Error Saat Menghitung Private Message, Mohon Restart Bot!**",
@@ -95,7 +95,7 @@ async def permitpm(event):
                 await event.client(BlockRequest(event.chat_id))
                 await event.client(ReportSpamRequest(peer=event.chat_id))
 
-                if BOTLOG:
+                if BOTLOG_CHATID:
                     name = await event.client.get_entity(event.chat_id)
                     name0 = str(name.first_name)
                     await event.client.send_message(
@@ -148,7 +148,7 @@ async def auto_accept(event):
                     except IntegrityError:
                         return
 
-                if is_approved(event.chat_id) and BOTLOG:
+                if is_approved(event.chat_id) and BOTLOG_CHATID:
                     await event.client.send_message(
                         BOTLOG_CHATID,
                         "**#AUTO_APPROVED**\n"
@@ -400,7 +400,7 @@ async def add_pmsg(cust_msg):
         sql.addgvar("unapproved_msg", msg)
         await cust_msg.edit("**Pesan Berhasil Disimpan Ke Room Chat**")
 
-        if BOTLOG:
+        if BOTLOG_CHATID:
             await cust_msg.client.send_message(
                 BOTLOG_CHATID,
                 f"**{status} PMPERMIT Yang Tersimpan:** \n\n{msg}",

@@ -13,7 +13,7 @@ import aiohttp
 import heroku3
 import urllib3
 
-from userbot import BOTLOG, BOTLOG_CHATID
+from userbot import BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, HEROKU_API_KEY, HEROKU_APP_NAME, SUDO_USERS
 from userbot.modules.sql_helper.globals import addgvar, delgvar, gvarstatus
@@ -49,7 +49,7 @@ async def variable(var):
         variable = var.pattern_match.group(2)
         if variable == "":
             configvars = heroku_var.to_dict()
-            if BOTLOG:
+            if BOTLOG_CHATID:
                 msg = "".join(
                     f"`{item}` = `{configvars[item]}`\n" for item in configvars
                 )
@@ -61,7 +61,7 @@ async def variable(var):
             await xx.edit("**Mohon Ubah Var** `BOTLOG` **Ke** `True`")
             return False
         if variable in heroku_var:
-            if BOTLOG:
+            if BOTLOG_CHATID:
                 await var.client.send_message(
                     BOTLOG_CHATID,
                     "**Logger : #SYSTEM**\n\n"
@@ -81,7 +81,7 @@ async def variable(var):
             await xx.edit("**Mohon Tentukan Config Vars Yang Mau Anda Hapus**")
             return False
         if variable in heroku_var:
-            if BOTLOG:
+            if BOTLOG_CHATID:
                 await var.client.send_message(
                     BOTLOG_CHATID,
                     "**Logger : #SYSTEM**\n\n"
@@ -107,7 +107,7 @@ async def set_var(var):
     variable = var.pattern_match.group(1)
     value = var.pattern_match.group(2)
     if variable in heroku_var:
-        if BOTLOG:
+        if BOTLOG_CHATID:
             await var.client.send_message(
                 BOTLOG_CHATID,
                 "**Logger : #SYSTEM**\n\n"
@@ -116,7 +116,7 @@ async def set_var(var):
             )
         await xx.edit("`Sedang Proses, Mohon Tunggu sebentar..`")
     else:
-        if BOTLOG:
+        if BOTLOG_CHATID:
             await var.client.send_message(
                 BOTLOG_CHATID,
                 "**Logger : #SYSTEM**\n\n"

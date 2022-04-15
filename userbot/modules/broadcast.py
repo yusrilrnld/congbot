@@ -5,15 +5,14 @@
 
 from asyncio import sleep
 
-from userbot import BOTLOG, BOTLOG_CHATID
+from userbot import BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, LOGS, bot
-from userbot.events import poci_cmd
+from userbot import CMD_HELP, LOGS
 from userbot.modules.sql_helper import broadcast_sql as sql
-from userbot.utils import parse_pre
+from userbot.utils import poci_cmd, parse_pre
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"sendto ?(.*)"))
+@poci_cmd(pattern="sendto ?(.*)")
 async def catbroadcast_send(event):
     if event.fwd_from:
         return
@@ -51,7 +50,7 @@ async def catbroadcast_send(event):
         await sleep(0.5)
     resultext = f"**Pesan dikirim ke** `{i}` **obrolan keluar** `{no_of_chats}` **obrolan dalam kategori** `{keyword}`"
     await catevent.edit(resultext)
-    if BOTLOG:
+    if BOTLOG_CHATID:
         await event.client.send_message(
             BOTLOG_CHATID,
             f"**Sebuah pesan dikirim ke** `{i}` **obrolan keluar** `{no_of_chats}` **obrolan dalam kategori** `{keyword}`",
@@ -59,7 +58,7 @@ async def catbroadcast_send(event):
         )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"fwdto ?(.*)"))
+@poci_cmd(pattern="fwdto ?(.*)")
 async def catbroadcast_send(event):
     if event.fwd_from:
         return
@@ -97,7 +96,7 @@ async def catbroadcast_send(event):
         await sleep(0.5)
     resultext = f"**Pesan dikirim ke** {i} **obrolan keluar** {no_of_chats} **obrolan dalam kategori** `{keyword}`"
     await catevent.edit(resultext)
-    if BOTLOG:
+    if BOTLOG_CHATID:
         await event.client.send_message(
             BOTLOG_CHATID,
             f"**Sebuah pesan diteruskan ke** `{i}` **obrolan keluar** `{no_of_chats}` **obrolan dalam kategori** `{keyword}`",
@@ -105,7 +104,7 @@ async def catbroadcast_send(event):
         )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"addto ?(.*)"))
+@poci_cmd(pattern="addto ?(.*)")
 async def catbroadcast_add(event):
     if event.fwd_from:
         return
@@ -126,7 +125,7 @@ async def catbroadcast_add(event):
         f"Obrolan ini Sekarang ditambahkan ke kategori {keyword}", parse_mode=parse_pre
     )
     chat = await event.get_chat()
-    if BOTLOG:
+    if BOTLOG_CHATID:
         try:
             await event.client.send_message(
                 BOTLOG_CHATID,
@@ -141,7 +140,7 @@ async def catbroadcast_add(event):
             )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"rmfrom ?(.*)"))
+@poci_cmd(pattern="rmfrom ?(.*)")
 async def catbroadcast_remove(event):
     if event.fwd_from:
         return
@@ -162,7 +161,7 @@ async def catbroadcast_remove(event):
         parse_mode=parse_pre,
     )
     chat = await event.get_chat()
-    if BOTLOG:
+    if BOTLOG_CHATID:
         try:
             await event.client.send_message(
                 BOTLOG_CHATID,
@@ -177,7 +176,7 @@ async def catbroadcast_remove(event):
             )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"bclist ?(.*)"))
+@poci_cmd(pattern="bclist ?(.*)")
 async def catbroadcast_list(event):
     if event.fwd_from:
         return
@@ -217,7 +216,7 @@ async def catbroadcast_list(event):
     await catevent.edit(finaloutput)
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"bclistall ?(.*)"))
+@poci_cmd(pattern="bclistall ?(.*)")
 async def catbroadcast_list(event):
     if event.fwd_from:
         return
@@ -233,7 +232,7 @@ async def catbroadcast_list(event):
     await event.efit(resultext)
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"frmfrom ?(.*)"))
+@poci_cmd(pattern="frmfrom ?(.*)")
 async def catbroadcast_remove(event):
     if event.fwd_from:
         return
@@ -275,7 +274,7 @@ async def catbroadcast_remove(event):
         parse_mode=parse_pre,
     )
     chat = await event.get_chat()
-    if BOTLOG:
+    if BOTLOG_CHATID
         try:
             await event.client.send_message(
                 BOTLOG_CHATID,
@@ -290,7 +289,7 @@ async def catbroadcast_remove(event):
             )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"delc ?(.*)"))
+@poci_cmd(pattern="delc ?(.*)")
 async def catbroadcast_delete(event):
     if event.fwd_from:
         return

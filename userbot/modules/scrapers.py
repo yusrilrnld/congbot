@@ -57,7 +57,7 @@ from yt_dlp.utils import (
     XAttrMetadataError,
 )
 
-from userbot import BOTLOG, BOTLOG_CHATID
+from userbot import BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import (
     CMD_HELP,
@@ -67,13 +67,13 @@ from userbot import (
     TEMP_DOWNLOAD_DIRECTORY,
     bot,
 )
-from userbot.events import poci_cmd
 from userbot.modules.upload_download import get_video_thumb
 from userbot.utils import (
     chrome,
     edit_delete,
     edit_or_reply,
     googleimagesdownload,
+    poci_cmd,
     options,
     progress,
 )
@@ -101,7 +101,7 @@ async def ocr_space_file(
     return r.json()
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"img (.*)"))
+@poci_cmd(pattern="img (.*)")
 async def img_sampler(event):
     """For .img command, search and return images matching the query."""
     await event.edit("`Sedang Mencari Gambar Yang Anda Cari...`")
@@ -133,7 +133,7 @@ async def img_sampler(event):
     await event.delete()
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"currency ([\d\.]+) ([a-zA-Z]+) ([a-zA-Z]+)"))
+@poci_cmd(pattern="currency ([\d\.]+) ([a-zA-Z]+) ([a-zA-Z]+)")
 async def moni(event):
     c_from_val = float(event.pattern_match.group(1))
     c_from = (event.pattern_match.group(2)).upper()
@@ -155,7 +155,7 @@ async def moni(event):
     await event.edit(f"**{c_from_val} {c_from} = {c_to_val} {c_to}**")
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"google ([\s\S]*)"))
+@poci_cmd(pattern="google ([\s\S]*)")
 async def gsearch(q_event):
     man = await edit_or_reply(q_event, "`Processing...`")
     match = q_event.pattern_match.group(1)
@@ -211,7 +211,7 @@ async def gsearch(q_event):
     )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"wiki (.*)"))
+@poci_cmd(pattern="wiki (.*)")
 async def wiki(wiki_q):
     """For .wiki command, fetch content from Wikipedia."""
     match = wiki_q.pattern_match.group(1)
@@ -240,7 +240,7 @@ async def wiki(wiki_q):
     await wiki_q.edit("**Search:**\n`" + match + "`\n\n**Result:**\n" + result)
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"ud (.*)"))
+@poci_cmd(pattern="ud (.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -258,7 +258,7 @@ async def _(event):
         await event.edit("Tidak ada hasil untuk **" + word + "**")
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"tts(?: |$)([\s\S]*)"))
+@poci_cmd(pattern="tts(?: |$)([\s\S]*)")
 async def text_to_speech(query):
     """For .tts command, a wrapper for Google Text-to-Speech."""
     textx = await query.get_reply_message()
@@ -297,7 +297,7 @@ async def text_to_speech(query):
         await query.delete()
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"tr(?: |$)(.*)"))
+@poci_cmd(pattern="tr(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -329,7 +329,7 @@ async def _(event):
         await event.edit(str(exc))
 
 
-@bot.on(poci_cmd(pattern=r"lang (tr|tts) (.*)", outgoing=True))
+@poci_cmd(pattern="lang (tr|tts) (.*)")
 async def lang(value):
     """For .lang command, change the default langauge of userbot scrapers."""
     util = value.pattern_match.group(1).lower()
@@ -360,14 +360,14 @@ async def lang(value):
     await value.edit(
         f"**Bahasa untuk** `{scraper}` **diganti menjadi** `{LANG.title()}`"
     )
-    if BOTLOG:
+    if BOTLOG_CHATID:
         await value.client.send_message(
             BOTLOG_CHATID,
             f"**Bahasa untuk** `{scraper}` **diganti menjadi** `{LANG.title()}`",
         )
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"utube (\d*) *(.*)"))
+@poci_cmd(pattern="utube (\d*) *(.*)")
 async def yt_search(video_q):
     """For .yt command, do a YouTube search from Telegram."""
     if video_q.pattern_match.group(1) != "":
@@ -407,7 +407,7 @@ async def yt_search(video_q):
     await video_q.edit(output, link_preview=False)
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"yt(audio|video( \d{0,4})?) (.*)"))
+@poci_cmd(pattern="yt(audio|video( \d{0,4})?) (.*)")
 async def download_video(v_url):
     """For .yt command, download media from YouTube and many other sites."""
     dl_type = v_url.pattern_match.group(1).lower()
@@ -591,7 +591,7 @@ async def download_video(v_url):
         await v_url.delete()
 
 
-@bot.on(poci_cmd(outgoing=True, pattern=r"rbg(?: |$)(.*)"))
+@poci_cmd(pattern="rbg(?: |$)(.*)")
 async def kbg(remob):
     """For .rbg command, Remove Image Background."""
     if REM_BG_API_KEY is None:
@@ -679,7 +679,7 @@ async def ReTrieveURL(input_url):
     )
 
 
-@bot.on(poci_cmd(pattern=r"ocr (.*)", outgoing=True))
+@poci_cmd(pattern="ocr (.*)")
 async def ocr(event):
     if not OCR_SPACE_API_KEY:
         return await event.edit(
@@ -704,7 +704,7 @@ async def ocr(event):
     os.remove(downloaded_file_name)
 
 
-@bot.on(poci_cmd(pattern=r"decode$", outgoing=True))
+@poci_cmd(pattern="decode$")
 async def parseqr(qr_e):
     """For .decode command, get QR Code/BarCode content from the replied photo."""
     downloaded_file_name = await qr_e.client.download_media(
@@ -739,7 +739,7 @@ async def parseqr(qr_e):
     await qr_e.edit(qr_contents)
 
 
-@bot.on(poci_cmd(pattern=r"barcode(?: |$)([\s\S]*)", outgoing=True))
+@poci_cmd(pattern="barcode(?: |$)([\s\S]*)")
 async def bq(event):
     """For .barcode command, genrate a barcode containing the given content."""
     await event.edit("`Processing..`")
@@ -774,7 +774,7 @@ async def bq(event):
     await event.delete()
 
 
-@bot.on(poci_cmd(pattern=r"makeqr(?: |$)([\s\S]*)", outgoing=True))
+@poci_cmd(pattern="makeqr(?: |$)([\s\S]*)")
 async def make_qr(makeqr):
     """For .makeqr command, make a QR Code containing the given content."""
     input_str = makeqr.pattern_match.group(1)
@@ -812,7 +812,7 @@ async def make_qr(makeqr):
     await makeqr.delete()
 
 
-@bot.on(poci_cmd(pattern=r"ss (.*)", outgoing=True))
+@poci_cmd(pattern="ss (.*)")
 async def capture(url):
     """For .ss command, capture a website's screenshot and send the photo."""
     await url.edit("`Processing...`")
