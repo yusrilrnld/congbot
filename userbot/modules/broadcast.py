@@ -274,7 +274,7 @@ async def catbroadcast_remove(event):
         parse_mode=parse_pre,
     )
     chat = await event.get_chat()
-    if BOTLOG_CHATID
+    if BOTLOG_CHATID:
         try:
             await event.client.send_message(
                 BOTLOG_CHATID,
