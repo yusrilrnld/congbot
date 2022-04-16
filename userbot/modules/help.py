@@ -5,7 +5,7 @@
 #
 """ Userbot help command """
 
-from userbot import CHANNEL
+from userbot import CHANNEL, GROUP
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, ICON_HELP
 from userbot.utils import edit_delete, edit_or_reply, poci_cmd
@@ -18,9 +18,9 @@ async def help(event):
     args = event.pattern_match.group(1).lower()
     if args:
         if args in CMD_HELP:
-            await edit_or_reply(event, str(CMD_HELP[args]))
+            await edit_or_reply(event, f"{CMD_HELP[args]}\n\nSupport @{GROUP}")
         else:
-            await edit_delete(event, f"`{args}` **Module yang lu cari gada tod.**")
+            await edit_delete(event, f"`{args}` **Maaf Module yang anda cari tidak tersedia.**")
     else:
         user = await event.client.get_me()
         string = ""
