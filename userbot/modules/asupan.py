@@ -5,12 +5,13 @@ import requests
 import random
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, owner
-from userbot.utils import poci_cmd
+from userbot.utils import edit_or_reply, edit_delete, poci_cmd
 from telethon.tl.types import InputMessagesFilterVideo
 
 
 @poci_cmd(pattern="asupan$")
 async def _(event):
+    xx = await edit_or_reply(event, "`Bentar.... cari video asupannya dlu`")
     try:
         asupannya = [
             asupan
@@ -24,13 +25,14 @@ async def _(event):
             file=random.choice(asupannya),
             caption=f"nih asupan buat  [{owner}](tg://user?id={sy.id}) biar ga lemess 🥵",
         )
-        await event.delete()
+        await xx.delete()
     except Exception:
-        await event.edit("Tidak bisa menemukan video asupan.")
+        await xx.edit("Tidak bisa menemukan video asupan.")
 
 
 @poci_cmd(pattern="wibu$")
 async def _(event):
+    xx = await edit_or_reply(event, "`Prosses.... ya wibuu`")
     try:
         wibukntl = [
             wibu
@@ -44,19 +46,20 @@ async def _(event):
             file=random.choice(wibukntl),
             caption=f"nih buat lo [{owner}](tg://user?id={mmq.id}) vvibu bau bawang",
         )
-        await event.delete()
+        await xx.delete()
     except Exception:
-        await event.edit("Tidak bisa menemukan video anime.")
+        await xx.edit("Tidak bisa menemukan video anime.")
 
 
 @poci_cmd(pattern="chika$")
 async def _(event):
+    xx = await edit_or_reply(event, Prosess....)
     try:
         response = requests.get("https://api-alphabot.herokuapp.com/api/asupan/chika?apikey=Alphabot").json()
         await event.client.send_file(event.chat_id, response["url"])
-        await event.delete()
+        await xx.delete()
     except Exception:
-        await event.edit("**Tidak bisa menemukan video chikakiku.**")
+        await xx.edit("**Maaf 🥺 , untuk cmd ini belum dapat digunakan untuk saat ini.**")
 
 
 CMD_HELP.update(
