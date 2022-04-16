@@ -5,7 +5,7 @@ import requests
 import random
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, owner
-from userbot.utils import edit_or_reply, edit_delete, poci_cmd
+from userbot.utils import edit_or_reply, poci_cmd
 from telethon.tl.types import InputMessagesFilterVideo
 
 
