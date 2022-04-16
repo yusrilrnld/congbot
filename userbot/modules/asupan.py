@@ -53,7 +53,7 @@ async def _(event):
 
 @poci_cmd(pattern="chika$")
 async def _(event):
-    xx = await edit_or_reply(event, Prosess....)
+    xx = await edit_or_reply(event, "`Prosess....`")
     try:
         response = requests.get("https://api-alphabot.herokuapp.com/api/asupan/chika?apikey=Alphabot").json()
         await event.client.send_file(event.chat_id, response["url"])
