@@ -184,7 +184,6 @@ CMD_HELP.update(
         \n\n  •  **Syntax :** `{cmd}delblacklist`\
         \n  •  **Function : **Untuk Menghapus grup tersebut dari blacklist gcast.\
         \n  •  **Note : **Ketik perintah** `{cmd}addblacklist` **dan** `{cmd}delblacklist` **di grup yang kamu Blacklist.\
-        
     "
     }
 )
