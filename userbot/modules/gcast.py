@@ -69,7 +69,7 @@ async def gcast(event):
 
 @poci_cmd(pattern="gucast(?: |$)(.*)")
 async def gucast(event):
-    if xx := event.pattern_match.group(1)
+    if xx := event.pattern_match.group(1):
         msg = xx
     elif event.is_reply:
         msg = await event.get_reply_message()
