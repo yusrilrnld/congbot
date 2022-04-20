@@ -131,8 +131,8 @@ async def kikme(leave):
     await leave.client.kick_participant(leave.chat_id, "me")
     
     
- @poci_cmd(pattern="leaveall$")
- async def kickmeall(event):
+@poci_cmd(pattern="leaveall$")
+async def kickmeall(event):
      Kyy = await edit_or_reply(event, "`Global leave from group chats...`")
      er = 0
      done = 0
