@@ -140,9 +140,10 @@ async def kikme(leave):
          if x.is_group:
              chat = x.id
              try:
-                 done +=1
+                 done += 1
                  await event.client(LeaveChannelRequest(chat))
              except BaseException:
+                 er += 1
      await Kyy.edit(
          f"**Berhasil keluar dari {done} Gruop, Gagal keluar dari {er} Group**"
      )
