@@ -18,13 +18,13 @@ async def insta(event):
     if event.fwd_from:
         return
     if not event.reply_to_msg_id:
-        await event.edit("`Mohon Reply Ke Link Instagram`")
+        await event.edit("`Mohon Berikan Link / Reply Ke Link Instagram`")
         return
     reply_message = await event.get_reply_message()
     if not reply_message.text:
         await event.edit("`Mohon Maaf, Saya Membutuhkan Link Media Instagram Untuk Download`")
         return
-    chat = "@SaveAsBot"
+    chat = "@ThisVidBot"
     reply_message.sender
     if reply_message.sender.bot:
         await event.edit("`Memproses....`")
@@ -33,12 +33,12 @@ async def insta(event):
     async with event.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(
-                events.NewMessage(incoming=True, from_users=523131145)
+                events.NewMessage(incoming=True, from_users=1878760241)
             )
             await event.client.send_message(chat, reply_message)
             response = await response
         except YouBlockedUserError:
-            await event.edit("`Mohon Buka Blokir` @SaveAsbot `Lalu Coba Lagi`")
+            await event.edit("`Mohon Buka Blokir` @ThisVidBot `Lalu Coba Lagi`")
             return
         if response.text.startswith("Forward"):
             await event.edit(
@@ -49,7 +49,7 @@ async def insta(event):
             await event.client.send_file(
                 event.chat_id,
                 response.message.media,
-                caption=f"**Creator @Pocongonlen**",
+                caption=f"**Maintened Bot By @pocongproject**",
             )
             await event.client.send_read_acknowledge(conv.chat_id)
             await bot(functions.messages.DeleteHistoryRequest(peer=chat, max_id=0))
