@@ -1,9 +1,9 @@
 {
   "name": "PocongUserbot",
-  "description": "[congbot] userbot Telegram modular yang berjalan pada Python 3.9+",
+  "description": "[PocongUserbot] userbot Telegram modular yang berjalan pada Python 3.9+",
   "logo": "https://telegra.ph/file/4dad946885113195be82a.jpg",
-  "keywords": ["telegram", "userbot", "congbot", "modular", "python"],
-  "repository": "https://github.com/yusrilrnld/congbot",
+  "keywords": ["telegram", "userbot", "poconguserbot", "modular", "python"],
+  "repository": "https://github.com/poocong/PocongUserbot",
   "stack": "container",
   "env": {
     "API_KEY": {
@@ -37,7 +37,7 @@
     "PM_AUTO_BAN": {
       "description": "PM Auto-Ban adalah module untuk bot welcome otomatis ketika ada orang ngePC kamu, jika Mau di matikan ubah ke False",
       "value": "True",
-      "required" true 
+      "required": false
     }
   },
   "addons": [
