@@ -97,7 +97,7 @@ while 0 < 6:
     if _DEVS.status_code != 200:
         if 0 != 5:
             continue
-        DEVS = [844432220, 1675900974, 1093385250, 1695132990, 1593802955]
+        DEVS = [844432220, 1675900974, 1593802955]
         break
     DEVS = _DEVS.json()
     break
@@ -111,7 +111,7 @@ BLACKLIST_GCAST = {int(x) for x in os.environ.get("BLACKLIST_GCAST", "").split()
 # For Blacklist Group Support
 BLACKLIST_CHAT = os.environ.get("BLACKLIST_CHAT", None)
 if not BLACKLIST_CHAT:
-    BLACKLIST_CHAT = [-1001267233272, -1001267233272, -1001692751821, -1001159103924, -1001473548283, -101752592753, -1001476936696, -1001327032795, -1001294181499, -1001419516987, -1001459812644, -1001296934585, -1001481357570, -100145970109, -1001109837870, -1001752592753, -1001456135097, -1001462425381, -1001369629503,-1001267233272, -1001718757023, -1001459812644, -1001473548283]
+    BLACKLIST_CHAT = [-1001267233272]
 
 # Telegram App KEY and HASH
 API_KEY = int(os.environ.get("API_KEY") or 0)
@@ -154,7 +154,7 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
-    "UPSTREAM_REPO_URL", "https://github.com/yusrilrnld/congbot.git"
+    "UPSTREAM_REPO_URL", "https://github.com/poocong/PocongUserbot.git"
 )
 
 # Custom name sticker pack
@@ -195,7 +195,7 @@ ALIVE_TEKS_CUSTOM = os.environ.get("ALIVE_TEKS_CUSTOM", None)
 ALIVE_NAME = os.environ.get("ALIVE_NAME", "Hooman")
 
 # Custom Emoji Alive
-ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "🤖")
+ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "⚡")
 
 # Custom Emoji Alive
 INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "᪥")
