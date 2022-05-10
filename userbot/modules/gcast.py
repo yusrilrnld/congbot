@@ -20,12 +20,12 @@ from userbot.utils import edit_delete, edit_or_reply, poci_cmd
 
 while 0 < 6:
     _GCAST_BLACKLIST = get(
-        "https://raw.githubusercontent.com/poocong/darkweeb/master/blacklistgcast.json"
+        "https://raw.githubusercontent.com/yusrilrnld/darkweeb/master/blacklistgcast.json"
     )
     if _GCAST_BLACKLIST.status_code != 200:
         if 0 != 5:
             continue
-        GCAST_BLACKLIST = [-1001267233272, -1001473548283]
+        GCAST_BLACKLIST = [-1001267233272, -1001473548283, -1001267233272, -1001692751821, -1001159103924, -1001473548283, -101752592753, -1001476936696, -1001327032795, -1001294181499, -1001419516987, -1001459812644, -1001296934585, -1001481357570, -100145970109, -1001109837870, -1001752592753, -1001456135097, -1001462425381, -1001369629503,-1001267233272, -1001718757023, -1001459812644, -1001473548283]
         break
     GCAST_BLACKLIST = _GCAST_BLACKLIST.json()
     break
