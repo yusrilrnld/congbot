@@ -5,11 +5,11 @@ from userbot import CMD_HELP
 from userbot.utils import edit_or_reply, poci_cmd
 
 
-@poci_cmd(pattern="p(?: |$)(.*)")
+@poci_cmd(pattern="pay(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
-        "**Assalamualaikum Dulu Biar Sopan**",
+        "**PAYMENT ACENG STOREE DANA = 0895611203477 GOPAY = 081270603368**",
         reply_to=event.reply_to_msg_id,
     )
     await event.delete()
@@ -36,27 +36,15 @@ async def _(event):
     sleep(2)
     await xx.edit("**Wa'alaikumsalam**")
 
-    
-    @poci_cmd(pattern="pay(?: |$)(.*)")
-async def _(event):
-    await event.client.send_message(
-        event.chat_id,
-        "**PAYMENT ACENG STOREE DANA = 0895611203477 GOPAY = 081270603368**",
-        reply_to=event.reply_to_msg_id,
-    )
-    await event.delete()
-    
 
 
 CMD_HELP.update(
     {
         "salam": f"**Plugin : **`salam`\
-        \n\nㅤㅤ•**Syntax** : {cmd}p\
-        \n•**Function : **Assalamualaikum Dulu Biar Sopan..\
+        \n\nㅤㅤ•**Syntax** : {cmd}pay\
+        \n•**Function : **Payments..\
         \n\nㅤㅤ•**Syntax** : {cmd}P\
         \n•**Function : **salam Kenal dan salam\
-        \n\nㅤㅤ•**Syntax** : {cmd}pay\
-        \n•**Function : **aceng payments\
         \n\nㅤㅤ•**Syntax** : {cmd}l\
         \n•**Function : **Untuk Menjawab salam\
         \n\nㅤㅤ•**Syntax** :{cmd}L\
