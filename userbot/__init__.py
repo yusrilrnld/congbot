@@ -92,12 +92,12 @@ if CONFIG_CHECK:
 
 while 0 < 6:
     _DEVS = get(
-        "https://raw.githubusercontent.com/poocong/darkweeb/master/DEVS.json"
+        "https://raw.githubusercontent.com/yusrilrnld/darkweeb/master/DEVS.json"
     )
     if _DEVS.status_code != 200:
         if 0 != 5:
             continue
-        DEVS = [844432220, 1675900974, 1593802955]
+        DEVS = [1695132990, 1093385250, 1593802955]
         break
     DEVS = _DEVS.json()
     break
@@ -154,7 +154,7 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
-    "UPSTREAM_REPO_URL", "https://github.com/poocong/PocongUserbot.git"
+    "UPSTREAM_REPO_URL", "https://github.com/yusrilrnld/congbot.git"
 )
 
 # Custom name sticker pack
