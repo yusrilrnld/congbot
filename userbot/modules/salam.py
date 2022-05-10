@@ -9,7 +9,7 @@ from userbot.utils import edit_or_reply, poci_cmd
 async def _(event):
     await event.client.send_message(
         event.chat_id,
-        "**PAYMENT ACENG • STOREE DANA = 0895611203477 PAYMENT ACENG • STOREE GOPAY = 081270603368 PAYMENT ACENG • STOREE**",
+        "**PAYMENT ACENG • STOREE \n\n DANA = 0895611203477 \n\nㅤPAYMENT ACENG • STOREE \n\nㅤGOPAY = 081270603368 \n\nㅤ★@ACENG_STOREE★ **",
         reply_to=event.reply_to_msg_id,
     )
     await event.delete()
