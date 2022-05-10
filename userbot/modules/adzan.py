@@ -40,7 +40,7 @@ CMD_HELP.update(
     {
         "adzan": f"**Plugin : **`adzan`\
         \n\n  •  **Syntax :** `{cmd}adzan` <nama kota>\
-        \n  •  **Function : **Menunjukkan waktu jadwal sholat dari kota yang diberikan.\
+        \n  •  **Function : **Menunjukkan jadwal adzan dari kota yang di tujukan.\
     "
     }
 )
