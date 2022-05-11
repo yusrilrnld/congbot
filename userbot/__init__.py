@@ -129,7 +129,7 @@ NO_LOAD = os.environ.get("NO_LOAD", "").split()
 
 # Bleep Blop, this is a bot ;)
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "True"))
-PM_LIMIT = int(os.environ.get("PM_LIMIT", 5))
+PM_LIMIT = int(os.environ.get("PM_LIMIT", 3))
 
 # Custom Handler command
 CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
@@ -137,8 +137,8 @@ CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"!")
 
 # Support
-GROUP = os.environ.get("GROUP", "PocongUserbot")
-CHANNEL = os.environ.get("CHANNEL", "PocongProject")
+GROUP = os.environ.get("GROUP", "jb_indo")
+CHANNEL = os.environ.get("CHANNEL", "selllastore")
 BYPASS_URL = os.environ.get("BYPASS_URL", "@bypassvip_bot")
 
 # Heroku Credentials for updater.
@@ -158,7 +158,7 @@ UPSTREAM_REPO_URL = os.environ.get(
 )
 
 # Custom name sticker pack
-S_PACK_NAME = os.environ.get("S_PACK_NAME", "Tikell @PocongProject")
+S_PACK_NAME = os.environ.get("S_PACK_NAME", "Tikell @jb_indo")
 
 # SQL Database URI
 DB_URI = os.environ.get("DATABASE_URL", None)
@@ -182,8 +182,8 @@ WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY", "Jakarta")
 MONGO_URI = os.environ.get("MONGO_URI", None)
 
 # Anti Spambot Config
-ANTI_SPAMBOT = sb(os.environ.get("ANTI_SPAMBOT", "False"))
-ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
+ANTI_SPAMBOT = sb(os.environ.get("ANTI_SPAMBOT", "True"))
+ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "True"))
 
 # Youtube API key
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", "AIzaSyACwFrVv-mlhICIOCvDQgaabo6RIoaK8Dg")
@@ -192,10 +192,10 @@ YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", "AIzaSyACwFrVv-mlhICIOCvDQga
 ALIVE_TEKS_CUSTOM = os.environ.get("ALIVE_TEKS_CUSTOM", None)
 
 # Default .alive name
-ALIVE_NAME = os.environ.get("ALIVE_NAME", "Hooman")
+ALIVE_NAME = os.environ.get("ALIVE_NAME", "𝘩𝘦𝘭𝘭𝘰 𝘐 𝘢𝘮 𝘶𝘴𝘦𝘳𝘣𝘰𝘵🤖")
 
 # Custom Emoji Alive
-ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "⚡")
+ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "❈")
 
 # Custom Emoji Alive
 INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "᪥")
@@ -223,11 +223,11 @@ BOT_VER = os.environ.get("BOT_VER", "3.1.0")
 
 # Default .alive logo
 ALIVE_LOGO = (
-    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/4dad946885113195be82a.jpg"
+    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/ee25230510fcca4c5b54f.jpg"
 )
 
 INLINE_PIC = (
-    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/4dad946885113195be82a.jpg"
+    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/ee25230510fcca4c5b54f.jpg"
 )
 
 # Picture For VCPLUGIN
