@@ -1,4 +1,5 @@
 # reupdate by : ramadhani892
+# reEdit by @yusril4you
 # Thanks For @tofik_dn & @mrismanaziz
 
 import random
