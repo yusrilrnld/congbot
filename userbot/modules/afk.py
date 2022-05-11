@@ -38,7 +38,7 @@ async def set_not_afk(event):
                 shite = await event.client.send_message(event.chat_id, file=pic)
                 shites = await event.client.send_message(
                     event.chat_id,
-                    f"**{owner} Kembali Online Untuk Parming**\n**Dari AFK :** `{total_afk_time}` **Yang Lalu**",
+                    f"**{owner} Kembali Online Untuk Ngepet**\n**Dari AFK :** `{total_afk_time}` **Yang Lalu**",
                 )
             else:
                 shite = await event.client.send_message(
@@ -94,7 +94,7 @@ async def on_afk(event):
             )
         else:
             message_to_reply = (
-                f"**✘ Maaf {owner} Sedang AFK** `{total_afk_time}` **Yang Lalu ✘**"
+                f"**★ Maaf {owner} Sedang AFK** `{total_afk_time}` **Yang Lalu ★**"
             )
         try:
             if pic.endswith((".tgs", ".webp")):
