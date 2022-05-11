@@ -32,7 +32,7 @@ else:
 
 async def autopilot():
     LOGS.info("TUNGGU SEBENTAR. SEDANG MEMBUAT GROUP LOG USERBOT UNTUK ANDA")
-    desc = "Group Logs untuk PocongUserBot.\nHARAP JANGAN KELUAR DARI GROUP INI.\n\n✨ Powered By ~ @PocongProject"
+    desc = "Group Logs untuk PocongUserBot.\nHARAP JANGAN KELUAR DARI GROUP INI.\n\n✨ Powered By ~ @jb_indo"
     try:
         grup = await bot(
             CreateChannelRequest(title="BOT [ JGN DI HAPUS ]", about=desc, megagroup=True)
@@ -55,11 +55,11 @@ async def autobot():
         BOTLOG_CHATID, "**SEDANG MEMBUAT BOT TELEGRAM UNTUK ANDA DI @BotFather**"
     )
     who = await bot.get_me()
-    name = who.first_name + " Assisten"
+    name = who.first_name + " Assistant"
     if who.username:
         username = who.username + "_bot"
     else:
-        username = "Assist3n" + (str(who.id))[5:] + "bot"
+        username = "Assistant" + (str(who.id))[5:] + "bot"
     bf = "@BotFather"
     await bot(UnblockRequest(bf))
     await bot.send_message(bf, "/cancel")
@@ -92,7 +92,7 @@ async def autobot():
     await bot.send_read_acknowledge("botfather")
     if isdone.startswith("Sorry,"):
         ran = randint(1, 100)
-        username = "Assist3n" + (str(who.id))[6:] + str(ran) + "ubot"
+        username = "Assistant" + (str(who.id))[6:] + str(ran) + "ubot"
         await bot.send_message(bf, username)
         await asyncio.sleep(1)
         nowdone = (await bot.get_messages(bf, limit=1))[0].text
@@ -121,7 +121,7 @@ async def autobot():
             await bot.send_message(bf, f"@{username}")
             await asyncio.sleep(1)
             await bot.send_message(
-                bf, f"🤖 Owner ~ {who.first_name} \n🔥 Powered By ~ @PoconProject"
+                bf, f"🤖 Owner ~ {who.first_name} \n🔥 Powered By ~ @jb_indo"
             )
             await bot.send_message(
                 BOTLOG_CHATID,
@@ -163,7 +163,7 @@ async def autobot():
         await bot.send_message(bf, f"@{username}")
         await asyncio.sleep(1)
         await bot.send_message(
-            bf, f"🤖 Owner ~ {who.first_name} \n🔥 Powered By ~ @PocongProject"
+            bf, f"🤖 Owner ~ {who.first_name} \n🔥 Powered By ~ @jb_indo"
         )
         await bot.send_message(
             BOTLOG_CHATID,
