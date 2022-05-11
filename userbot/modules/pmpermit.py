@@ -16,12 +16,12 @@ from userbot.events import poci_cmd
 from userbot.utils import edit_delete, edit_or_reply
 
 DEF_UNAPPROVED_MSG = (
-    "❏ 𝐏𝐞𝐫𝐢𝐧𝐠𝐚𝐭𝐚𝐧!\n"
-    "• Saya belum menyetujui anda untuk Cht.\n"
-    "• Tunggu sampai sy menyetujui chat anda.\n"
+    "❏ 𝐏𝐞𝐫𝐢𝐧𝐠𝐚𝐭𝐚𝐧!!!\n"
+    "• Tuan Saya belum menyetujui anda untuk Chat.\n"
+    "• Tunggu sampai Tuan menyetujui chat anda.\n"
     "• Jangan Spam Chat atau anda akan otomatis di blokir.\n"
     "┌━━━━━━━━━━━━\n"
-    "├❏ 𝐏𝐞𝐬𝐚𝐧 𝐨𝐭𝐨𝐦𝐚𝐭𝐢𝐬 𝐁𝐲 𝐏𝐨𝐜𝐨𝐧𝐠𝐔𝐬𝐞𝐫𝐛𝐨𝐭\n"
+    "├❏ 𝐏𝐞𝐬𝐚𝐧 𝐨𝐭𝐨𝐦𝐚𝐭𝐢𝐬 𝐁𝐲 𝗨𝘀𝗲𝗿𝗯𝗼𝘁\n"
     "└━━━━━━━━━━━━\n"
 )
 
