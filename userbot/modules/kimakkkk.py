@@ -2,16 +2,18 @@
 # Thanks For @tofik_dn & @mrismanaziz
 
 import random
+import requests
+import random
 
 from userbot import CMD_HELP, BLACKLIST_CHAT, CMD_HANDLER as cmd
-from userbot.utils import ram_cmd, edit_or_reply, edit_delete
+from userbot.utils import poci_cmd, edit_or_reply, edit_delete
 from userbot import owner
 from telethon.tl.types import InputMessagesFilterVoice
 from telethon.tl.types import InputMessagesFilterPhotos
 from telethon.tl.types import InputMessagesFilterVideo
 from telethon.tl.types import InputMessagesFilterMusic
 
-@ram_cmd(pattern=r"vbkp$")
+@poci_cmd(pattern=r"vbkp$")
 async def _(event):
     if event.chat_id in BLACKLIST_CHAT:
         return await edit_delete(
@@ -37,7 +39,7 @@ async def _(event):
 
 
 
-@ram_cmd(pattern=r"vtik$")
+@poci_cmd(pattern=r"vtik$")
 async def _(event):
     ram = await edit_or_reply(event, "`Bentar Gua cariin....`")
     try:
@@ -58,7 +60,7 @@ async def _(event):
         await ram.edit("Kalo Gak bisa, Ya jangan nangis tod")
 
 
-@ram_cmd(pattern=r"ayg$")
+@poci_cmd(pattern=r"ayg$")
 async def _(event):
     syg = await edit_or_reply(event, "Gua Cariin Ayang yg cocok sama lu....")
     try:
@@ -78,7 +80,7 @@ async def _(event):
     except Exception:
         await syg.edit("Kalo Gak bisa, Ya jangan nangis tod")
 
-@ram_cmd(pattern=r"dcewe$")
+@poci_cmd(pattern=r"dcewe$")
 async def _(event):
     dsh = await edit_or_reply(event, "**Sebentar ya cok....**")
     try:
@@ -99,7 +101,7 @@ async def _(event):
         await dsh.edit("`Yah Kurang beruntung lu cok...`")
 
 
-@ram_cmd(pattern=r"dcowo$")
+@poci_cmd(pattern=r"dcowo$")
 async def _(event):
     dsh = await edit_or_reply(event, "`Bentar cok...`")
     try:
@@ -120,7 +122,7 @@ async def _(event):
         await dsh.edit("`Yah Kurang Beruntung lu cok...`")
 # =================≠================================================================================================================================
 
-@ram_cmd(pattern=r"alq$")
+@poci_cmd(pattern=r"alq$")
 async def _(event):
     ram = await edit_or_reply(event, "`Masya Allah, tobat.....`")
     try:
@@ -141,7 +143,7 @@ async def _(event):
         await ram.edit(f"`Kalo Ga bisa, Jangan nangis ya {owner}`")
 
 
-@ram_cmd(pattern=r"sholawat$")
+@poci_cmd(pattern=r"sholawat$")
 async def _(event):
     ram = await edit_or_reply(event, "**Sedang mencari sholawat....**")
     try:
