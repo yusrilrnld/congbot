@@ -20,7 +20,7 @@ async def _(event):
         return await edit_delete(
             event, "**NYARI BOKEP JANGAN DISINI ANJING LU NGENTOD!!!!!**", 5
         )
-    ram = await edit_or_reply(event, "`Bentar tod lg gua ambilin...`")
+    xx = await edit_or_reply(event, "`Bentar tod lg gua ambilin...`")
     try:
         videonya = [
             asupan
@@ -34,15 +34,15 @@ async def _(event):
             file=random.choice(videonya),
             caption=f"Silahkan menikmati.",
             reply_to=event.reply_to_msg_id)
-        await ram.delete()
+        await xx.delete()
     except Exception:
-        await ram.edit("Kalo Gak bisa, Ya jangan nangis tod")
+        await xx.edit("Kalo Gak bisa, Ya jangan nangis tod")
 
 
 
 @poci_cmd(pattern=r"vtik$")
 async def _(event):
-    ram = await edit_or_reply(event, "`Bentar Gua cariin....`")
+    xx = await edit_or_reply(event, "`Bentar Gua cariin....`")
     try:
         videonya = [
             asupan
@@ -56,9 +56,9 @@ async def _(event):
             file=random.choice(videonya),
             caption=f"Silahkan menikmati [{owner}](tg://user?id={aing.id})",
             reply_to=event.reply_to_msg_id)
-        await ram.delete()
+        await xx.delete()
     except Exception:
-        await ram.edit("Kalo Gak bisa, Ya jangan nangis tod")
+        await xx.edit("Kalo Gak bisa, Ya jangan nangis tod")
 
 
 @poci_cmd(pattern=r"ayg$")
@@ -125,7 +125,7 @@ async def _(event):
 
 @poci_cmd(pattern=r"alq$")
 async def _(event):
-    ram = await edit_or_reply(event, "`Masya Allah, tobat.....`")
+    xx = await edit_or_reply(event, "`Masya Allah, tobat.....`")
     try:
         qurannya = [
             quran
@@ -139,14 +139,14 @@ async def _(event):
             file=random.choice(qurannya),
             caption=f"Dengarkan Dengan Khusyu [{owner}](tg://user?id={aing.id})",
            reply_to=event.reply_to_msg_id)
-        await ram.delete()
+        await xx.delete()
     except Exception:
-        await ram.edit(f"`Kalo Ga bisa, Jangan nangis ya {owner}`")
+        await xx.edit(f"`Kalo Ga bisa, Jangan nangis ya {owner}`")
 
 
 @poci_cmd(pattern=r"sholawat$")
 async def _(event):
-    ram = await edit_or_reply(event, "**Sedang mencari sholawat....**")
+    xx = await edit_or_reply(event, "**Sedang mencari sholawat....**")
     try:
         sholawatnya = [
             quran
@@ -160,9 +160,9 @@ async def _(event):
             file=random.choice(sholawatnya),
             caption=f"Dengerin tuh Sholawat Biar adem [{owner}](tg://user?id={aing.id})",
            reply_to=event.reply_to_msg_id)
-        await ram.delete()
+        await xx.delete()
     except Exception:
-        await ram.edit(f"`Kalo Gabisa Ya jangan nangis lah {owner}.`")
+        await xx.edit(f"`Kalo Gabisa Ya jangan nangis lah {owner}.`")
 
 
 CMD_HELP.update(
