@@ -19,7 +19,7 @@ from userbot.utils import (
 )
 
 
-@poci_cmd(pattern="sg(u)?(?:\s|$)([\s\S]*)")
+@poci_cmd(pattern="sm(u)?(?:\s|$)([\s\S]*)")
 async def _(event):
     input_str = "".join(event.text.split(maxsplit=1)[1:])
     reply_message = await event.get_reply_message()
@@ -78,9 +78,9 @@ async def sangamata_seperator(sanga_list):
 CMD_HELP.update(
     {
         "sangmata": f"**Plugin : **`sangmata`\
-        \n\n  •  **Syntax :** `{cmd}sg` <sambil reply chat>\
+        \n\n  •  **Syntax :** `{cmd}sm` <sambil reply chat>\
         \n  •  **Function : **Mendapatkan Riwayat Nama Pengguna selama di telegram.\
-        \n\n  •  **Syntax :** `{cmd}sgu` <sambil reply chat>\
+        \n\n  •  **Syntax :** `{cmd}smu` <sambil reply chat>\
         \n  •  **Function : **Mendapatkan Riwayat Username Pengguna selama di telegram.\
     "
     }
