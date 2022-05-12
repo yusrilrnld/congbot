@@ -111,7 +111,7 @@ async def sudo(event):
         await edit_delete(event, "🔮 **Blacklist GCAST:** `Disabled`")
 
 
-@poci_cmd(pattern="addblacklist(?:\\s|$)([\\s\\S]*)")
+@poci_cmd(pattern="addbl(?:\\s|$)([\\s\\S]*)")
 async def add(event):
     xxnx = await edit_or_reply(event, "`Processing...`")
     var = "BLACKLIST_GCAST"
@@ -141,7 +141,7 @@ async def add(event):
     )
     heroku_Config[var] = blacklistgrup
 
-@poci_cmd(pattern="delblacklist(?:\\s|$)([\\s\\S]*)")
+@poci_cmd(pattern="delbl(?:\\s|$)([\\s\\S]*)")
 async def _(event):
     xxx = await edit_or_reply(event, "`Processing...`")
     gc = event.chat_id
@@ -179,11 +179,11 @@ CMD_HELP.update(
         \n  •  **Function : **Mengirim Global Broadcast pesan ke Seluruh Private Massage / PC yang masuk. (Bisa Mengirim Media/Sticker)\
         \n\n  •  **Syntax :** `{cmd}blchat`\
         \n  •  **Function : **Untuk Mengecek informasi daftar blacklist gcast.\
-        \n\n  •  **Syntax :** `{cmd}addblacklist`\
+        \n\n  •  **Syntax :** `{cmd}addbl`\
         \n  •  **Function : **Untuk Menambahkan grup tersebut ke blacklist gcast.\
-        \n\n  •  **Syntax :** `{cmd}delblacklist`\
+        \n\n  •  **Syntax :** `{cmd}delb`\
         \n  •  **Function : **Untuk Menghapus grup tersebut dari blacklist gcast.\
-        \n  •  **Note : **Ketik perintah** `{cmd}addblacklist` **dan** `{cmd}delblacklist` **di grup yang kamu Blacklist.\
+        \n  •  **Note : **Ketik perintah** `{cmd}addbl` **dan** `{cmd}delbl` **di grup yang kamu Blacklist.\
     "
     }
 )
