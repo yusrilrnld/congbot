@@ -1,9 +1,9 @@
 {
-  "name": "PocongUserbot",
-  "description": "[PocongUserbot] userbot Telegram modular yang berjalan pada Python 3.9+",
+  "name": "Userbot",
+  "description": "[Userbot] userbot Telegram modular yang berjalan pada Python 3.9+",
   "logo": "https://telegra.ph/file/4dad946885113195be82a.jpg",
-  "keywords": ["telegram", "userbot", "poconguserbot", "modular", "python"],
-  "repository": "https://github.com/poocong/PocongUserbot",
+  "keywords": ["telegram", "userbot", "userbot", "modular", "python"],
+  "repository": "https://github.com/yusrilrnld/congbot",
   "stack": "container",
   "env": {
     "API_KEY": {
