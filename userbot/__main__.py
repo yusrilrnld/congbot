@@ -54,7 +54,7 @@ if not BOTLOG_CHATID:
 
 async def pocong_userbot_on():
     try:
-        if BOTLOG_CHATID != 0:
+        if BOTLOG_CHATID != "-1001624320811":
             await bot.send_message(
                 BOTLOG_CHATID,
                 f"🔥 **congbot Berhasil Di Aktifkan**\n━━\n➠ **Userbot Version -** `{BOT_VER}@{branch}`\n➠ **Ketik** `{cmd}alive` **untuk Mengecheck Bot**\n━━",
