@@ -201,7 +201,7 @@ ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "❈")
 INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "᪥")
 
 # Custom icon HELP
-ICON_HELP = os.environ.get("ICON_HELP", "❈")
+ICON_HELP = os.environ.get("ICON_HELP", "♡")
 
 # Time & Date - Country and Time Zone
 COUNTRY = str(os.environ.get("COUNTRY", "ID"))
@@ -329,10 +329,10 @@ async def check_botlog_chatid() -> None:
 async def update_restart_msg(chat_id, msg_id):
     DEFAULTUSER = ALIVE_NAME or "Set `ALIVE_NAME` ConfigVar!"
     message = (
-        f"**PocongUserBot v{BOT_VER} is back up and running!**\n\n"
-        f"**Telethon:** {version.__version__}\n"
-        f"**Python:** {python_version()}\n"
-        f"**User:** {DEFAULTUSER}"
+        f"**🤖 UserBot v{BOT_VER} is back up and running!**\n\n"
+        f"**🦝 Telethon:** {version.__version__}\n"
+        f"**🪱 Python:** {python_version()}\n"
+        f"**👻 User:** {DEFAULTUSER}"
     )
     await bot.edit_message(chat_id, msg_id, message)
     return True
