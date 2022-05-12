@@ -25,7 +25,7 @@ from userbot import (
 def poci_cmd(
     pattern: str = None,
     allow_sudo: bool = True,
-    disable_edited: bool = False,
+    disable_edited: bool = True,
     forword=False,
     command: str = None,
     **args,
