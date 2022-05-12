@@ -5,7 +5,7 @@
 
 from time import sleep
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, DEVS
+from userbot import CMD_HELP, DEVS, BL_CHAT
 from userbot.events import register, poci_cmd
 from userbot.utils import edit_or_reply, poci_cmd
 
@@ -13,7 +13,7 @@ from userbot.utils import edit_or_reply, poci_cmd
 
 @poci_cmd(pattern="p(?: |$)(.*)")
 async def _(event):
-    if event.chat_id in BLACKLIST_CHAT:
+    if event.chat_id in BL_CHAT:
         return await edit_or_reply(event, "JANGAN PAKE DISINI SALAM LO HARAM HEHEHE")
     await event.client.send_message(
         event.chat_id, "**𝐀ssalamu'alaikum gc haram**", reply_to=event.reply_to_msg_id)
@@ -29,7 +29,7 @@ async def _(event):
 
 @poci_cmd(pattern="l(?: |$)(.*)")
 async def _(event):
-    if event.chat_id in BLACKLIST_CHAT:
+    if event.chat_id in BL_CHAT:
         return await edit_or_reply(event, "JANGAN DISINI DI NGENTOD SALAM LO HARAM!!")
     await event.client.send_message(
         event.chat_id, "**Wa'alaikumsalam kaum dajal...**", reply_to=event.reply_to_msg_id)
@@ -124,7 +124,7 @@ async def _(typeq):
 
 @poci_cmd(pattern="halo(?: |$)(.*)")
 async def _(typew):
-    if typew.chat_id in BLACKLIST_CHAT:
+    if typew.chat_id in BL_CHAT:
         return await edit_or_reply(typew, "GABOLEH NGATAIN MEMBER SINI NJING!!!!")
     await typew.client.send_message(
         typew.chat_id, "**HAI MEMBER ALAY, ALIANSI SAMPAH, FAMILY GAGUNA, MARGA TOLOL, SIRKEL ANJING, BOCAH AUTIS, PERKUMPULAN HARAM, PENYEMBAH KAMBING, PENCETUS KESESATAN, UTUSAN DAJAL, HARAM BGT YA KATA KATA GUA? YA IU COCOK BANGET KONTOL BUAT NGATAIN PERKUMPULAN KAYA LO PADA ANJING, YA EMANG HARAM SI PANTES BGT DI BUBARIN AJA JING!!**", reply_to=typew.reply_to_msg_id)
@@ -133,7 +133,7 @@ async def _(typew):
 
 @poci_cmd(pattern="loh(?: |$)(.*)")
 async def _(typew):
-     if typew.chat_id in BLACKLIST_CHAT:
+     if typew.chat_id in BL_CHAT:
          return await edit_or_reply(
              typew, f"**Dasar ngentot, Lo gabisa Nyoba disini anjing!!!**"
          )
