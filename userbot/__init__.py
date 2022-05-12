@@ -504,26 +504,26 @@ with bot:
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith("@PocongUserbot"):
+            if event.query.user_id == uid and query.startswith("@jb_indo"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
                     file=logoman,
                     link_preview=False,
-                    text=f"**🚀 PocongUserbot Inline Menu **\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules",
+                    text=f"**🦝 Userbot Inline Menu **\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules",
                     buttons=buttons,
                 )
             elif query.startswith("repo"):
                 result = builder.article(
                     title="Repository",
-                    description="Repository PocongUserbot",
-                    url="https://t.me/PocongUserbot",
+                    description="Repository Userbot",
+                    url="https://github.com/yusrilrnld/congbot",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text="**PocongUserBot**\n➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [Pocong](https://t.me/Pocongonlen)\n✣ **Support :** @PocongUserbot\n✣ **Repository :** [PocongUserbot](https://github.com/poocong/PocongUserbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="**UserBot**\n➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [Yusril](https://t.me/yusril4you)\n✣ **Support :** @jb_indo\n✣ **Repository :** [Userbot](https://github.com/yusrilrnld/congbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
-                            custom.Button.url("𝐺𝑟𝑜𝑢𝑝", "https://t.me/PocongUserbot"),
+                            custom.Button.url("𝐺𝑟𝑜𝑢𝑝", "https://t.me/jb_indo"),
                             custom.Button.url(
-                                "𝑅𝑒𝑝𝑜", "https://github.com/poocong/PocongUserbot"
+                                "𝑅𝑒𝑝𝑜", "https://github.com/yusrilrnld/congbot"
                             ),
                         ],
                     ],
@@ -563,16 +563,16 @@ with bot:
                 )
             else:
                 result = builder.article(
-                    title=" PocongUserbot ",
-                    description="PocongUserBot | Telethon",
-                    url="https://t.me/PocongUserbot",
+                    title=" Userbot ",
+                    description="UserBot | Telethon",
+                    url="https://github.com/yusrilrnld/congbot",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text=f"**PocongUserBot**\n➖➖➖➖➖➖➖➖➖ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n✣ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖\n**Support:** @PoocongUserbot\n➖➖➖➖➖➖➖➖",
+                    text=f"**UserBot**\n➖➖➖➖➖➖➖➖➖ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n✣ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖\n**Support:** @jb_indo\n➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
-                            custom.Button.url("𝐺𝑟𝑜𝑢𝑝", "https://t.me/PocongUserbot"),
+                            custom.Button.url("𝐺𝑟𝑜𝑢𝑝", "https://t.me/jb_indo"),
                             custom.Button.url(
-                                "𝑅𝑒𝑝𝑜", "https://github.com/poocong/PocongUserbot"
+                                "𝑅𝑒𝑝𝑜", "https://github.com/yusrilrnld/congbot"
                             ),
                         ],
                     ],
@@ -587,7 +587,7 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 current_page_number = int(looters)
                 buttons = paginate_help(current_page_number, dugmeler, "helpme")
-                text = f"**🚀 PocongUserbot Inline Menu **\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules"
+                text = f"**🦝 Userbot Inline Menu **\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules"
                 await event.edit(
                     text,
                     file=logoman,
