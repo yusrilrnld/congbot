@@ -42,16 +42,16 @@ def mentionuser(name, userid):
 async def gban(event):
     if event.fwd_from:
         return
-    gbun = await edit_or_reply(event, "`Gbanning...`")
+    gbun = await edit_or_reply(event, "`Proses Global banning...`")
     start = datetime.now()
     user, reason = await get_user_from_event(event, gbun)
     if not user:
         return
     if user.id == (await event.client.get_me()).id:
-        await gbun.edit("**Ngapain NgeGban diri sendiri Goblok 🐽**")
+        await gbun.edit("**Ngapain NgeGban diri sendiri Goblok💩**")
         return
     if user.id in DEVS:
-        await gbun.edit("**Gagal GBAN karena dia adalah Pembuat saya 🗿**")
+        await gbun.edit("**Gagal GBAN karena dia adadalah Developer Gua🥰*")
         return
     if gban_sql.is_gbanned(user.id):
         await gbun.edit(
@@ -67,7 +67,7 @@ async def gban(event):
         await gbun.edit("**Anda Tidak mempunyai GC yang anda admin 🥺**")
         return
     await gbun.edit(
-        f"**Prosess gban anak** [yteam](tg://user?id={user.id}) **di** `{len(san)}` **groups**"
+        f"**Prosess Gban anak** [Haram](tg://user?id={user.id}) **di** `{len(san)}` **groups**"
     )
     for i in range(fiz):
         try:
@@ -116,7 +116,7 @@ async def ungban(event):
         await ungbun.edit("**Anda Tidak mempunyai GC yang anda admin 🥺**")
         return
     await ungbun.edit(
-        f"**Prosess ungban anak** [yteam](tg://user?id={user.id}) **di** `{len(san)}` **groups**"
+        f"**Prosess ungban anak** [Haram](tg://user?id={user.id}) **di** `{len(san)}` **groups**"
     )
     for i in range(fiz):
         try:
