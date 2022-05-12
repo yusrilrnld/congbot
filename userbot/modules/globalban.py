@@ -14,7 +14,7 @@ import userbot.modules.sql_helper.gban_sql as gban_sql
 from userbot import BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, DEVS, bot
-from userbot.events import register as DEVS
+from userbot.events import register
 from userbot.utils import edit_or_reply, get_user_from_event, poci_cmd
 
 from .admin import BANNED_RIGHTS, UNBAN_RIGHTS
