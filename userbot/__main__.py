@@ -41,7 +41,7 @@ for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
 LOGS.info(
-    f"Jika {user.first_name} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/PocongUserbot"
+    f"Jika {user.first_name} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/jb_indo"
 )
 
 LOGS.info(f"USERBOT🤖 V{BOT_VER} [🔥 BERHASIL DIAKTIFKAN! 🔥]")
